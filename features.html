@@ -9,19 +9,24 @@
   :root{--bg:#F0F2F5;--white:#fff;--border:#E5E7EB;--r:12px;--blue:#2563EB;--blue-l:#EFF4FF;--blue-m:#DBEAFE;--green:#16A34A;--green-l:#DCFCE7;--red:#DC2626;--red-l:#FEE2E2;--orange:#EA580C;--orange-l:#FFEDD5;--purple:#7C3AED;--purple-l:#EDE9FE;--g50:#F9FAFB;--g100:#F3F4F6;--g200:#E5E7EB;--g300:#D1D5DB;--g400:#9CA3AF;--g500:#6B7280;--g600:#4B5563;--g700:#374151;--g800:#1F2937;--g900:#111827;--tp:#111827;--ts:#6B7280;--tm:#9CA3AF}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Inter',-apple-system,sans-serif;color:var(--tp);font-size:14px;line-height:1.5;background:var(--bg);}
+  
+  /* Topbar Navigation */
   .topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 32px;gap:14px}
   .logo-icon{width:32px;height:32px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:900;flex-shrink:0}
   .tb-sep{width:1px;height:24px;background:var(--border);flex-shrink:0}
-  .tb-links{display:flex;gap:2px;margin-left:auto}
-  .tb-links a{font-size:13px;font-weight:500;color:var(--ts);text-decoration:none;padding:6px 12px;border-radius:6px;transition:background .15s}
+  .tb-links{display:flex;gap:4px;margin-left:auto}
+  .tb-links a{font-size:13px;font-weight:600;color:var(--ts);text-decoration:none;padding:8px 14px;border-radius:6px;transition:all .15s}
   .tb-links a:hover{background:var(--g100);color:var(--tp)}
-  .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:all .15s}
-  .btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:#1D4ED8;box-shadow:0 4px 12px rgba(37,99,235,.3)}
-  .btn-s{background:#fff;color:var(--tp);border:1px solid var(--border)}.btn-s:hover{background:var(--g50)}
-  .cov-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;transition:all .15s}
-  .cov-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);transform:translateY(-2px)}
+  .tb-links a.active{background:var(--blue-l);color:var(--blue);}
+  
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:all .15s}
+  .btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:#1D4ED8;}
+  
+  .feature-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .2s ease;}
+  .feature-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-3px)}
+  
   .cta-sec{background:var(--blue)}
-  footer{background:var(--g900)}
+  footer{background:var(--g900);color:rgba(255,255,255,0.7);}
   @media(max-width:900px){.tb-links{display:none}}
 </style>
 </head>
@@ -38,66 +43,60 @@
   <div class="tb-sep"></div>
   <nav class="tb-links">
     <a href="index.html">Home</a>
-    <a href="features.html">Features</a>
-    <a href="index.html#pricing">Pricing</a>
     <a href="dashboard.html">Dashboard</a>
+    <a href="features.html" class="active">Features</a>
   </nav>
-  <a href="upload.html" class="btn btn-p" style="margin-left:12px;">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    New Audit
-  </a>
+  <a href="upload.html" class="btn btn-p" style="margin-left:12px;">New Audit</a>
 </header>
 
-<section id="features" style="padding:120px 32px 100px; min-height:calc(100vh - 200px);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;text-align:center;">Platform Features</div>
-    <h1 style="font-size:36px;font-weight:900;letter-spacing:-.02em;margin-bottom:12px;text-align:center;">Everything You Need in One Intelligent Ledger.</h1>
-    <p style="font-size:16px;color:var(--ts);margin-bottom:48px;text-align:center;max-width:600px;margin-left:auto;margin-right:auto;">Four dedicated screens — each purpose-built for a stage of your compliance workflow.</p>
-    
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
-      <a href="dashboard.html" style="text-decoration:none;" class="cov-card">
-        <div style="width:48px;height:48px;border-radius:12px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">📊</div>
-        <div style="font-size:18px;font-weight:800;color:var(--tp);margin-bottom:8px;">Dashboard</div>
-        <p style="font-size:14px;color:var(--ts);margin-bottom:16px;">Portfolio overview, compliance scores across all SKUs and alerts at a glance.</p>
-        <div style="font-size:13px;font-weight:600;color:var(--blue);">Open Dashboard →</div>
-      </a>
-      <a href="dashboard.html" style="text-decoration:none;" class="cov-card">
-        <div style="width:48px;height:48px;border-radius:12px;background:var(--green-l);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">📦</div>
-        <div style="font-size:18px;font-weight:800;color:var(--tp);margin-bottom:8px;">SKU Management</div>
-        <p style="font-size:14px;color:var(--ts);margin-bottom:16px;">Manage 452+ SKUs, audit history, version control, and detail panel per product.</p>
-        <div style="font-size:13px;font-weight:600;color:var(--blue);">Open SKU Manager →</div>
-      </a>
-      <a href="upload.html" style="text-decoration:none;" class="cov-card">
-        <div style="width:48px;height:48px;border-radius:12px;background:var(--orange-l);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">📤</div>
-        <div style="font-size:18px;font-weight:800;color:var(--tp);margin-bottom:8px;">Label Upload</div>
-        <p style="font-size:14px;color:var(--ts);margin-bottom:16px;">Drag-and-drop your artwork. Supports JPG, PNG, PDF up to 25MB. 4-step guided flow.</p>
-        <div style="font-size:13px;font-weight:600;color:var(--blue);">Upload Label →</div>
-      </a>
-      <a href="analysis.html" style="text-decoration:none;" class="cov-card">
-        <div style="width:48px;height:48px;border-radius:12px;background:var(--purple-l);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">🔍</div>
-        <div style="font-size:18px;font-weight:800;color:var(--tp);margin-bottom:8px;">Compliance Analysis</div>
-        <p style="font-size:14px;color:var(--ts);margin-bottom:16px;">Clause-mapped findings, suggested fixes, AI confidence scores, and expert review.</p>
-        <div style="font-size:13px;font-weight:600;color:var(--blue);">View Analysis →</div>
-      </a>
-    </div>
+<div style="padding:120px 32px 80px; max-width:1100px; margin:0 auto; min-height:calc(100vh - 150px);">
+  
+  <div style="text-align:center;margin-bottom:64px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;">Platform Capabilities</div>
+    <h1 style="font-size:40px;font-weight:900;letter-spacing:-.02em;margin-bottom:16px;">Built for the Modern Compliance Team</h1>
+    <p style="font-size:16px;color:var(--ts);max-width:600px;margin:0 auto;">Everything you need to scan, manage, and verify your product packaging in one intelligent environment.</p>
   </div>
-</section>
-
-<div class="cta-sec" style="padding:64px 32px;">
-  <div style="max-width:1100px;margin:0 auto;display:flex; justify-content:space-between; align-items:center;">
-    <div>
-      <h2 style="font-size:26px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:-.02em;">Ready to see these features in action?</h2>
-      <p style="font-size:14px;color:rgba(255,255,255,.65);">Run your first label through the system today.</p>
+  
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;">
+    
+    <div class="feature-card">
+      <div style="width:56px;height:56px;border-radius:14px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:24px;">📊</div>
+      <h2 style="font-size:20px;font-weight:800;color:var(--tp);margin-bottom:12px;">Portfolio Dashboard</h2>
+      <p style="font-size:15px;color:var(--ts);margin-bottom:24px;line-height:1.6;">Get a bird's-eye view of your entire catalogue. Track overall compliance scores across all SKUs, monitor active alerts, and identify high-risk packaging before it goes to print.</p>
+      <a href="dashboard.html" style="font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;">Explore Dashboard →</a>
     </div>
-    <a href="upload.html" style="background:#fff;color:var(--blue);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;text-decoration:none;">Start Free Audit</a>
+
+    <div class="feature-card">
+      <div style="width:56px;height:56px;border-radius:14px;background:var(--green-l);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:24px;">📦</div>
+      <h2 style="font-size:20px;font-weight:800;color:var(--tp);margin-bottom:12px;">SKU Management</h2>
+      <p style="font-size:15px;color:var(--ts);margin-bottom:24px;line-height:1.6;">Manage hundreds of product variations effortlessly. Keep track of audit histories, artwork versions, and detailed parameter panels for every single product in your lineup.</p>
+      <a href="#" style="font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;">Learn More →</a>
+    </div>
+
+    <div class="feature-card">
+      <div style="width:56px;height:56px;border-radius:14px;background:var(--orange-l);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:24px;">📤</div>
+      <h2 style="font-size:20px;font-weight:800;color:var(--tp);margin-bottom:12px;">Frictionless Uploads</h2>
+      <p style="font-size:15px;color:var(--ts);margin-bottom:24px;line-height:1.6;">Drag and drop your print-ready artwork directly into the engine. We support JPG, PNG, and layered PDFs up to 25MB through a simple, guided 4-step workflow.</p>
+      <a href="upload.html" style="font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;">Try an Upload →</a>
+    </div>
+
+    <div class="feature-card">
+      <div style="width:56px;height:56px;border-radius:14px;background:var(--purple-l);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:24px;">🔍</div>
+      <h2 style="font-size:20px;font-weight:800;color:var(--tp);margin-bottom:12px;">Deep Compliance Analysis</h2>
+      <p style="font-size:15px;color:var(--ts);margin-bottom:24px;line-height:1.6;">Our engine maps visual findings directly to specific FSSAI clauses and Legal Metrology rules, providing AI confidence scores and actionable, suggested fixes.</p>
+      <a href="#" style="font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;">See Analysis Engine →</a>
+    </div>
+
   </div>
 </div>
 
-<footer style="padding:48px 32px 24px;">
-  <div style="max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;">
-    <p style="font-size:12px;color:rgba(255,255,255,.22);">© 2024 CompliOS India. All rights reserved.</p>
-    <p style="font-size:12px;color:rgba(255,255,255,.22);">🇮🇳 Made for India, by India</p>
-  </div>
+<div class="cta-sec" style="padding:64px 32px; text-align:center;">
+  <h2 style="font-size:28px;font-weight:900;color:#fff;margin-bottom:16px;">Ready to audit your labels?</h2>
+  <a href="upload.html" style="background:#fff;color:var(--blue);padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;">Start Free Audit</a>
+</div>
+
+<footer style="padding:32px; text-align:center;">
+  <div style="font-size:13px; color:rgba(255,255,255,0.6);">© 2024 CompliOS India. All rights reserved.</div>
 </footer>
 
 </body>
