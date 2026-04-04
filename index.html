@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CompliOS India — Label Compliance for Indian FMCG Brands</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{--bg:#F0F2F5;--white:#fff;--border:#E5E7EB;--r:12px;--blue:#2563EB;--blue-l:#EFF4FF;--blue-m:#DBEAFE;--green:#16A34A;--green-l:#DCFCE7;--red:#DC2626;--red-l:#FEE2E2;--orange:#EA580C;--orange-l:#FFEDD5;--purple:#7C3AED;--purple-l:#EDE9FE;--g50:#F9FAFB;--g100:#F3F4F6;--g200:#E5E7EB;--g300:#D1D5DB;--g400:#9CA3AF;--g500:#6B7280;--g600:#4B5563;--g700:#374151;--g800:#1F2937;--g900:#111827;--tp:#111827;--ts:#6B7280;--tm:#9CA3AF}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,sans-serif;color:var(--tp);font-size:14px;line-height:1.5;background:var(--bg);}
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 32px;gap:14px}
+  .logo-icon{width:32px;height:32px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:900;flex-shrink:0}
+  .tb-sep{width:1px;height:24px;background:var(--border);flex-shrink:0}
+  .tb-links{display:flex;gap:2px;margin-left:auto}
+  .tb-links a{font-size:13px;font-weight:500;color:var(--ts);text-decoration:none;padding:6px 12px;border-radius:6px;transition:background .15s}
+  .tb-links a:hover{background:var(--g100);color:var(--tp)}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:all .15s}
+  .btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:#1D4ED8;box-shadow:0 4px 12px rgba(37,99,235,.3)}
+  .btn-s{background:#fff;color:var(--tp);border:1px solid var(--border)}.btn-s:hover{background:var(--g50)}
+  .prob-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 16px 16px 20px;position:relative;overflow:hidden;transition:all .15s}
+  .prob-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
+  .prob-strip{position:absolute;left:0;top:0;bottom:0;width:4px}
+  .cov-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:18px 16px;transition:all .15s}
+  .cov-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);transform:translateY(-2px)}
+  .hero-bg{background:var(--bg)}
+  .stats-bar{background:var(--g900)}
+  .price-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px}
+  .price-card.feat{border:2px solid var(--blue);position:relative}
+  .price-card.dark{background:var(--g900);border-color:var(--g700)}
+  .feat-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;white-space:nowrap}
+  .cta-sec{background:var(--blue)}
+  footer{background:var(--g900)}
+  @media(max-width:900px){.tb-links{display:none}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:9px;">
+    <div class="logo-icon">C</div>
+    <div>
+      <div style="font-size:14px;font-weight:800;color:var(--tp);">CompliOS India</div>
+      <span style="font-size:10px;font-weight:500;color:var(--tm);letter-spacing:.08em;text-transform:uppercase;">Intelligent Ledger</span>
+    </div>
+  </div>
+  <div class="tb-sep"></div>
+  <nav class="tb-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#pricing">Pricing</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+  <a href="upload.html" class="btn btn-p" style="margin-left:12px;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    New Audit
+  </a>
+</header>
+
+<div class="hero-bg" style="padding:120px 32px 60px; max-width:800px; margin:0 auto; text-align:center;">
+  <div style="display:flex; flex-direction:column; align-items:center;">
+    <div style="display:inline-flex;align-items:center;gap:5px;background:var(--blue-l);color:var(--blue);padding:4px 10px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;">
+      <div style="width:5px;height:5px;border-radius:50%;background:var(--blue);"></div>
+      Built for Indian FMCG & D2C Brands
+    </div>
+    <h1 style="font-size:48px;font-weight:900;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px;">Is Your Label<br/><span style="color:var(--blue);">FSSAI Ready</span><br/>Before You Ship?</h1>
+    <p style="font-size:16px;color:var(--ts);line-height:1.7;max-width:580px;margin-bottom:32px;">CompliOS India scans your packaging artwork against FSSAI Labelling Regulations and Legal Metrology (PC) Rules — giving you clause-mapped findings and exact fixes before you print, list on Amazon, or go live on Blinkit.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;">
+      <a href="upload.html" class="btn btn-p" style="padding:12px 24px; font-size:14px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Check Your Label Compliance
+      </a>
+      <a href="dashboard.html" class="btn btn-s" style="padding:12px 24px; font-size:14px;">See Dashboard Demo →</a>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <div style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:500;color:var(--ts);"><div style="width:4px;height:4px;border-radius:50%;background:var(--green);"></div>FSSAI Regulations 2020</div>
+      <div style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:500;color:var(--ts);"><div style="width:4px;height:4px;border-radius:50%;background:var(--green);"></div>Legal Metrology PC Rules</div>
+      <div style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:500;color:var(--ts);"><div style="width:4px;height:4px;border-radius:50%;background:var(--green);"></div>E-commerce Listing Checks</div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar" style="padding:28px 0;">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;padding:0 32px;">
+    <div style="text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.07);"><div style="font-size:24px;font-weight:900;color:var(--blue);">500+</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;">Indian FMCG brands</div></div>
+    <div style="text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.07);"><div style="font-size:24px;font-weight:900;color:var(--blue);">12L+</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;">Labels scanned</div></div>
+    <div style="text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.07);"><div style="font-size:24px;font-weight:900;color:var(--blue);">94%</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;">First-pass compliance rate</div></div>
+    <div style="text-align:center;padding:0 20px;"><div style="font-size:24px;font-weight:900;color:var(--blue);">&lt;2min</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;">Upload to full report</div></div>
+  </div>
+</div>
+
+<section id="problem" style="background:#fff;padding:80px 32px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;">The Problem</div>
+      <h2 style="font-size:28px;font-weight:900;letter-spacing:-.02em;margin-bottom:16px;">Most Brands Find Compliance Issues After Printing.</h2>
+      <p style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:24px;">FSSAI inspections, quick-commerce rejections, and Legal Metrology notices are catching Indian brands off guard — often after lakhs have been spent on packaging.</p>
+      <a href="features.html" class="btn btn-p">See How We Solve This →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="prob-card"><div class="prob-strip" style="background:var(--red);"></div><div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;"><div style="width:28px;height:28px;border-radius:7px;background:var(--red-l);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🚫</div><h3 style="font-size:14px;font-weight:700;margin:0;">Rejected on Blinkit, Zepto & Amazon</h3></div><p style="font-size:13px;color:var(--ts);">Platforms enforce FSSAI label checks at onboarding. Missing licence numbers = instant rejection.</p><div style="display:inline-block;margin-top:7px;font-size:10px;font-weight:700;background:var(--red-l);color:var(--red);padding:2px 7px;border-radius:4px;">Top cause of e-commerce delays 2024</div></div>
+      <div class="prob-card"><div class="prob-strip" style="background:var(--orange);"></div><div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;"><div style="width:28px;height:28px;border-radius:7px;background:var(--orange-l);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">⚖️</div><h3 style="font-size:14px;font-weight:700;margin:0;">Legal Metrology Violations</h3></div><p style="font-size:13px;color:var(--ts);">Incorrect net quantity font size, missing MRP — each a standalone offence under LM-PC Rules 2011.</p><div style="display:inline-block;margin-top:7px;font-size:10px;font-weight:700;background:var(--red-l);color:var(--red);padding:2px 7px;border-radius:4px;">Fines up to ₹25,000 per SKU</div></div>
+      <div class="prob-card"><div class="prob-strip" style="background:var(--blue);"></div><div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;"><div style="width:28px;height:28px;border-radius:7px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📋</div><h3 style="font-size:14px;font-weight:700;margin:0;">FSSAI Licence Number Errors</h3></div><p style="font-size:13px;color:var(--ts);">Wrong or absent FSSAI licence number is among the top reasons products are pulled post-launch.</p><div style="display:inline-block;margin-top:7px;font-size:10px;font-weight:700;background:var(--red-l);color:var(--red);padding:2px 7px;border-radius:4px;">Mandatory on every packaged product</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="coverage" style="background:var(--bg);padding:80px 32px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;">Regulatory Coverage</div>
+    <h2 style="font-size:28px;font-weight:900;letter-spacing:-.02em;margin-bottom:12px;">Every Indian Regulation That Matters.</h2>
+    <p style="font-size:14px;color:var(--ts);margin-bottom:32px;">Full-stack Indian labelling law — no need to hire a specialist just to check a text field.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div class="cov-card"><div style="width:34px;height:34px;border-radius:8px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:10px;">🏛️</div><div style="font-size:12px;color:var(--green);font-weight:700;margin-bottom:6px;">✓ Covered</div><h4 style="font-size:13px;font-weight:700;margin-bottom:5px;">FSSAI Labelling Regulations</h4><p style="font-size:12px;color:var(--ts);">Labelling & Display Regulations 2020, all amendments, Schedule IX allergen requirements.</p></div>
+      <div class="cov-card"><div style="width:34px;height:34px;border-radius:8px;background:var(--orange-l);display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:10px;">⚖️</div><div style="font-size:12px;color:var(--green);font-weight:700;margin-bottom:6px;">✓ Covered</div><h4 style="font-size:13px;font-weight:700;margin-bottom:5px;">Legal Metrology (PC) Rules</h4><p style="font-size:12px;color:var(--ts);">LM-PC Rules 2011 — net quantity, MRP, manufacturer details, font sizes and placement.</p></div>
+      <div class="cov-card"><div style="width:34px;height:34px;border-radius:8px;background:var(--purple-l);display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:10px;">📢</div><div style="font-size:12px;color:var(--green);font-weight:700;margin-bottom:6px;">✓ Covered</div><h4 style="font-size:13px;font-weight:700;margin-bottom:5px;">FSSAI Claims & Advertising</h4><p style="font-size:12px;color:var(--ts);">Advertising & Claims Regulations 2018 — nutrition, health, and comparative claims.</p></div>
+      <div class="cov-card"><div style="width:34px;height:34px;border-radius:8px;background:var(--green-l);display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:10px;">🛒</div><div style="font-size:12px;color:var(--green);font-weight:700;margin-bottom:6px;">✓ Covered</div><h4 style="font-size:13px;font-weight:700;margin-bottom:5px;">E-commerce Platform Policies</h4><p style="font-size:12px;color:var(--ts);">Listing checks for Amazon India, Flipkart, Blinkit, Zepto, and JioMart.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="background:#fff;padding:80px 32px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;">Pricing</div>
+    <h2 style="font-size:28px;font-weight:900;letter-spacing:-.02em;margin-bottom:12px;">Simple, Transparent Plans.</h2>
+    <p style="font-size:14px;color:var(--ts);margin-bottom:32px;">Start free. Scale as your catalogue grows.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div class="price-card"><div style="font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tm);margin-bottom:13px;">Starter</div><div style="font-size:32px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:3px;">Free</div><div style="font-size:12px;color:var(--tm);margin-bottom:20px;">1 label audit / month</div><a href="upload.html" class="btn btn-s" style="width:100%;justify-content:center;margin-bottom:20px;font-size:14px;">Get Started Free</a><div style="display:flex;flex-direction:column;gap:10px;"><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>1 label scan per month</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>AI audit report</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>FSSAI & LM-PC checks</div></div></div>
+      <div class="price-card feat"><div class="feat-badge">Most Popular</div><div style="font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:13px;">Growth</div><div style="font-size:32px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:3px;">₹4,999</div><div style="font-size:12px;color:var(--tm);margin-bottom:20px;">per month · up to 50 SKUs</div><a href="upload.html" class="btn btn-p" style="width:100%;justify-content:center;margin-bottom:20px;font-size:14px;">Start 14-Day Trial</a><div style="display:flex;flex-direction:column;gap:10px;"><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>50 labels / month</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>AI + Expert verification</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>SKU management dashboard</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>PDF compliance reports</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--ts);"><div style="width:16px;height:16px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>Regulatory Watch alerts</div></div></div>
+      <div class="price-card dark"><div style="font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:13px;">Enterprise</div><div style="font-size:32px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:3px;color:#fff;">Custom</div><div style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:20px;">Unlimited SKUs · API Access</div><button style="width:100%;padding:11px;background:var(--g800);color:#fff;border:1px solid var(--g700);border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:20px;">Talk to Sales</button><div style="display:flex;flex-direction:column;gap:10px;"><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:rgba(255,255,255,.55);"><div style="width:16px;height:16px;border-radius:50%;background:rgba(22,163,74,.2);color:#4ADE80;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>Unlimited label scans</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:rgba(255,255,255,.55);"><div style="width:16px;height:16px;border-radius:50%;background:rgba(22,163,74,.2);color:#4ADE80;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>Dedicated compliance specialist</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:rgba(255,255,255,.55);"><div style="width:16px;height:16px;border-radius:50%;background:rgba(22,163,74,.2);color:#4ADE80;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>REST API for CI/CD pipeline</div><div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:rgba(255,255,255,.55);"><div style="width:16px;height:16px;border-radius:50%;background:rgba(22,163,74,.2);color:#4ADE80;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px;">✓</div>Custom regulatory rule sets</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-sec" style="padding:64px 32px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;">
+    <div>
+      <h2 style="font-size:26px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:-.02em;">Don't Let a Label Hold Back Your Launch.</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;">Get your first compliance audit free — no credit card required. Results in under 2 minutes.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;">
+        <span style="font-size:12px;color:rgba(255,255,255,.45);">✓ No credit card required</span>
+        <span style="font-size:12px;color:rgba(255,255,255,.45);">✓ First audit free</span>
+        <span style="font-size:12px;color:rgba(255,255,255,.45);">✓ FSSAI & LM-PC coverage</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex-shrink:0;">
+      <a href="upload.html" style="background:#fff;color:var(--blue);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;text-align:center;">Check Your Label Compliance →</a>
+      <a href="dashboard.html" style="background:rgba(255,255,255,.1);color:#fff;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.2);cursor:pointer;text-decoration:none;display:inline-block;text-align:center;">View Dashboard</a>
+    </div>
+  </div>
+</div>
+
+<footer style="padding:48px 32px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px;">
+      <div><div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:10px;">Compli<span style="color:var(--blue);">OS</span> India</div><p style="font-size:13px;color:rgba(255,255,255,.35);max-width:240px;line-height:1.65;">AI-powered label compliance for Indian FMCG brands. Built for FSSAI, Legal Metrology, and e-commerce readiness.</p></div>
+      <div><h5 style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;">Pages</h5><ul style="list-style:none;display:flex;flex-direction:column;gap:10px;"><li><a href="dashboard.html" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Dashboard</a></li><li><a href="upload.html" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Label Upload</a></li><li><a href="features.html" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Features</a></li></ul></div>
+      <div><h5 style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;">Regulations</h5><ul style="list-style:none;display:flex;flex-direction:column;gap:10px;"><li><a href="#" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">FSSAI Guide</a></li><li><a href="#" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Legal Metrology Rules</a></li><li><a href="#" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Claims Regulations</a></li></ul></div>
+      <div><h5 style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;">Company</h5><ul style="list-style:none;display:flex;flex-direction:column;gap:10px;"><li><a href="#" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">About</a></li><li><a href="#" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Privacy Policy</a></li><li><a href="#" style="font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;">Contact</a></li></ul></div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,.22);">© 2024 CompliOS India. All rights reserved.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.22);">🇮🇳 Made for India, by India</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
