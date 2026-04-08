@@ -18,10 +18,10 @@
     </div>
     <div class="flex gap-1">
       <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
-      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
       <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Projects</a>
       <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workflow</a>
-      <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Review</a>
+      <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Review</a>
+      <a href="sku.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Workspace</a>
     </div>
   </nav>
 
@@ -34,11 +34,8 @@
       </div>
 
       <nav class="flex flex-col flex-1">
-        <a href="#" class="flex items-center gap-3 px-8 py-3 text-[14px] font-semibold text-blue-600 bg-blue-50 border-l-3 border-blue-600">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Overview
-        </a>
         <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2H2V5zm0 4h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9zm2 2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 001-1v-1a1 1 0 00-1-1H4z" clip-rule="evenodd"/></svg> Projects
+          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"/><path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"/></svg> Projects
         </a>
         <a href="review.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
           <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Review Queue
@@ -62,10 +59,10 @@
       <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-[#F9FAFB]">
           <div id="breadcrumb" class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
             <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
-            <span class="text-gray-300">/</span>
+            <span class="text-gray-300">›</span>
             <span id="breadcrumbProduct" class="hover:text-gray-900 transition-colors">Organic Almond Milk V2</span>
-            <span class="text-gray-300">/</span>
-            <span class="text-gray-900 font-bold">SKU Workspace</span>
+            <span class="text-gray-300">›</span>
+            <span class="text-gray-900 font-bold">Workspace</span>
           </div>
         <div class="flex items-center gap-5">
           <div class="relative">
@@ -134,6 +131,38 @@
                 <p id="scoreMessage" class="text-[11px] text-gray-500 leading-snug">High confidence for market entry</p>
               </div>
             </div>
+          </div>
+
+          <!-- Controls & Mode Toggle -->
+          <div class="flex gap-6 mb-6">
+            <div class="w-[260px] flex flex-col gap-4 shrink-0">
+              <div class="bg-gray-100/80 p-1.5 rounded-xl flex shadow-inner border border-gray-200/50">
+                <button id="expertMode" class="flex-1 py-2.5 rounded-lg bg-white shadow-sm text-[13px] font-bold text-gray-900 transition-all">Expert-certified</button>
+                <button id="aiMode" class="flex-1 py-2.5 rounded-lg text-[13px] font-semibold text-gray-500 hover:text-gray-700 transition-colors">AI-only</button>
+              </div>
+              <div id="aiModePanel" class="ai-mode-panel hidden">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                  <span class="text-[12px] font-semibold text-blue-600">AI-Generated Insights</span>
+                </div>
+                <p class="text-[11px] text-gray-500 leading-relaxed">Analysis based on automated checks. Review recommended before final approval.</p>
+              </div>
+              <div class="flex gap-4">
+                <button id="downloadPdfBtn" class="flex-1 bg-white border border-gray-200 rounded-2xl py-4 flex flex-col items-center justify-center gap-2 card-shadow hover:bg-gray-50 transition-colors cursor-pointer btn-interactive">
+                  <div class="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-1">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                  </div>
+                  <span class="text-[11px] font-bold text-gray-900 leading-none">Download PDF</span>
+                </button>
+                <button id="shareReportBtn" class="flex-1 bg-white border border-gray-200 rounded-2xl py-4 flex flex-col items-center justify-center gap-2 card-shadow hover:bg-gray-50 transition-colors cursor-pointer btn-interactive">
+                  <div class="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                  </div>
+                  <span class="text-[11px] font-bold text-gray-900 leading-none">Share</span>
+                </button>
+              </div>
+            </div>
+            <div class="flex-1"></div>
           </div>
 
           <!-- Tab Content Container -->
@@ -309,6 +338,16 @@
             <!-- Compliance Tab -->
             <div id="tab-compliance" class="tab-panel">
               <h3 class="font-bold text-gray-900 text-[18px] mb-5">Compliance Audit Findings</h3>
+              <!-- Empty state for compliance (shown when no issues) -->
+              <div class="empty-state-placeholder hidden" id="complianceEmptyState">
+                <div class="bg-green-50 border border-green-100 rounded-2xl p-12 text-center">
+                  <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <h4 class="font-semibold text-green-800 text-[15px] mb-2">No compliance issues found</h4>
+                  <p class="text-sm text-green-600">Your product label meets all regulatory requirements.</p>
+                </div>
+              </div>
               <div class="grid grid-cols-2 gap-5" id="complianceFindings">
                 <div class="bg-white border border-gray-200 rounded-2xl p-5 card-shadow">
                   <div class="flex items-center gap-3 mb-3">
@@ -387,6 +426,16 @@
               <div class="mt-8">
                 <h4 class="font-bold text-gray-900 text-[15px] mb-4">Workflow Tasks</h4>
                 <div class="space-y-3">
+                  <!-- Empty state for workflow tasks (shown when no tasks) -->
+                  <div class="empty-state-placeholder hidden" id="workflowEmptyState">
+                    <div class="bg-gray-50 rounded-xl p-8 text-center">
+                      <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                      </div>
+                      <p class="text-sm font-medium text-gray-600">No workflow tasks</p>
+                      <p class="text-xs text-gray-400 mt-1">All tasks have been completed.</p>
+                    </div>
+                  </div>
                   <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-between card-shadow">
                     <div class="flex items-center gap-3">
                       <input type="checkbox" checked class="w-5 h-5 rounded border-gray-300 text-blue-600">
@@ -434,6 +483,16 @@
             <!-- Audit History Tab -->
             <div id="tab-history" class="tab-panel">
               <h3 class="font-bold text-gray-900 text-[18px] mb-5">Audit History</h3>
+              <!-- Empty state for audit history (shown when no history) -->
+              <div class="empty-state-placeholder hidden" id="historyEmptyState">
+                <div class="bg-gray-50 rounded-xl p-12 text-center">
+                  <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <h4 class="font-semibold text-gray-700 text-[15px] mb-2">No audit history</h4>
+                  <p class="text-sm text-gray-500">Start a new audit to track your compliance journey.</p>
+                </div>
+              </div>
               <div class="space-y-4">
                 <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
                   <div class="flex items-start justify-between">
@@ -489,10 +548,22 @@
             <div id="tab-files" class="tab-panel">
               <div class="flex items-center justify-between mb-5">
                 <h3 class="font-bold text-gray-900 text-[18px]">Attached Files</h3>
-                <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-[13px] font-semibold rounded-lg transition-colors btn-interactive flex items-center gap-2">
+                <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors btn-interactive flex items-center gap-2">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                   Upload File
                 </button>
+              </div>
+
+              <!-- Empty state for files (shown when no files) -->
+              <div class="empty-state-placeholder hidden" id="filesEmptyState">
+                <div class="bg-gray-50 rounded-2xl p-12 text-center">
+                  <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                  </div>
+                  <h4 class="font-semibold text-gray-700 text-[15px] mb-2">No files uploaded yet</h4>
+                  <p class="text-sm text-gray-500 mb-4">Upload product labels, reports, and compliance documents.</p>
+                  <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg">Upload File</button>
+                </div>
               </div>
 
               <div class="bg-white rounded-2xl border border-gray-100 card-shadow overflow-hidden">
@@ -583,7 +654,7 @@
       </div>
       <div class="modal-footer">
         <button class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors" id="cancelModal">Cancel</button>
-        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="createAudit">Create Audit</button>
+        <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="createAudit">Create Audit</button>
       </div>
     </div>
   </div>
@@ -592,23 +663,24 @@
     (function() {
       'use strict';
 
-      // DOM Elements
-      var loadingOverlay = document.getElementById('loadingOverlay');
-      var loadingText = document.getElementById('loadingText');
-      var loadingSubtext = document.getElementById('loadingSubtext');
-      var toastContainer = document.getElementById('toastContainer');
-      var newAuditModal = document.getElementById('newAuditModal');
-      var newAuditBtn = document.getElementById('newAuditBtn');
-      var closeModal = document.getElementById('closeModal');
-      var cancelModal = document.getElementById('cancelModal');
-      var createAudit = document.getElementById('createAudit');
-      var notificationBtn = document.getElementById('notificationBtn');
-      var tabNav = document.getElementById('tabNav');
+      // Global error handler - prevents one error from breaking entire app
+      window.onerror = function(message, source, lineno, colno, error) {
+        console.log('[JS Error]', message, 'at line', lineno);
+        return true;
+      };
+
+      console.log('[SKU] Script starting...');
 
       // Safe text helpers
       function safeText(val, fallback) {
         return (val !== undefined && val !== null && val !== '') ? val : fallback;
       }
+
+      // DOM Elements (fetched inside DOMContentLoaded)
+      var loadingOverlay, loadingText, loadingSubtext, toastContainer;
+      var newAuditModal, newAuditBtn, closeModal, cancelModal, createAudit;
+      var notificationBtn, tabNav, downloadPdfBtn, shareReportBtn;
+      var expertMode, aiMode, aiModePanel, currentMode, currentProduct;
 
       // Product Data (same as dashboard.html)
       var productData = {
@@ -787,13 +859,9 @@
         data = data || {};
 
         var nameEl = document.getElementById('productName');
-        if (nameEl) nameEl.textContent = safeText(productName, 'Unknown Product');
-
-        var breadcrumbEl = document.getElementById('breadcrumbProduct');
-        if (breadcrumbEl) breadcrumbEl.textContent = safeText(productName, 'Unknown Product');
-
-        var extNameEl = document.getElementById('extProductName');
-        if (extNameEl) extNameEl.textContent = safeText(productName, 'Unknown Product');
+        if (nameEl) nameEl.textContent = safeText(productName, 'New Product');
+        if (breadcrumbEl) breadcrumbEl.textContent = safeText(productName, 'New Product');
+        if (extNameEl) extNameEl.textContent = safeText(productName, 'New Product');
 
         var imgEl = document.getElementById('productImage');
         if (imgEl && data.image) {
@@ -841,7 +909,7 @@
         if (visibilityEl) visibilityEl.textContent = safeText(data.visibility, 0);
 
         var statusEl = document.getElementById('productStatus');
-        if (statusEl) statusEl.textContent = safeText(data.status, 'Unknown');
+        if (statusEl) statusEl.textContent = safeText(data.status, 'Pending Review');
 
         var descEl = document.getElementById('productDescription');
         if (descEl) descEl.textContent = safeText(data.description, '');
@@ -855,10 +923,155 @@
         document.title = safeText(productName, 'SKU Workspace') + ' | Compliance OS';
       }
 
+      // AI Mode Toggle
+      var currentMode = 'expert';
+      var expertMode = document.getElementById('expertMode');
+      var aiMode = document.getElementById('aiMode');
+      var aiModePanel = document.getElementById('aiModePanel');
+      var currentProduct = 'Organic Almond Milk V2';
+
+      // AI Metrics Data
+      function getAIMetrics(productName) {
+        var aiMetrics = {
+          "Organic Almond Milk V2": { score: 76, risk: 2, visibility: 1, status: "AI Analyzed", description: "AI analysis suggests strong compliance alignment. Minor optimization possible in allergen visibility and typography contrast.", missing: 1, format: 0 },
+          "Masala Chai Concentrate": { score: 72, risk: 4, visibility: 2, status: "AI Analyzed", description: "AI detected potential compliance issues with claim language. Manual verification recommended.", missing: 2, format: 1 },
+          "Himalayan Sea Salt Chips": { score: 52, risk: 9, visibility: 5, status: "AI Flagged", description: "AI analysis shows multiple risk areas including sodium claims and nutrition labeling. Expert review required.", missing: 4, format: 2 },
+          "Probiotic Greek Yogurt": { score: 65, risk: 2, visibility: 1, status: "AI Analyzed", description: "AI detected health claims that may require substantiation under FSSAI guidelines.", missing: 1, format: 0 },
+          "Green Tea Extract Capsules": { score: 88, risk: 1, visibility: 0, status: "AI Analyzed", description: "AI analysis indicates good regulatory alignment with dietary supplement requirements.", missing: 0, format: 0 },
+          "Oat Milk - Vanilla": { score: 85, risk: 1, visibility: 0, status: "AI Analyzed", description: "AI suggests label is compliant with plant-based milk labeling requirements.", missing: 0, format: 0 },
+          "Coconut Water": { score: 60, risk: 3, visibility: 2, status: "AI Flagged", description: "AI detected potential issues with nutritional claims and serving size declarations.", missing: 2, format: 1 },
+          "Organic Protein Bar": { score: 58, risk: 4, visibility: 2, status: "AI Flagged", description: "AI analysis shows protein claim may need additional disclaimers for sports nutrition.", missing: 2, format: 1 },
+          "Quinoa Pasta - Whole Grain": { score: 70, risk: 2, visibility: 1, status: "AI Analyzed", description: "AI suggests whole grain claims are within FSSAI guidelines with minor formatting issues.", missing: 1, format: 1 },
+          "Avocado Oil Spray": { score: 82, risk: 1, visibility: 0, status: "AI Analyzed", description: "AI analysis indicates cooking oil labeling meets regulatory standards.", missing: 0, format: 0 },
+          "Energy Drink - Tropical": { score: 48, risk: 7, visibility: 4, status: "AI Flagged", description: "AI detected multiple regulatory concerns including caffeine warnings and claim substantiation.", missing: 3, format: 2 },
+          "Protein Powder - Unflavored": { score: 75, risk: 2, visibility: 1, status: "AI Analyzed", description: "AI suggests supplement labeling is mostly compliant with FSSAI requirements.", missing: 1, format: 0 }
+        };
+        return aiMetrics[productName] || { score: 60, risk: 2, visibility: 1, status: "AI Analyzed", description: "AI analysis in progress.", missing: 1, format: 1 };
+      }
+
+      // Comprehensive Mode UI Update Function
+      function updateModeUI() {
+        var mode = currentMode;
+        var data = productData[currentProduct];
+        var aiData = getAIMetrics(currentProduct);
+
+        // Update status badge
+        var statusEl = document.getElementById('productStatus');
+        if (statusEl) {
+          statusEl.textContent = mode === 'expert' ? safeText(data ? data.status : '', 'Expert Reviewed') : safeText(aiData.status, 'AI Analyzed');
+        }
+
+        // Update status badge color
+        var statusBadge = document.getElementById('productStatusBadge');
+        if (statusBadge) {
+          if (mode === 'expert') {
+            statusBadge.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 text-[11px] font-bold self-start mt-1 border border-blue-100';
+          } else {
+            var aiStatus = aiData.status || 'AI Analyzed';
+            if (aiStatus === 'AI Flagged') {
+              statusBadge.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-50 text-orange-600 text-[11px] font-bold self-start mt-1 border border-orange-100';
+            } else {
+              statusBadge.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 text-green-600 text-[11px] font-bold self-start mt-1 border border-green-100';
+            }
+          }
+        }
+
+        // Update description
+        var descEl = document.getElementById('productDescription');
+        if (descEl) {
+          descEl.textContent = mode === 'expert' ? safeText(data ? data.description : '', '') : safeText(aiData.description, '');
+        }
+
+        // Update metrics
+        var missingEl = document.getElementById('missingCount');
+        if (missingEl) {
+          missingEl.textContent = mode === 'expert' ? safeText(data ? data.missing : 0, 0) : safeText(aiData.missing, 0);
+        }
+
+        var formatEl = document.getElementById('formatCount');
+        if (formatEl) {
+          formatEl.textContent = mode === 'expert' ? safeText(data ? data.format : 0, 0) : safeText(aiData.format, 0);
+        }
+
+        var visibilityEl = document.getElementById('visibilityCount');
+        if (visibilityEl) {
+          visibilityEl.textContent = mode === 'expert' ? safeText(data ? data.visibility : 0, 0) : safeText(aiData.visibility, 0);
+        }
+
+        var riskEl = document.getElementById('riskCount');
+        if (riskEl) {
+          riskEl.textContent = mode === 'expert' ? safeText(data ? data.risk : 0, 0) : safeText(aiData.risk, 0);
+        }
+      }
+
+      function setExpertMode() {
+        currentMode = 'expert';
+        if (expertMode) {
+          expertMode.classList.add('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          expertMode.classList.remove('text-gray-500');
+        }
+        if (aiMode) {
+          aiMode.classList.remove('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          aiMode.classList.add('text-gray-500');
+        }
+        if (aiModePanel) aiModePanel.classList.add('hidden');
+        
+        var data = productData[currentProduct];
+        var score = data ? data.score : 0;
+        updateScoreDisplay(score, score >= 80 ? 'High confidence for market entry' : 'Review recommended');
+        updateModeUI();
+        
+        showToast('success', 'Mode Changed', 'Now showing Expert-certified analysis.');
+      }
+
+      function setAIMode() {
+        currentMode = 'ai';
+        if (aiMode) {
+          aiMode.classList.add('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          aiMode.classList.remove('text-gray-500');
+        }
+        if (expertMode) {
+          expertMode.classList.remove('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          expertMode.classList.add('text-gray-500');
+        }
+        if (aiModePanel) aiModePanel.classList.remove('hidden');
+
+        var aiData = getAIMetrics(currentProduct);
+        var aiScore = aiData.score;
+        updateScoreDisplay(aiScore, 'Showing AI-generated analysis only.');
+        updateModeUI();
+        
+        showToast('info', 'AI-only Mode', 'Showing AI-generated analysis only.');
+      }
+
+      function updateScoreDisplay(score, message) {
+        var scoreEl = document.getElementById('complianceScore');
+        if (scoreEl) scoreEl.textContent = score;
+
+        var donutRing = document.getElementById('donutRing');
+        if (donutRing) {
+          var circumference = 2 * Math.PI * 46;
+          var offset = circumference - (score / 100) * circumference;
+          donutRing.style.strokeDasharray = circumference;
+          donutRing.style.strokeDashoffset = offset;
+
+          donutRing.classList.remove('text-blue-600', 'text-green-600', 'text-yellow-600', 'text-orange-600', 'text-red-600');
+          if (score >= 80) donutRing.classList.add('text-green-600');
+          else if (score >= 60) donutRing.classList.add('text-yellow-600');
+          else if (score >= 40) donutRing.classList.add('text-orange-600');
+          else donutRing.classList.add('text-red-600');
+        }
+
+        var scoreMsgEl = document.getElementById('scoreMessage');
+        if (scoreMsgEl) scoreMsgEl.textContent = message;
+      }
+
       // Tab Functions
       function switchTab(tabName) {
+        console.log('[SKU] switchTab called with:', tabName);
         var tabBtns = document.querySelectorAll('.tab-btn');
         var tabPanels = document.querySelectorAll('.tab-panel');
+        console.log('[SKU] Found buttons:', tabBtns.length, 'panels:', tabPanels.length);
 
         tabBtns.forEach(function(btn) {
           if (btn.dataset.tab === tabName) {
@@ -881,60 +1094,163 @@
         window.history.replaceState({}, '', url);
       }
 
-      // Event Listeners
-      if (newAuditBtn) {
-        newAuditBtn.addEventListener('click', function() {
-          if (newAuditModal) newAuditModal.classList.add('active');
-        });
-      }
-
-      if (closeModal) {
-        closeModal.addEventListener('click', function() {
-          if (newAuditModal) newAuditModal.classList.remove('active');
-        });
-      }
-
-      if (cancelModal) {
-        cancelModal.addEventListener('click', function() {
-          if (newAuditModal) newAuditModal.classList.remove('active');
-        });
-      }
-
-      if (newAuditModal) {
-        newAuditModal.addEventListener('click', function(e) {
-          if (e.target === newAuditModal) newAuditModal.classList.remove('active');
-        });
-      }
-
-      if (createAudit) {
-        createAudit.addEventListener('click', function() {
-          if (newAuditModal) newAuditModal.classList.remove('active');
-          showLoading('Creating Audit...', 'Setting up new compliance workspace.');
-          setTimeout(function() {
-            hideLoading();
-            showToast('success', 'Audit Created', 'New audit workspace is ready.');
-            setTimeout(function() { window.location.href = 'upload.html'; }, 800);
-          }, 1500);
-        });
-      }
-
-      if (notificationBtn) {
-        notificationBtn.addEventListener('click', function() {
-          showToast('warning', 'New Alert', 'Regulatory update detected for FSSAI labeling rules.');
-        });
-      }
-
-      if (tabNav) {
-        tabNav.addEventListener('click', function(e) {
-          var btn = e.target.closest('.tab-btn');
-          if (btn && btn.dataset.tab) {
-            switchTab(btn.dataset.tab);
-          }
-        });
-      }
-
       // Initialize on DOM ready
       document.addEventListener('DOMContentLoaded', function() {
+        // Fetch DOM elements inside DOMContentLoaded
+        loadingOverlay = document.getElementById('loadingOverlay');
+        loadingText = document.getElementById('loadingText');
+        loadingSubtext = document.getElementById('loadingSubtext');
+        toastContainer = document.getElementById('toastContainer');
+        newAuditModal = document.getElementById('newAuditModal');
+        newAuditBtn = document.getElementById('newAuditBtn');
+        closeModal = document.getElementById('closeModal');
+        cancelModal = document.getElementById('cancelModal');
+        createAudit = document.getElementById('createAudit');
+        notificationBtn = document.getElementById('notificationBtn');
+        tabNav = document.getElementById('tabNav');
+        downloadPdfBtn = document.getElementById('downloadPdfBtn');
+        shareReportBtn = document.getElementById('shareReportBtn');
+        expertMode = document.getElementById('expertMode');
+        aiMode = document.getElementById('aiMode');
+        aiModePanel = document.getElementById('aiModePanel');
+
+        console.log('[SKU] Elements fetched - tabNav:', tabNav, 'expertMode:', expertMode, 'aiMode:', aiMode);
+
+        currentMode = 'expert';
+        currentProduct = 'Organic Almond Milk V2';
+
+        // Set up Event Listeners
+        if (expertMode) {
+          expertMode.addEventListener('click', function() {
+            if (currentMode !== 'expert') setExpertMode();
+          });
+        }
+
+        if (aiMode) {
+          aiMode.addEventListener('click', function() {
+            if (currentMode !== 'ai') setAIMode();
+          });
+        }
+
+        if (downloadPdfBtn) {
+          downloadPdfBtn.addEventListener('click', function() {
+            showToast('success', 'PDF Downloaded', 'Compliance report has been downloaded.');
+          });
+        }
+
+        if (shareReportBtn) {
+          shareReportBtn.addEventListener('click', function() {
+            showToast('info', 'Share Link', 'Report link copied to clipboard.');
+          });
+        }
+
+        if (newAuditBtn) {
+          newAuditBtn.addEventListener('click', function() {
+            if (newAuditModal) newAuditModal.classList.add('active');
+          });
+        }
+
+        if (closeModal) {
+          closeModal.addEventListener('click', function() {
+            if (newAuditModal) newAuditModal.classList.remove('active');
+          });
+        }
+
+        if (cancelModal) {
+          cancelModal.addEventListener('click', function() {
+            if (newAuditModal) newAuditModal.classList.remove('active');
+          });
+        }
+
+        if (newAuditModal) {
+          newAuditModal.addEventListener('click', function(e) {
+            if (e.target === newAuditModal) newAuditModal.classList.remove('active');
+          });
+        }
+
+        if (createAudit) {
+          createAudit.addEventListener('click', function() {
+            if (newAuditModal) newAuditModal.classList.remove('active');
+            showLoading('Creating Audit...', 'Setting up new compliance workspace.');
+            setTimeout(function() {
+              hideLoading();
+              showToast('success', 'Audit Created', 'New audit workspace is ready.');
+              setTimeout(function() { window.location.href = 'new-audit.html'; }, 800);
+            }, 1500);
+          });
+        }
+
+        if (notificationBtn) {
+          notificationBtn.addEventListener('click', function() {
+            showToast('warning', 'New Alert', 'Regulatory update detected for FSSAI labeling rules.');
+          });
+        }
+
+        if (tabNav) {
+          console.log('[SKU] Setting up tabNav listener');
+          tabNav.addEventListener('click', function(e) {
+            console.log('[SKU] TabNav clicked');
+            var btn = e.target.closest('.tab-btn');
+            if (btn && btn.dataset.tab) {
+              switchTab(btn.dataset.tab);
+            }
+          });
+        }
+
+        // Quick Actions Buttons
+        var downloadPdfBtn = document.querySelector('button[class*="Download PDF Report"]') || 
+                            Array.from(document.querySelectorAll('button')).find(function(b) { return b.textContent.includes('Download PDF Report'); });
+        var shareReportBtn = document.querySelector('button[class*="Share Report"]') ||
+                            Array.from(document.querySelectorAll('button')).find(function(b) { return b.textContent.includes('Share Report'); });
+        var reanalyzeBtn = document.querySelector('button[class*="Re-analyze Label"]') ||
+                          Array.from(document.querySelectorAll('button')).find(function(b) { return b.textContent.includes('Re-analyze Label'); });
+
+        if (downloadPdfBtn) {
+          downloadPdfBtn.addEventListener('click', function() {
+            console.log('[SKU] Downloading report...');
+            var content = 'Compliance OS - Compliance Report\n\nProduct: ' + currentProduct + '\nDate: ' + new Date().toLocaleDateString() + '\n\nThis is a sample compliance report.';
+            var blob = new Blob([content], { type: 'text/plain' });
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'compliance-report.txt';
+            link.click();
+            URL.revokeObjectURL(link.href);
+            if (typeof showToast === 'function') showToast('success', 'Report Downloaded', 'Compliance report has been downloaded.');
+          });
+        }
+
+        if (shareReportBtn) {
+          shareReportBtn.addEventListener('click', function() {
+            console.log('[SKU] Sharing report...');
+            var shareUrl = window.location.origin + window.location.pathname + '?product=' + encodeURIComponent(currentProduct) + '&name=' + encodeURIComponent(currentProduct);
+            if (navigator.clipboard) {
+              navigator.clipboard.writeText(shareUrl).then(function() {
+                if (typeof showToast === 'function') showToast('info', 'Link Copied', 'Report link copied to clipboard.');
+              });
+            } else {
+              if (typeof showToast === 'function') showToast('info', 'Share Report', 'Report sharing coming soon.');
+            }
+          });
+        }
+
+        if (reanalyzeBtn) {
+          reanalyzeBtn.addEventListener('click', function() {
+            console.log('[SKU] Re-analyzing...');
+            var originalText = reanalyzeBtn.textContent.trim();
+            reanalyzeBtn.textContent = 'Analyzing...';
+            reanalyzeBtn.disabled = true;
+            reanalyzeBtn.classList.add('opacity-50');
+            setTimeout(function() {
+              reanalyzeBtn.textContent = originalText;
+              reanalyzeBtn.disabled = false;
+              reanalyzeBtn.classList.remove('opacity-50');
+              console.log('[SKU] Re-analysis complete');
+              if (typeof showToast === 'function') showToast('success', 'Analysis Complete', 'Re-analysis finished. Compliance status unchanged.');
+            }, 2500);
+          });
+        }
+
+        // Initialize product data
         var params = new URLSearchParams(window.location.search);
         var productName = params.get('name') || params.get('product');
         var tabName = params.get('tab') || 'overview';
@@ -948,6 +1264,7 @@
         var match = findProductData(productName);
 
         if (match) {
+          currentProduct = match.key;
           updateProductDisplay(match.key, match.data);
         } else {
           var fallbackData = {
@@ -955,8 +1272,8 @@
             image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23f3f4f6' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='10' font-weight='bold' fill='%236b7280' text-anchor='middle' dominant-baseline='middle'%3EPRODUCT%3C/text%3E%3C/svg%3E",
             risk: 2,
             visibility: 1,
-            status: 'Unknown',
-            description: 'Product data not found.',
+            status: 'New Product',
+            description: 'This product has not been audited yet. Start a new audit to analyze its compliance.',
             missing: 0,
             format: 0
           };
