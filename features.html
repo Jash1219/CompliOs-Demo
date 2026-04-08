@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="h-screen flex flex-col overflow-hidden bg-white">
+<body class="h-screen flex flex-col overflow-hidden bg-[#F9FAFB]">
 
   <!-- Navigation -->
   <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
@@ -18,43 +18,35 @@
     </div>
     <div class="flex gap-1">
       <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
-      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
       <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Projects</a>
       <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workflow</a>
       <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Review</a>
+      <a href="sku.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workspace</a>
     </div>
   </nav>
 
   <div class="flex flex-1 overflow-hidden">
     <!-- Sidebar -->
-    <aside class="w-[260px] bg-gray-50 border-r border-gray-200 flex flex-col shrink-0 py-6 z-20">
-      <div class="px-6 mb-8 flex items-center gap-2">
-        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <div>
-          <h2 class="font-bold text-[15px] leading-none text-gray-900">Compliance OS</h2>
-          <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Intelligent Ledger</p>
-        </div>
+    <aside class="w-[260px] bg-white border-r border-gray-200 flex flex-col shrink-0 z-20">
+      <div class="px-8 pt-8 pb-10">
+        <h2 class="font-bold text-[17px] text-gray-900 mb-1 leading-tight">Projects</h2>
+        <p class="text-[12px] text-gray-500 font-medium">SKU Inventory</p>
       </div>
 
-      <nav class="flex flex-col gap-1 flex-1">
-        <a href="dashboard.html" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Dashboard
+      <nav class="flex flex-col flex-1">
+        <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-semibold text-blue-600 bg-blue-50 border-l-3 border-blue-600">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"/><path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"/></svg> Projects
         </a>
-        <a href="features.html" class="sidebar-link active px-6 py-2.5 text-sm font-semibold flex items-center gap-3">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"/><path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"/></svg> Projects
+        <a href="review.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Review Queue
         </a>
-        <a href="review.html" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Review Queue
-        </a>
-        <a href="workflow.html" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> Workflow
+        <a href="workflow.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> Workflow
         </a>
       </nav>
 
-      <div class="px-6">
-        <button id="newAuditSidebarBtn" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm btn-interactive">
+      <div class="p-6">
+        <button id="newAuditSidebarBtn" class="w-full py-3 bg-[#175CD3] hover:bg-blue-700 text-white font-semibold rounded-lg text-[14px] flex items-center justify-center gap-2 transition-colors shadow-md btn-interactive">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           New Audit
         </button>
@@ -64,14 +56,16 @@
     <!-- Main Content -->
     <main class="flex-1 bg-white flex flex-col relative">
       <!-- Header -->
-      <header class="px-8 py-4 border-b border-gray-100 flex items-center justify-between z-10 bg-white shrink-0">
-        <div class="text-sm font-medium text-gray-500">
-          <a href="index.html" class="hover:text-gray-900 transition-colors">Home</a> <span class="text-gray-300 mx-1">›</span> <span class="text-blue-600 font-semibold">SKU Inventory</span>
+      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-[#F9FAFB] border-b border-gray-100 z-10">
+        <div class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
+          <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
+          <span class="text-gray-300">›</span>
+          <span class="text-gray-900 font-bold">SKU Inventory</span>
         </div>
         <div class="flex items-center gap-4">
           <div class="relative">
             <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="searchInput" placeholder="Search global ledger..." class="pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm focus:ring-2 focus:ring-blue-500 outline-none w-64">
+            <input type="text" id="searchInput" placeholder="Search..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
           </div>
         </div>
       </header>
@@ -84,7 +78,7 @@
               <h1 class="text-3xl font-bold text-gray-900 mb-2">SKU Management</h1>
               <p class="text-gray-500">Review and validate product compliance across your catalog.</p>
             </div>
-            <button id="addSkuBtn" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl text-sm flex items-center gap-2 shadow-lg shadow-blue-200 hover:bg-blue-700 transition-colors btn-interactive">
+            <button id="addSkuBtn" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm flex items-center gap-2 shadow-md btn-interactive">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
               Add New SKU
             </button>
@@ -258,7 +252,7 @@
                   <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                   Audit History
                 </h3>
-                <a href="sku.html" class="text-xs font-semibold text-blue-600 hover:underline">View All</a>
+                  <a href="sku.html?product=SKU-ALM-2024-01&name=Organic%20Almond%20Milk%20V2&tab=history" class="text-xs font-semibold text-blue-600 hover:underline">View All</a>
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between py-2.5 border-b border-gray-100">
@@ -286,7 +280,7 @@
             </div>
 
             <!-- Actions -->
-            <a href="sku.html" class="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-lg text-sm flex items-center justify-center transition-colors">
+            <a href="sku.html?product=SKU-ALM-2024-01&name=Organic%20Almond%20Milk%20V2" id="viewReportLink" class="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-lg text-sm flex items-center justify-center transition-colors">
               View Full Compliance Report →
             </a>
 
@@ -331,7 +325,7 @@
       </div>
       <div class="modal-footer">
         <button class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors" id="cancelSkuModal">Cancel</button>
-        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="createSku">Create SKU</button>
+        <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="createSku">Create SKU</button>
       </div>
     </div>
   </div>
@@ -347,124 +341,147 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    const addSkuModal = document.getElementById('addSkuModal');
-    const addSkuBtn = document.getElementById('addSkuBtn');
-    const emptyStateAddBtn = document.getElementById('emptyStateAddBtn');
-    const newAuditSidebarBtn = document.getElementById('newAuditSidebarBtn');
-    const closeSkuModal = document.getElementById('closeSkuModal');
-    const cancelSkuModal = document.getElementById('cancelSkuModal');
-    const createSku = document.getElementById('createSku');
-    const exportBtn = document.getElementById('exportBtn');
-    const searchInput = document.getElementById('searchInput');
-    const statusFilter = document.getElementById('statusFilter');
-    const skuList = document.getElementById('skuList');
-    const emptyState = document.getElementById('emptyState');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const toastContainer = document.getElementById('toastContainer');
+    // Global error handler
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.log('[JS Error]', message, 'at line', lineno);
+      return true;
+    };
 
-    function showLoading(text, subtext) {
-      document.getElementById('loadingText').textContent = text;
-      document.getElementById('loadingSubtext').textContent = subtext;
-      loadingOverlay.classList.add('active');
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var addSkuModal = document.getElementById('addSkuModal');
+      var addSkuBtn = document.getElementById('addSkuBtn');
+      var emptyStateAddBtn = document.getElementById('emptyStateAddBtn');
+      var newAuditSidebarBtn = document.getElementById('newAuditSidebarBtn');
+      var closeSkuModal = document.getElementById('closeSkuModal');
+      var cancelSkuModal = document.getElementById('cancelSkuModal');
+      var createSku = document.getElementById('createSku');
+      var exportBtn = document.getElementById('exportBtn');
+      var searchInput = document.getElementById('searchInput');
+      var statusFilter = document.getElementById('statusFilter');
+      var skuList = document.getElementById('skuList');
+      var emptyState = document.getElementById('emptyState');
+      var loadingOverlay = document.getElementById('loadingOverlay');
+      var toastContainer = document.getElementById('toastContainer');
 
-    function hideLoading() {
-      loadingOverlay.classList.remove('active');
-    }
-
-    function showToast(type, title, message) {
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
-      const icons = {
-        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
-        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
-      };
-      toast.innerHTML = `<div class="toast-icon">${icons[type]}</div><div class="toast-content"><p class="toast-title">${title}</p><p class="toast-message">${message}</p></div>`;
-      toastContainer.appendChild(toast);
-      setTimeout(() => { toast.classList.add('hiding'); setTimeout(() => toast.remove(), 300); }, 4000);
-    }
-
-    // Modal handlers
-    addSkuBtn.addEventListener('click', () => addSkuModal.classList.add('active'));
-    emptyStateAddBtn.addEventListener('click', () => addSkuModal.classList.add('active'));
-    newAuditSidebarBtn.addEventListener('click', () => {
-      window.location.href = 'upload.html';
-    });
-    closeSkuModal.addEventListener('click', () => addSkuModal.classList.remove('active'));
-    cancelSkuModal.addEventListener('click', () => addSkuModal.classList.remove('active'));
-    addSkuModal.addEventListener('click', (e) => { if (e.target === addSkuModal) addSkuModal.classList.remove('active'); });
-
-    createSku.addEventListener('click', () => {
-      const name = document.getElementById('newSkuName').value.trim();
-      const category = document.getElementById('newSkuCategory').value;
-      
-      if (!name) {
-        showToast('error', 'Name Required', 'Please enter a product name.');
-        return;
+      function showLoading(text, subtext) {
+        var lt = document.getElementById('loadingText');
+        var ls = document.getElementById('loadingSubtext');
+        if (lt) lt.textContent = text;
+        if (ls) ls.textContent = subtext;
+        if (loadingOverlay) loadingOverlay.classList.add('active');
       }
-      if (!category) {
-        showToast('error', 'Category Required', 'Please select a category.');
-        return;
+
+      function hideLoading() {
+        if (loadingOverlay) loadingOverlay.classList.remove('active');
       }
-      
-      addSkuModal.classList.remove('active');
-      showLoading('Creating SKU...', 'Adding new product to the ledger.');
-      
-      setTimeout(() => {
-        hideLoading();
-        document.getElementById('newSkuName').value = '';
-        document.getElementById('newSkuCategory').value = '';
-        document.getElementById('newSkuManufacturer').value = '';
-        showToast('success', 'SKU Created', `"${name}" has been added to your inventory.`);
-      }, 1500);
-    });
 
-    // Export
-    exportBtn.addEventListener('click', () => {
-      exportBtn.disabled = true;
-      showLoading('Exporting...', 'Preparing compliance documentation.');
-      setTimeout(() => {
-        hideLoading();
-        exportBtn.disabled = false;
-        showToast('success', 'Export Complete', 'Compliance pack has been downloaded.');
-      }, 2000);
-    });
+      function showToast(type, title, message) {
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        var icons = {
+          success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+          info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+        };
+        toast.innerHTML = '<div class="toast-icon">' + (icons[type] || icons.info) + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        if (toastContainer) toastContainer.appendChild(toast);
+        setTimeout(function() { toast.classList.add('hiding'); setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300); }, 4000);
+      }
 
-    // Search and filter
-    searchInput.addEventListener('input', filterSkus);
-    statusFilter.addEventListener('change', filterSkus);
-
-    function filterSkus() {
-      const search = searchInput.value.toLowerCase();
-      const status = statusFilter.value;
-      const items = skuList.querySelectorAll('[data-status]');
-      let visibleCount = 0;
-      
-      items.forEach(item => {
-        const name = item.dataset.name.toLowerCase();
-        const itemStatus = item.dataset.status;
-        const matchesSearch = name.includes(search);
-        const matchesStatus = status === 'all' || itemStatus === status;
-        
-        if (matchesSearch && matchesStatus) {
-          item.style.display = '';
-          visibleCount++;
-        } else {
-          item.style.display = 'none';
-        }
+      // Modal handlers
+      if (addSkuBtn) addSkuBtn.addEventListener('click', function() { 
+        console.log('Add New SKU clicked');
+        window.location.href = 'new-audit.html';
       });
-      
-      emptyState.classList.toggle('hidden', visibleCount > 0);
-      document.getElementById('showingCount').textContent = `Showing ${visibleCount} of 452 SKUs`;
-    }
+      if (emptyStateAddBtn) emptyStateAddBtn.addEventListener('click', function() { if (addSkuModal) addSkuModal.classList.add('active'); });
+      if (newAuditSidebarBtn) newAuditSidebarBtn.addEventListener('click', function() { window.location.href = 'new-audit.html'; });
+      if (closeSkuModal) closeSkuModal.addEventListener('click', function() { if (addSkuModal) addSkuModal.classList.remove('active'); });
+      if (cancelSkuModal) cancelSkuModal.addEventListener('click', function() { if (addSkuModal) addSkuModal.classList.remove('active'); });
+      if (addSkuModal) addSkuModal.addEventListener('click', function(e) { if (e.target === addSkuModal) addSkuModal.classList.remove('active'); });
 
-    // SKU row click - pass product data via URL
-    skuList.addEventListener('click', (e) => {
-      const row = e.target.closest('[data-product-id]');
-      if (row) {
-        const productName = row.dataset.name;
-        const productId = row.dataset.productId;
-        window.location.href = `sku.html?product=${productId}&name=${encodeURIComponent(productName)}`;
+      if (createSku) {
+        createSku.addEventListener('click', function() {
+          var nameInput = document.getElementById('newSkuName');
+          var categoryInput = document.getElementById('newSkuCategory');
+          var name = nameInput ? nameInput.value.trim() : '';
+          var category = categoryInput ? categoryInput.value : '';
+          
+          if (!name) {
+            showToast('error', 'Name Required', 'Please enter a product name.');
+            return;
+          }
+          if (!category) {
+            showToast('error', 'Category Required', 'Please select a category.');
+            return;
+          }
+          
+          if (addSkuModal) addSkuModal.classList.remove('active');
+          showLoading('Creating SKU...', 'Adding new product to the ledger.');
+          
+          setTimeout(function() {
+            hideLoading();
+            if (nameInput) nameInput.value = '';
+            if (categoryInput) categoryInput.value = '';
+            var mfrInput = document.getElementById('newSkuManufacturer');
+            if (mfrInput) mfrInput.value = '';
+            showToast('success', 'SKU Created', '"' + name + '" has been added to your inventory.');
+          }, 1500);
+        });
+      }
+
+      // Export
+      if (exportBtn) {
+        exportBtn.addEventListener('click', function() {
+          exportBtn.disabled = true;
+          showLoading('Exporting...', 'Preparing compliance documentation.');
+          setTimeout(function() {
+            hideLoading();
+            exportBtn.disabled = false;
+            showToast('success', 'Export Complete', 'Compliance pack has been downloaded.');
+          }, 2000);
+        });
+      }
+
+      // Search and filter
+      function filterSkus() {
+        var search = searchInput ? searchInput.value.toLowerCase() : '';
+        var status = statusFilter ? statusFilter.value : 'all';
+        var items = skuList ? skuList.querySelectorAll('[data-status]') : [];
+        var visibleCount = 0;
+        
+        items.forEach(function(item) {
+          var name = item.dataset.name ? item.dataset.name.toLowerCase() : '';
+          var itemStatus = item.dataset.status;
+          var matchesSearch = name.includes(search);
+          var matchesStatus = status === 'all' || itemStatus === status;
+          
+          if (matchesSearch && matchesStatus) {
+            item.style.display = '';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        
+        if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
+        var countEl = document.getElementById('showingCount');
+        if (countEl) countEl.textContent = 'Showing ' + visibleCount + ' of 452 SKUs';
+      }
+
+      if (searchInput) searchInput.addEventListener('input', filterSkus);
+      if (statusFilter) statusFilter.addEventListener('change', filterSkus);
+
+      // SKU row click - pass product data via URL
+      if (skuList) {
+        skuList.addEventListener('click', function(e) {
+          var row = e.target.closest('[data-product-id]');
+          if (row) {
+            var productName = row.dataset.name || '';
+            var productId = row.dataset.productId || '';
+            window.location.href = 'sku.html?product=' + productId + '&name=' + encodeURIComponent(productName);
+          }
+        });
       }
     });
   </script>
