@@ -1,228 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CompliOS India — Upload your product label for FSSAI and Legal Metrology compliance analysis." />
-  <title>Upload Label | Compliance OS India</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compliance OS - AI-powered FMCG product compliance analysis for FSSAI and Legal Metrology regulations.">
+  <title>Compliance OS - Intelligent Compliance Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="h-screen flex flex-col overflow-hidden bg-white">
+<body class="bg-white">
 
-  <!-- ======== NAVBAR ======== -->
-  <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
-    <div class="flex items-center gap-2">
-      <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
-      <span class="font-bold text-sm tracking-wide">Compliance OS India</span>
+  <!-- Navigation -->
+  <nav class="h-16 bg-white border-b border-gray-200 flex items-center px-8 justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">C</div>
+      <span class="font-bold text-base tracking-wide">Compliance OS</span>
     </div>
-    <div class="flex gap-1">
-      <a href="index.html"     class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Home</a>
-      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
-      <a href="features.html"  class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Features</a>
+    <div class="flex items-center gap-6">
+      <a href="index.html" class="text-sm font-semibold text-blue-600">Home</a>
+      <a href="dashboard.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Dashboard</a>
+      <a href="features.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Projects</a>
+      <a href="workflow.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Workflow</a>
+      <a href="review.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Review</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="upload.html" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors shadow-md shadow-blue-200/50">
+        Start New Audit
+      </a>
     </div>
   </nav>
 
-  <div class="flex flex-1 overflow-hidden">
-
-    <!-- ======== SIDEBAR ======== -->
-    <aside class="w-64 bg-gray-50 border-r border-gray-200 flex flex-col py-6 shrink-0">
-      <div class="px-6 mb-8">
-        <h2 class="font-bold text-lg mb-1">CompliOS India</h2>
-        <p class="text-xs text-gray-500 font-semibold tracking-wider uppercase">Onboarding</p>
-        <p class="text-xs text-gray-400">Step 3 of 4</p>
-      </div>
-
-      <nav class="flex flex-col gap-1">
-        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-          </svg>
-          Account
-        </a>
-        <a href="features.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-          </svg>
-          SKU Details
-        </a>
-        <a href="index.html" class="sidebar-link active flex items-center gap-3 px-6 py-2.5 text-sm font-semibold">
-          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
-          </svg>
-          Label Upload
-        </a>
-        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-          Results
-        </a>
-      </nav>
-
-      <div class="mt-auto px-6">
-        <div class="bg-gray-100 p-4 rounded-xl">
-          <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide mb-1">Compliance Tip</p>
-          <p class="text-xs text-gray-600 leading-relaxed">Ensure text is legible and lighting is even for the most accurate FSSAI AI analysis.</p>
-        </div>
-      </div>
-    </aside>
-
-    <!-- ======== MAIN CONTENT ======== -->
-    <main class="flex-1 bg-white relative flex flex-col overflow-hidden">
-
-      <!-- Sub-header bar -->
-      <div class="px-10 py-4 border-b border-gray-100 flex justify-between items-center text-sm text-gray-500 font-medium shrink-0">
-        <div class="flex items-center gap-6">
-          <span>Product ID: <span class="font-semibold text-gray-800">#IN-0042</span></span>
-          <span>Region: <span class="font-semibold text-gray-800">India (FSSAI)</span></span>
-        </div>
-        <div class="flex items-center gap-3">
-          <button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors" title="Help">
-            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </button>
-          <a href="features.html" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors" title="Close">
-            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Scrollable content -->
-      <div class="flex-1 overflow-y-auto p-10">
-        <div class="max-w-5xl mx-auto w-full">
-
-          <!-- Page heading -->
-          <div class="max-w-2xl mb-10">
-            <h1 class="text-4xl font-bold mb-4 flex items-end gap-1 leading-tight">
-              Upload Label
-              <span class="text-blue-600 text-5xl leading-none" style="margin-bottom:-4px">.</span>
-            </h1>
-            <p class="text-gray-500 text-lg leading-relaxed">
-              Our intelligent ledger will scan your packaging artwork for FSSAI and Legal Metrology regulatory inconsistencies. Drop your file to begin the analysis.
-            </p>
+  <!-- Hero Section -->
+  <section class="hero-section px-8 py-16">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="grid grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="hero-badge">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            FSSAI & LM-PC Compliant
           </div>
-
-          <!-- Upload area + right panel -->
-          <div class="flex gap-8 items-start">
-
-            <!-- Drop zone -->
-            <div class="flex-1 dashed-box bg-gray-50 rounded-2xl flex flex-col items-center justify-center p-12 min-h-[400px]">
-              <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          <h1 class="hero-title">
+            Compliance<br/>
+            <span class="text-blue-600">Made Simple.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Upload your product label and get instant AI-powered analysis against FSSAI labeling regulations and Legal Metrology (Packaged Commodities) Rules. Ensure your FMCG products are market-ready.
+          </p>
+          <div class="flex gap-4">
+            <a href="upload.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition-all shadow-lg shadow-blue-200/50 btn-interactive">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              New Audit
+            </a>
+            <a href="dashboard.html" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 flex items-center gap-2 transition-all">
+              View Demo
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-white rounded-3xl shadow-2xl shadow-gray-200/50 p-8 border border-gray-100">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-gray-900">Compliance Score</p>
+                <p class="text-xs text-gray-500">Real-time analysis</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 mb-6">
+              <div class="relative w-24 h-24">
+                <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" stroke="#F3F4F6" stroke-width="10" fill="none"/>
+                  <circle cx="50" cy="50" r="42" stroke="#2563EB" stroke-width="10" fill="none" stroke-dasharray="264" stroke-dashoffset="26" stroke-linecap="round"/>
                 </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="text-3xl font-black text-gray-900">92</span>
+                </div>
               </div>
-              <h3 class="text-xl font-bold mb-2 text-gray-900">Drop your product label here</h3>
-              <p class="text-sm text-gray-500 mb-6 text-center">
-                Support for .jpg, .png, or .pdf files.<br/>Max size 25MB per label.
-              </p>
-              <button class="px-6 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-semibold transition-colors text-gray-800">
-                Select from computer
-              </button>
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-gray-900 mb-2">Organic Almond Milk V2</p>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                    <span class="text-xs text-gray-600">2 Missing Data issues</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                    <span class="text-xs text-gray-600">1 Formatting issue</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span class="text-xs text-gray-600">1 Claims Risk</span>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <!-- Right panel -->
-            <div class="w-72 flex flex-col gap-4 shrink-0">
-
-              <!-- Onboarding progress -->
-              <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                <div class="flex justify-between items-center mb-3">
-                  <h4 class="text-xs font-bold uppercase tracking-wide text-gray-500">Onboarding Progress</h4>
-                  <span class="text-blue-600 font-bold text-sm">75%</span>
-                </div>
-                <div class="h-1.5 w-full bg-gray-200 rounded-full mb-5 overflow-hidden">
-                  <div class="h-full bg-blue-600 rounded-full" style="width:75%"></div>
-                </div>
-                <div class="flex flex-col gap-3 text-sm">
-                  <div class="flex items-center gap-2 text-gray-600">
-                    <div class="step-check done">✓</div>
-                    Account setup complete
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-600">
-                    <div class="step-check done">✓</div>
-                    SKU details verified
-                  </div>
-                  <div class="flex items-center gap-2 font-semibold text-gray-900">
-                    <div class="step-check current"></div>
-                    Label upload in progress
-                  </div>
-                </div>
+            <div class="flex gap-3">
+              <div class="flex-1 bg-green-50 rounded-lg p-3 text-center">
+                <p class="text-lg font-bold text-green-700">98%</p>
+                <p class="text-[10px] text-green-600 font-medium">Verified</p>
               </div>
-
-              <!-- Upload checklist -->
-              <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm relative overflow-hidden">
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-l-xl"></div>
-                <h4 class="font-bold text-sm mb-4 pl-2">Upload Checklist</h4>
-                <div class="flex flex-col gap-4 pl-2">
-                  <div class="flex gap-3">
-                    <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
-                    </svg>
-                    <div>
-                      <p class="text-xs font-bold mb-0.5">Original Scale</p>
-                      <p class="text-xs text-gray-500">Don't crop margins or bleed lines.</p>
-                    </div>
-                  </div>
-                  <div class="flex gap-3">
-                    <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                    <div>
-                      <p class="text-xs font-bold mb-0.5">High Contrast</p>
-                      <p class="text-xs text-gray-500">Ensure text is readable against background.</p>
-                    </div>
-                  </div>
-                  <div class="flex gap-3">
-                    <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                    <div>
-                      <p class="text-xs font-bold mb-0.5">Flattened PDF</p>
-                      <p class="text-xs text-gray-500">Prefer flattened files for faster scanning.</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="flex-1 bg-orange-50 rounded-lg p-3 text-center">
+                <p class="text-lg font-bold text-orange-700">45%</p>
+                <p class="text-[10px] text-orange-600 font-medium">Needs Review</p>
               </div>
-
-              <!-- Coming soon -->
-              <div class="rounded-xl overflow-hidden" style="background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%)">
-                <div class="p-5">
-                  <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">Coming Soon</p>
-                  <p class="text-white font-bold text-base leading-snug">Batch Analysis &amp;<br/>Historical Comparisons</p>
-                </div>
+              <div class="flex-1 bg-gray-100 rounded-lg p-3 text-center">
+                <p class="text-lg font-bold text-gray-700">Draft</p>
+                <p class="text-[10px] text-gray-500 font-medium">0%</p>
               </div>
-
+            </div>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-4 border border-gray-100">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">Analysis Complete</p>
+                <p class="text-xs text-gray-500">4 findings detected</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ======== FOOTER BAR ======== -->
-      <div class="h-20 border-t border-gray-100 flex items-center justify-between px-10 bg-white shrink-0">
-        <div class="flex items-center gap-3">
-          <div class="flex -space-x-2">
-            <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
-            <div class="w-8 h-8 rounded-full bg-blue-600 border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">+12</div>
+      <!-- Feature Grid -->
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <span class="text-xs text-gray-500 font-medium">Trusted by 2,000+ legal &amp; compliance teams worldwide.</span>
+          <h3 class="feature-title">AI-Powered Analysis</h3>
+          <p class="feature-desc">Advanced computer vision scans your labels for regulatory issues in seconds, not days.</p>
         </div>
-        <div class="flex items-center gap-4">
-          <a href="features.html" class="text-sm font-bold text-gray-700 hover:text-gray-900 transition-colors">Back</a>
-          <a href="dashboard.html" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-sm flex items-center gap-2 transition-colors shadow-sm shadow-blue-200">
-            Analyze Label
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </a>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          </div>
+          <h3 class="feature-title">FSSAI & LM-PC Rules</h3>
+          <p class="feature-desc">Built-in compliance engine covers Schedule IX, Claims Regulations, and Legal Metrology Rules.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="feature-title">Instant Reports</h3>
+          <p class="feature-desc">Generate compliance reports with suggested fixes and rule references for your legal team.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-    </main>
-  </div>
+  <!-- Stats Section -->
+  <section class="bg-gray-50 py-16 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-4 gap-6">
+        <div class="stat-card text-center">
+          <p class="stat-value">2,500+</p>
+          <p class="stat-label">SKUs Analyzed</p>
+        </div>
+        <div class="stat-card text-center">
+          <p class="stat-value">98.5%</p>
+          <p class="stat-label">Accuracy Rate</p>
+        </div>
+        <div class="stat-card text-center">
+          <p class="stat-value">45 sec</p>
+          <p class="stat-label">Avg. Analysis Time</p>
+        </div>
+        <div class="stat-card text-center">
+          <p class="stat-value">500+</p>
+          <p class="stat-label">Enterprise Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CTA Section -->
+  <section class="py-20 px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to ensure compliance?</h2>
+      <p class="text-gray-500 mb-8 max-w-xl mx-auto">Start your first audit today and get actionable insights within minutes.</p>
+      <div class="flex gap-4 justify-center">
+        <a href="upload.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200/50 btn-interactive">
+          Start Free Audit
+        </a>
+        <a href="features.html" class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 transition-colors">
+          View All Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-8">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-sm">C</div>
+        <span class="font-bold">Compliance OS</span>
+      </div>
+      <div class="flex gap-8 text-sm text-gray-400">
+        <a href="features.html" class="hover:text-white transition-colors">Projects</a>
+        <a href="workflow.html" class="hover:text-white transition-colors">Workflow</a>
+        <a href="review.html" class="hover:text-white transition-colors">Review</a>
+        <a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a>
+      </div>
+      <p class="text-sm text-gray-500">© 2024 Compliance OS</p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    function showToast(type, title, message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      
+      const icons = {
+        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+        warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
+      };
+      
+      toast.innerHTML = `
+        <div class="toast-icon">${icons[type]}</div>
+        <div class="toast-content">
+          <p class="toast-title">${title}</p>
+          <p class="toast-message">${message}</p>
+        </div>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add('hiding');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showToast('success', 'Welcome to Compliance OS', 'Start by creating a new audit or exploring existing projects.');
+    });
+  </script>
 </body>
 </html>
