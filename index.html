@@ -13,27 +13,29 @@
   <!-- Navigation -->
   <nav class="h-16 bg-white border-b border-gray-200 flex items-center px-8 justify-between sticky top-0 z-50">
     <div class="flex items-center gap-3">
-      <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">C</div>
+      <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-200/50">C</div>
       <span class="font-bold text-base tracking-wide">Compliance OS</span>
     </div>
-    <div class="flex items-center gap-6">
-      <a href="index.html" class="text-sm font-semibold text-blue-600">Home</a>
-      <a href="dashboard.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Dashboard</a>
-      <a href="features.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Projects</a>
-      <a href="workflow.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Workflow</a>
-      <a href="review.html" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Review</a>
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-blue-600 bg-blue-50">Home</a>
+      <a href="dashboard.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Dashboard</a>
+      <a href="features.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Projects</a>
+      <a href="workflow.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Workflow</a>
+      <a href="review.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Review</a>
     </div>
     <div class="flex items-center gap-3">
-      <a href="upload.html" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors shadow-md shadow-blue-200/50">
+      <a href="upload.html" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-all shadow-lg shadow-blue-200/50 btn-interactive flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         Start New Audit
       </a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section px-8 py-16">
+  <section class="hero-section px-8 py-20">
     <div class="max-w-6xl mx-auto w-full">
       <div class="grid grid-cols-2 gap-16 items-center">
+        <!-- Left Content -->
         <div>
           <div class="hero-badge">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -46,72 +48,83 @@
           <p class="hero-subtitle">
             Upload your product label and get instant AI-powered analysis against FSSAI labeling regulations and Legal Metrology (Packaged Commodities) Rules. Ensure your FMCG products are market-ready.
           </p>
-          <div class="flex gap-4">
-            <a href="upload.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition-all shadow-lg shadow-blue-200/50 btn-interactive">
+          <div class="flex gap-4 mt-10">
+            <a href="upload.html" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition-all shadow-xl shadow-blue-200/50 btn-interactive">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
               New Audit
             </a>
-            <a href="dashboard.html" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 flex items-center gap-2 transition-all">
+            <a href="dashboard.html" class="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 flex items-center gap-2 transition-all hover:border-gray-300 hover:shadow-lg">
               View Demo
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
         </div>
+
+        <!-- Right Dashboard Preview -->
         <div class="relative">
-          <div class="bg-white rounded-3xl shadow-2xl shadow-gray-200/50 p-8 border border-gray-100">
+          <!-- Main Card -->
+          <div class="bg-white rounded-3xl shadow-2xl shadow-gray-200/80 p-8 border border-gray-100/50">
+            <!-- Header -->
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <div class="product-thumb">
+                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
               </div>
               <div>
-                <p class="font-bold text-gray-900">Compliance Score</p>
+                <p class="font-semibold text-gray-900 text-sm">Compliance Score</p>
                 <p class="text-xs text-gray-500">Real-time analysis</p>
               </div>
             </div>
+
+            <!-- Score Ring -->
             <div class="flex items-center gap-6 mb-6">
-              <div class="relative w-24 h-24">
-                <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="42" stroke="#F3F4F6" stroke-width="10" fill="none"/>
-                  <circle cx="50" cy="50" r="42" stroke="#2563EB" stroke-width="10" fill="none" stroke-dasharray="264" stroke-dashoffset="26" stroke-linecap="round"/>
+              <div class="compliance-ring">
+                <svg class="w-28 h-28 -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" stroke="#F3F4F6" stroke-width="8" fill="none"/>
+                  <circle cx="50" cy="50" r="42" stroke="#2563EB" stroke-width="8" fill="none" stroke-dasharray="264" stroke-dashoffset="21" stroke-linecap="round"/>
                 </svg>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <span class="text-3xl font-black text-gray-900">92</span>
+                <div class="compliance-ring-value">
+                  <span class="compliance-ring-number">92</span>
+                  <span class="compliance-ring-label">/ 100</span>
                 </div>
               </div>
               <div class="flex-1">
-                <p class="text-sm font-semibold text-gray-900 mb-2">Organic Almond Milk V2</p>
-                <div class="space-y-2">
+                <p class="font-semibold text-gray-900 mb-3">Organic Almond Milk V2</p>
+                <div class="space-y-2.5">
                   <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                    <span class="status-indicator error"></span>
                     <span class="text-xs text-gray-600">2 Missing Data issues</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                    <span class="status-indicator warning"></span>
                     <span class="text-xs text-gray-600">1 Formatting issue</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span class="status-indicator info"></span>
                     <span class="text-xs text-gray-600">1 Claims Risk</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="flex gap-3">
-              <div class="flex-1 bg-green-50 rounded-lg p-3 text-center">
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-3">
+              <div class="bg-green-50 rounded-xl p-3 text-center">
                 <p class="text-lg font-bold text-green-700">98%</p>
                 <p class="text-[10px] text-green-600 font-medium">Verified</p>
               </div>
-              <div class="flex-1 bg-orange-50 rounded-lg p-3 text-center">
+              <div class="bg-orange-50 rounded-xl p-3 text-center">
                 <p class="text-lg font-bold text-orange-700">45%</p>
-                <p class="text-[10px] text-orange-600 font-medium">Needs Review</p>
+                <p class="text-[10px] text-orange-600 font-medium">Review</p>
               </div>
-              <div class="flex-1 bg-gray-100 rounded-lg p-3 text-center">
+              <div class="bg-gray-100 rounded-xl p-3 text-center">
                 <p class="text-lg font-bold text-gray-700">Draft</p>
                 <p class="text-[10px] text-gray-500 font-medium">0%</p>
               </div>
             </div>
           </div>
-          <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-4 border border-gray-100">
+
+          <!-- Floating Success Card -->
+          <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl shadow-green-100/50 p-4 border border-green-100/50">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                 <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -122,27 +135,42 @@
               </div>
             </div>
           </div>
+
+          <!-- Floating Users Card -->
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100/50">
+            <div class="flex items-center gap-3">
+              <div class="avatar-stack">
+                <div class="avatar sm">A</div>
+                <div class="avatar sm">R</div>
+                <div class="avatar sm">+5</div>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">2,000+ Teams</p>
+                <p class="text-xs text-gray-500">Use Compliance OS</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Feature Grid -->
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <div class="feature-grid mt-24">
+        <div class="feature-card group">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           </div>
           <h3 class="feature-title">AI-Powered Analysis</h3>
           <p class="feature-desc">Advanced computer vision scans your labels for regulatory issues in seconds, not days.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+        <div class="feature-card group">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
           <h3 class="feature-title">FSSAI & LM-PC Rules</h3>
           <p class="feature-desc">Built-in compliance engine covers Schedule IX, Claims Regulations, and Legal Metrology Rules.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
+        <div class="feature-card group">
+          <div class="feature-icon group-hover:scale-110 transition-transform duration-300">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
           <h3 class="feature-title">Instant Reports</h3>
@@ -153,39 +181,51 @@
   </section>
 
   <!-- Stats Section -->
-  <section class="bg-gray-50 py-16 px-8">
+  <section class="bg-gradient-to-br from-gray-50 to-blue-50/30 py-20 px-8 border-y border-gray-100">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-4 gap-6">
-        <div class="stat-card text-center">
-          <p class="stat-value">2,500+</p>
-          <p class="stat-label">SKUs Analyzed</p>
+        <div class="metric-card text-center">
+          <div class="metric-card-icon mx-auto bg-blue-100 text-blue-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <p class="metric-card-value">2,500+</p>
+          <p class="metric-card-label">SKUs Analyzed</p>
         </div>
-        <div class="stat-card text-center">
-          <p class="stat-value">98.5%</p>
-          <p class="stat-label">Accuracy Rate</p>
+        <div class="metric-card text-center">
+          <div class="metric-card-icon mx-auto bg-green-100 text-green-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="metric-card-value">98.5%</p>
+          <p class="metric-card-label">Accuracy Rate</p>
         </div>
-        <div class="stat-card text-center">
-          <p class="stat-value">45 sec</p>
-          <p class="stat-label">Avg. Analysis Time</p>
+        <div class="metric-card text-center">
+          <div class="metric-card-icon mx-auto bg-orange-100 text-orange-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="metric-card-value">45 sec</p>
+          <p class="metric-card-label">Avg. Analysis Time</p>
         </div>
-        <div class="stat-card text-center">
-          <p class="stat-value">500+</p>
-          <p class="stat-label">Enterprise Clients</p>
+        <div class="metric-card text-center">
+          <div class="metric-card-icon mx-auto bg-purple-100 text-purple-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <p class="metric-card-value">500+</p>
+          <p class="metric-card-label">Enterprise Clients</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 px-8">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="py-24 px-8">
+    <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to ensure compliance?</h2>
-      <p class="text-gray-500 mb-8 max-w-xl mx-auto">Start your first audit today and get actionable insights within minutes.</p>
+      <p class="text-gray-500 mb-10 max-w-xl mx-auto text-base">Start your first audit today and get actionable insights within minutes. Join 500+ companies already using Compliance OS.</p>
       <div class="flex gap-4 justify-center">
-        <a href="upload.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200/50 btn-interactive">
+        <a href="upload.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-all shadow-xl shadow-blue-200/50 btn-interactive">
           Start Free Audit
         </a>
-        <a href="features.html" class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 transition-colors">
+        <a href="features.html" class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 transition-all hover:border-gray-300 hover:shadow-lg">
           View All Projects
         </a>
       </div>
@@ -219,9 +259,9 @@
       toast.className = `toast ${type}`;
       
       const icons = {
-        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
-        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
-        warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
+        success: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+        error: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+        warning: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
       };
       
       toast.innerHTML = `
@@ -241,7 +281,9 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      showToast('success', 'Welcome to Compliance OS', 'Start by creating a new audit or exploring existing projects.');
+      setTimeout(() => {
+        showToast('success', 'Welcome to Compliance OS', 'Start by creating a new audit or exploring existing projects.');
+      }, 500);
     });
   </script>
 </body>
