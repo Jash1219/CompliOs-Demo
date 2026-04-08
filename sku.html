@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compliance OS - SKU workspace.">
+  <title>SKU Workspace | Compliance OS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-screen flex flex-col overflow-hidden bg-[#F9FAFB]">
+
+  <!-- Navigation -->
+  <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
+      <span class="font-bold text-sm tracking-wide">Compliance OS</span>
+    </div>
+    <div class="flex gap-1">
+      <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
+      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
+      <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Projects</a>
+      <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workflow</a>
+      <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Review</a>
+    </div>
+  </nav>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-[260px] bg-white border-r border-gray-200 flex flex-col shrink-0 z-20">
+      <div class="px-8 pt-8 pb-10">
+        <h2 class="font-bold text-[17px] text-gray-900 mb-1 leading-tight">SKU Workspace</h2>
+        <p class="text-[12px] text-gray-500 font-medium">Product Compliance</p>
+      </div>
+
+      <nav class="flex flex-col flex-1">
+        <a href="#" class="flex items-center gap-3 px-8 py-3 text-[14px] font-semibold text-blue-600 bg-blue-50 border-l-3 border-blue-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Overview
+        </a>
+        <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2H2V5zm0 4h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9zm2 2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 001-1v-1a1 1 0 00-1-1H4z" clip-rule="evenodd"/></svg> Projects
+        </a>
+        <a href="review.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Review Queue
+        </a>
+        <a href="workflow.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> Workflow
+        </a>
+      </nav>
+
+      <div class="p-6">
+        <button id="newAuditBtn" class="w-full py-3 bg-[#175CD3] hover:bg-blue-700 text-white font-semibold rounded-lg text-[14px] flex items-center justify-center gap-2 transition-colors shadow-md btn-interactive">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          New Audit
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden">
+      <!-- Header -->
+      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-[#F9FAFB]">
+          <div id="breadcrumb" class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
+            <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
+            <span class="text-gray-300">/</span>
+            <span id="breadcrumbProduct" class="hover:text-gray-900 transition-colors">Organic Almond Milk V2</span>
+            <span class="text-gray-300">/</span>
+            <span class="text-gray-900 font-bold">SKU Workspace</span>
+          </div>
+        <div class="flex items-center gap-5">
+          <div class="relative">
+            <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="text" placeholder="Search..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
+          </div>
+          <button id="notificationBtn" class="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center hover:bg-gray-200 transition-colors relative">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+          </button>
+          <div class="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Tabs -->
+      <div class="px-8 border-b border-gray-200 bg-white shrink-0">
+        <nav class="flex gap-1" id="tabNav">
+          <button class="tab-btn active" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="label-data">Label Data</button>
+          <button class="tab-btn" data-tab="compliance">Compliance</button>
+          <button class="tab-btn" data-tab="workflow">Workflow</button>
+          <button class="tab-btn" data-tab="history">Audit History</button>
+          <button class="tab-btn" data-tab="files">Files</button>
+        </nav>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div class="flex-1 overflow-y-auto px-8 pb-12 pt-6">
+        <div class="max-w-[1000px]">
+          
+          <!-- Product Header -->
+          <div class="flex justify-between items-start mb-8">
+            <div class="flex-1 pr-8">
+              <div class="flex items-start gap-5">
+                <div style="width: 72px; height: 72px; border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);">
+                  <img id="productImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect width='100%25' height='100%25' fill='%23e0e7ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%234f46e5' font-size='11' font-weight='bold'%3EALMOND%3C/text%3E%3C/svg%3E" alt="Product" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                  <div class="flex items-center gap-3 mb-3">
+                    <h1 id="productName" class="text-[32px] font-bold text-gray-900 tracking-tight leading-tight">Organic Almond Milk V2</h1>
+                    <span id="productStatusBadge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 text-[11px] font-bold self-start mt-1 border border-blue-100">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> <span id="productStatus">Expert Reviewed</span>
+                    </span>
+                  </div>
+                  <p id="productDescription" class="text-gray-500 text-[14px] max-w-[380px] leading-relaxed">Detailed analysis of labeling, claims, and regulatory alignment for the North American market launch.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Score Card -->
+            <div class="w-[260px] bg-white rounded-2xl p-5 card-shadow border border-gray-100 flex items-center gap-4 shrink-0">
+              <div class="relative w-[64px] h-[64px] flex items-center justify-center shrink-0">
+                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="46" class="text-gray-100" stroke-width="8" fill="none" stroke="currentColor"></circle>
+                  <circle id="donutRing" cx="50" cy="50" r="46" class="text-green-600 progress-ring-circle" stroke-width="8" stroke="currentColor" fill="none" stroke-dasharray="289.0" stroke-dashoffset="0"></circle>
+                </svg>
+                <div class="absolute text-center flex flex-col justify-center items-center mt-1">
+                  <span id="complianceScore" class="text-[20px] font-black text-gray-900 leading-none">92</span>
+                  <span class="text-[9px] font-bold text-gray-400 mt-0.5">/ 100</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-[13px] mb-1">Compliance Score</h3>
+                <p id="scoreMessage" class="text-[11px] text-gray-500 leading-snug">High confidence for market entry</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content Container -->
+          <div id="tabContent">
+            
+            <!-- Overview Tab -->
+            <div id="tab-overview" class="tab-panel active">
+              <div class="grid grid-cols-2 gap-6">
+                <!-- Metrics Grid -->
+                <div class="col-span-2 grid grid-cols-4 gap-4 mb-6">
+                  <div class="metric-card">
+                    <div class="metric-icon" style="background: #fef2f2;">
+                      <svg class="w-4 h-4" style="color: #D92D20;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    </div>
+                    <div class="metric-content">
+                      <p class="metric-label">Missing Data</p>
+                      <p class="metric-value" id="missingCount" style="color: #D92D20;">2</p>
+                    </div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-icon" style="background: #fffbeb;">
+                      <svg class="w-4 h-4" style="color: #B45308;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    </div>
+                    <div class="metric-content">
+                      <p class="metric-label">Formatting</p>
+                      <p class="metric-value" id="formatCount" style="color: #B45308;">1</p>
+                    </div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-icon" style="background: #f0fdf4;">
+                      <svg class="w-4 h-4" style="color: #16a34a;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    </div>
+                    <div class="metric-content">
+                      <p class="metric-label">Visibility</p>
+                      <p id="visibilityCount" class="metric-value" style="color: #16a34a;">0</p>
+                    </div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-icon" style="background: #eff6ff;">
+                      <svg class="w-4 h-4" style="color: #175CD3;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div class="metric-content">
+                      <p class="metric-label">Claims Risks</p>
+                      <p id="riskCount" class="metric-value" style="color: #175CD3;">1</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product Info Card -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100">
+                  <h3 class="font-bold text-gray-900 text-[15px] mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Product Information
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span class="text-[12px] font-medium text-gray-500">Category</span>
+                      <span class="text-[13px] font-semibold text-gray-900">Beverages</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span class="text-[12px] font-medium text-gray-500">Manufacturer</span>
+                      <span class="text-[13px] font-semibold text-gray-900">PureEarth Organics</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span class="text-[12px] font-medium text-gray-500">SKU Code</span>
+                      <span class="text-[13px] font-semibold text-gray-900 font-mono">SKU-ALM-2024-01</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-[12px] font-medium text-gray-500">Last Audited</span>
+                      <span class="text-[13px] font-semibold text-gray-900">Oct 24, 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions Card -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100">
+                  <h3 class="font-bold text-gray-900 text-[15px] mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Quick Actions
+                  </h3>
+                  <div class="flex flex-col gap-3">
+                    <button class="w-full py-3 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold rounded-xl text-[13px] transition-colors text-left px-4 flex items-center gap-3 btn-interactive">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                      Download PDF Report
+                    </button>
+                    <button class="w-full py-3 bg-gray-50 hover:bg-gray-100 text-gray-700 font-semibold rounded-xl text-[13px] transition-colors text-left px-4 flex items-center gap-3 btn-interactive">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                      Share Report
+                    </button>
+                    <button class="w-full py-3 bg-gray-50 hover:bg-gray-100 text-gray-700 font-semibold rounded-xl text-[13px] transition-colors text-left px-4 flex items-center gap-3 btn-interactive">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                      Re-analyze Label
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Recent Findings -->
+                <div class="col-span-2">
+                  <h3 class="font-bold text-gray-900 text-[15px] mb-4">Recent Findings</h3>
+                  <div class="space-y-3" id="findingsList">
+                    <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-start gap-4 card-shadow">
+                      <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-red-50 shrink-0">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                      </div>
+                      <div class="flex-1">
+                        <span class="text-[10px] font-bold text-red-600 uppercase tracking-wider">Missing Data</span>
+                        <h4 class="font-semibold text-gray-900 text-[14px] mt-1">Missing allergen statement for Almonds</h4>
+                        <p class="text-[12px] text-gray-500 mt-1">The product contains Almonds, which are a major food allergen.</p>
+                      </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-start gap-4 card-shadow">
+                      <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-50 shrink-0">
+                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                      </div>
+                      <div class="flex-1">
+                        <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Claims Risk</span>
+                        <h4 class="font-semibold text-gray-900 text-[14px] mt-1">"Heart Healthy" claim requires disclaimer</h4>
+                        <p class="text-[12px] text-gray-500 mt-1">This is a regulated health claim and must be accompanied by FDA disclaimer.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Label Data Tab -->
+            <div id="tab-label-data" class="tab-panel">
+              <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100">
+                <h3 class="font-bold text-gray-900 text-[15px] mb-5 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Label Image
+                </h3>
+                <div class="border-2 border-dashed border-gray-200 rounded-xl p-8 flex flex-col items-center justify-center bg-gray-50/50">
+                  <div class="w-full max-w-md aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);">
+                    <img id="labelImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23e0e7ff' width='400' height='300'/%3E%3Ctext x='200' y='130' font-family='system-ui' font-size='18' font-weight='bold' fill='%234f46e5' text-anchor='middle'%3EOrganic Almond%3C/text%3E%3Ctext x='200' y='160' font-family='system-ui' font-size='14' fill='%236b7280' text-anchor='middle'%3EMilk V2 - Label%3C/text%3E%3C/svg%3E" alt="Label" class="w-full h-full object-cover">
+                  </div>
+                  <button class="mt-4 px-4 py-2 bg-white border border-gray-200 rounded-lg text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                    Upload New Label
+                  </button>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100 mt-6">
+                <h3 class="font-bold text-gray-900 text-[15px] mb-5 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  Extracted Data
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Product Name</p>
+                    <p class="text-[14px] font-semibold text-gray-900" id="extProductName">Organic Almond Milk V2</p>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Brand</p>
+                    <p class="text-[14px] font-semibold text-gray-900">PureEarth Organics</p>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Net Quantity</p>
+                    <p class="text-[14px] font-semibold text-gray-900">1 Liter</p>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ingredients</p>
+                    <p class="text-[14px] font-semibold text-gray-900">Filtered Water, Almonds (2%), Salt...</p>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-4 col-span-2">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Nutrition Information</p>
+                    <p class="text-[14px] font-semibold text-gray-900">Energy: 17 kcal | Protein: 0.6g | Fat: 1.5g | Carbs: 0.3g per 100ml</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compliance Tab -->
+            <div id="tab-compliance" class="tab-panel">
+              <h3 class="font-bold text-gray-900 text-[18px] mb-5">Compliance Audit Findings</h3>
+              <div class="grid grid-cols-2 gap-5" id="complianceFindings">
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 card-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-red-50">
+                      <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    </div>
+                    <span class="px-2 py-1 rounded-[4px] text-[10px] font-bold bg-red-50 text-red-600 uppercase">Missing Data</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900 text-[14px] mb-2">Missing allergen statement for Almonds</h4>
+                  <p class="text-[12px] text-gray-500 leading-relaxed mb-3">The product contains Almonds, which are a major food allergen. Federal law requires a clear statement on the packaging.</p>
+                  <div class="text-[11px] font-medium text-gray-400">FSSAI Schedule IX, Clause 5.1</div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 card-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-50">
+                      <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <span class="px-2 py-1 rounded-[4px] text-[10px] font-bold bg-blue-50 text-blue-600 uppercase">Claims Risk</span>
+                  </div>
+                  <h4 class="font-bold text-gray-900 text-[14px] mb-2">"Heart Healthy" claim requires disclaimer</h4>
+                  <p class="text-[12px] text-gray-500 leading-relaxed mb-3">The term "Heart Healthy" is a regulated health claim and must be accompanied by the standard FDA disclaimer.</p>
+                  <div class="text-[11px] font-medium text-gray-400">FDA 21 CFR 101.14</div>
+                </div>
+              </div>
+
+              <div class="mt-6 bg-green-50 border border-green-100 rounded-xl p-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-green-800 text-[14px]">Compliance Status: Approved with Conditions</h4>
+                    <p class="text-[12px] text-green-600 mt-0.5">2 issues require resolution before final approval.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workflow Tab -->
+            <div id="tab-workflow" class="tab-panel">
+              <h3 class="font-bold text-gray-900 text-[18px] mb-5">Audit Workflow</h3>
+              <div class="flex items-center gap-4">
+                <div class="flex-1 bg-green-50 border-2 border-green-200 rounded-xl p-5 text-center">
+                  <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <h4 class="font-bold text-gray-900 text-[14px] mb-1">Upload</h4>
+                  <p class="text-[11px] text-gray-500">Completed</p>
+                </div>
+                <div class="w-8 h-0.5 bg-green-300"></div>
+                <div class="flex-1 bg-green-50 border-2 border-green-200 rounded-xl p-5 text-center">
+                  <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <h4 class="font-bold text-gray-900 text-[14px] mb-1">Extract</h4>
+                  <p class="text-[11px] text-gray-500">Completed</p>
+                </div>
+                <div class="w-8 h-0.5 bg-green-300"></div>
+                <div class="flex-1 bg-blue-50 border-2 border-blue-300 rounded-xl p-5 text-center">
+                  <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  </div>
+                  <h4 class="font-bold text-blue-800 text-[14px] mb-1">Review</h4>
+                  <p class="text-[11px] text-blue-600">In Progress</p>
+                </div>
+                <div class="w-8 h-0.5 bg-gray-200"></div>
+                <div class="flex-1 bg-gray-50 border-2 border-gray-200 rounded-xl p-5 text-center">
+                  <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <h4 class="font-bold text-gray-400 text-[14px] mb-1">Approve</h4>
+                  <p class="text-[11px] text-gray-400">Pending</p>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="font-bold text-gray-900 text-[15px] mb-4">Workflow Tasks</h4>
+                <div class="space-y-3">
+                  <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-between card-shadow">
+                    <div class="flex items-center gap-3">
+                      <input type="checkbox" checked class="w-5 h-5 rounded border-gray-300 text-blue-600">
+                      <div>
+                        <p class="font-semibold text-gray-900 text-[13px]">Review allergen declaration</p>
+                        <p class="text-[11px] text-gray-500">Verify almond allergen statement is present</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">COMPLETED</span>
+                  </div>
+                  <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-between card-shadow">
+                    <div class="flex items-center gap-3">
+                      <input type="checkbox" checked class="w-5 h-5 rounded border-gray-300 text-blue-600">
+                      <div>
+                        <p class="font-semibold text-gray-900 text-[13px]">Verify nutrition facts panel</p>
+                        <p class="text-[11px] text-gray-500">Check accuracy of nutritional information</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">COMPLETED</span>
+                  </div>
+                  <div class="bg-white rounded-xl p-4 border border-blue-200 flex items-center justify-between card-shadow">
+                    <div class="flex items-center gap-3">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600">
+                      <div>
+                        <p class="font-semibold text-gray-900 text-[13px]">Add health claim disclaimer</p>
+                        <p class="text-[11px] text-gray-500">Include required FDA disclaimer for "Heart Healthy"</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">IN PROGRESS</span>
+                  </div>
+                  <div class="bg-white rounded-xl p-4 border border-gray-100 flex items-center justify-between card-shadow">
+                    <div class="flex items-center gap-3">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600">
+                      <div>
+                        <p class="font-semibold text-gray-900 text-[13px]">Final approval sign-off</p>
+                        <p class="text-[11px] text-gray-500">Expert review and compliance certification</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">PENDING</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Audit History Tab -->
+            <div id="tab-history" class="tab-panel">
+              <h3 class="font-bold text-gray-900 text-[18px] mb-5">Audit History</h3>
+              <div class="space-y-4">
+                <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-4">
+                      <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-[16px]">92</div>
+                      <div>
+                        <h4 class="font-bold text-gray-900 text-[14px]">Compliance Audit - Expert Review</h4>
+                        <p class="text-[12px] text-gray-500 mt-1">Oct 24, 2024 at 2:45 PM</p>
+                        <p class="text-[12px] text-gray-500">Reviewed by: Dr. Priya Sharma</p>
+                      </div>
+                    </div>
+                    <span class="text-[11px] font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">APPROVED</span>
+                  </div>
+                  <div class="mt-4 pt-4 border-t border-gray-100">
+                    <p class="text-[12px] text-gray-600"><strong>Summary:</strong> Product approved with 2 minor findings that require correction before market launch.</p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-4">
+                      <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-[16px]">96</div>
+                      <div>
+                        <h4 class="font-bold text-gray-900 text-[14px]">Initial Compliance Scan</h4>
+                        <p class="text-[12px] text-gray-500 mt-1">Aug 12, 2024 at 10:30 AM</p>
+                        <p class="text-[12px] text-gray-500">Automated analysis</p>
+                      </div>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">PASSED</span>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-4">
+                      <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-[16px]">82</div>
+                      <div>
+                        <h4 class="font-bold text-gray-900 text-[14px]">Label Review</h4>
+                        <p class="text-[12px] text-gray-500 mt-1">May 03, 2024 at 4:15 PM</p>
+                        <p class="text-[12px] text-gray-500">Reviewed by: Ankit Verma</p>
+                      </div>
+                    </div>
+                    <span class="text-[11px] font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">REVIEW REQUIRED</span>
+                  </div>
+                  <div class="mt-4 pt-4 border-t border-gray-100">
+                    <p class="text-[12px] text-gray-600"><strong>Summary:</strong> Multiple labeling issues detected. Updated label required.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Files Tab -->
+            <div id="tab-files" class="tab-panel">
+              <div class="flex items-center justify-between mb-5">
+                <h3 class="font-bold text-gray-900 text-[18px]">Attached Files</h3>
+                <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-[13px] font-semibold rounded-lg transition-colors btn-interactive flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                  Upload File
+                </button>
+              </div>
+
+              <div class="bg-white rounded-2xl border border-gray-100 card-shadow overflow-hidden">
+                <div class="grid grid-cols-12 gap-4 p-4 bg-gray-50 border-b border-gray-100 text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                  <div class="col-span-6">File Name</div>
+                  <div class="col-span-2">Type</div>
+                  <div class="col-span-2">Size</div>
+                  <div class="col-span-2">Date</div>
+                </div>
+                <div class="divide-y divide-gray-50">
+                  <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-gray-50/50 transition-colors">
+                    <div class="col-span-6 flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                      </div>
+                      <span class="text-[13px] font-semibold text-gray-900">Product_Label_v2.jpg</span>
+                    </div>
+                    <div class="col-span-2 text-[12px] text-gray-500">Image</div>
+                    <div class="col-span-2 text-[12px] text-gray-500">2.4 MB</div>
+                    <div class="col-span-2 text-[12px] text-gray-500">Oct 24, 2024</div>
+                  </div>
+                  <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-gray-50/50 transition-colors">
+                    <div class="col-span-6 flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </div>
+                      <span class="text-[13px] font-semibold text-gray-900">Compliance_Report.pdf</span>
+                    </div>
+                    <div class="col-span-2 text-[12px] text-gray-500">PDF</div>
+                    <div class="col-span-2 text-[12px] text-gray-500">1.8 MB</div>
+                    <div class="col-span-2 text-[12px] text-gray-500">Oct 24, 2024</div>
+                  </div>
+                  <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-gray-50/50 transition-colors">
+                    <div class="col-span-6 flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </div>
+                      <span class="text-[13px] font-semibold text-gray-900">Ingredients_List.docx</span>
+                    </div>
+                    <div class="col-span-2 text-[12px] text-gray-500">Document</div>
+                    <div class="col-span-2 text-[12px] text-gray-500">156 KB</div>
+                    <div class="col-span-2 text-[12px] text-gray-500">Sep 15, 2024</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner loading-spinner-dark" style="width: 40px; height: 40px; border-width: 3px;"></div>
+    <p class="loading-text" id="loadingText">Processing...</p>
+    <p class="loading-subtext" id="loadingSubtext">Please wait.</p>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- New Audit Modal -->
+  <div id="newAuditModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Create New Audit</h3>
+        <button class="modal-close" id="closeModal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Product Name</label>
+          <input type="text" class="form-input" placeholder="e.g., Organic Almond Milk">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-select">
+            <option value="">Select category</option>
+            <option value="beverages">Beverages</option>
+            <option value="dairy">Dairy &amp; Alternatives</option>
+            <option value="snacks">Snacks</option>
+            <option value="bakery">Bakery</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors" id="cancelModal">Cancel</button>
+        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="createAudit">Create Audit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // DOM Elements
+      var loadingOverlay = document.getElementById('loadingOverlay');
+      var loadingText = document.getElementById('loadingText');
+      var loadingSubtext = document.getElementById('loadingSubtext');
+      var toastContainer = document.getElementById('toastContainer');
+      var newAuditModal = document.getElementById('newAuditModal');
+      var newAuditBtn = document.getElementById('newAuditBtn');
+      var closeModal = document.getElementById('closeModal');
+      var cancelModal = document.getElementById('cancelModal');
+      var createAudit = document.getElementById('createAudit');
+      var notificationBtn = document.getElementById('notificationBtn');
+      var tabNav = document.getElementById('tabNav');
+
+      // Safe text helpers
+      function safeText(val, fallback) {
+        return (val !== undefined && val !== null && val !== '') ? val : fallback;
+      }
+
+      // Product Data (same as dashboard.html)
+      var productData = {
+        "Organic Almond Milk V2": {
+          score: 92,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23e0e7ff' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='11' font-weight='bold' fill='%234f46e5' text-anchor='middle' dominant-baseline='middle'%3EALMOND%3C/text%3E%3C/svg%3E",
+          risk: 1,
+          visibility: 0,
+          status: "Expert Reviewed",
+          description: "Detailed analysis of labeling, claims, and regulatory alignment for the North American market launch.",
+          missing: 2,
+          format: 1
+        },
+        "Masala Chai Concentrate": {
+          score: 78,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23fde68a' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='10' font-weight='bold' fill='%23b45309' text-anchor='middle' dominant-baseline='middle'%3ECHAI%3C/text%3E%3C/svg%3E",
+          risk: 3,
+          visibility: 2,
+          status: "Review Required",
+          description: "Analysis of chai concentrate labeling for domestic market compliance.",
+          missing: 1,
+          format: 0
+        },
+        "Himalayan Sea Salt Chips": {
+          score: 45,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23fef3c7' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%2392400e' text-anchor='middle' dominant-baseline='middle'%3ECHIPS%3C/text%3E%3C/svg%3E",
+          risk: 8,
+          visibility: 4,
+          status: "Review Required",
+          description: "Compliance analysis for snack product labeling in the Indian market.",
+          missing: 3,
+          format: 2
+        },
+        "Probiotic Greek Yogurt": {
+          score: 0,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23fce7f3' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%23be185d' text-anchor='middle' dominant-baseline='middle'%3EYOGURT%3C/text%3E%3C/svg%3E",
+          risk: 0,
+          visibility: 0,
+          status: "Draft",
+          description: "Initial compliance review for dairy product.",
+          missing: 0,
+          format: 0
+        },
+        "Green Tea Extract Capsules": {
+          score: 95,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23d1fae5' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%23059669' text-anchor='middle' dominant-baseline='middle'%3EGTE%3C/text%3E%3C/svg%3E",
+          risk: 0,
+          visibility: 0,
+          status: "Approved",
+          description: "Dietary supplement compliance analysis.",
+          missing: 0,
+          format: 0
+        },
+        "Oat Milk - Vanilla": {
+          score: 94,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23ffedd5' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='11' font-weight='bold' fill='%23c2410c' text-anchor='middle' dominant-baseline='middle'%3EOAT%3C/text%3E%3C/svg%3E",
+          risk: 0,
+          visibility: 0,
+          status: "Approved",
+          description: "Plant-based milk alternative compliance review.",
+          missing: 0,
+          format: 0
+        },
+        "Coconut Water": {
+          score: 58,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23d1fae5' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%23059669' text-anchor='middle' dominant-baseline='middle'%3ECWATER%3C/text%3E%3C/svg%3E",
+          risk: 4,
+          visibility: 1,
+          status: "Draft",
+          description: "Coconut water product compliance review.",
+          missing: 1,
+          format: 1
+        },
+        "Organic Protein Bar": {
+          score: 65,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23e9d5ff' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='10' font-weight='bold' fill='%237c3aed' text-anchor='middle' dominant-baseline='middle'%3EBAR%3C/text%3E%3C/svg%3E",
+          risk: 3,
+          visibility: 1,
+          status: "Review Required",
+          description: "Protein bar compliance analysis for sports nutrition products.",
+          missing: 1,
+          format: 0
+        },
+        "Quinoa Pasta - Whole Grain": {
+          score: 72,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23fef3c7' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%2392400e' text-anchor='middle' dominant-baseline='middle'%3EPASTA%3C/text%3E%3C/svg%3E",
+          risk: 2,
+          visibility: 1,
+          status: "Approved",
+          description: "Whole grain pasta compliance review for healthy eating category.",
+          missing: 0,
+          format: 0
+        },
+        "Avocado Oil Spray": {
+          score: 88,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23dcfce7' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%2315803d' text-anchor='middle' dominant-baseline='middle'%3EOIL%3C/text%3E%3C/svg%3E",
+          risk: 1,
+          visibility: 0,
+          status: "Approved",
+          description: "Cooking oil spray product compliance analysis.",
+          missing: 0,
+          format: 0
+        },
+        "Energy Drink - Tropical": {
+          score: 55,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23fee2e2' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='9' font-weight='bold' fill='%23dc2626' text-anchor='middle' dominant-baseline='middle'%3EENERGY%3C/text%3E%3C/svg%3E",
+          risk: 6,
+          visibility: 3,
+          status: "Review Required",
+          description: "Energy drink labeling compliance for functional beverages.",
+          missing: 2,
+          format: 1
+        },
+        "Protein Powder - Unflavored": {
+          score: 81,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23fee2e2' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='8' font-weight='bold' fill='%23dc2626' text-anchor='middle' dominant-baseline='middle'%3EPOWDER%3C/text%3E%3C/svg%3E",
+          risk: 2,
+          visibility: 1,
+          status: "Approved",
+          description: "Dietary supplement powder compliance review.",
+          missing: 0,
+          format: 0
+        }
+      };
+
+      // Helper Functions
+      function showLoading(text, subtext) {
+        text = safeText(text, 'Processing...');
+        subtext = safeText(subtext, 'Please wait.');
+        if (loadingText) loadingText.textContent = text;
+        if (loadingSubtext) loadingSubtext.textContent = subtext;
+        if (loadingOverlay) loadingOverlay.classList.add('active');
+      }
+
+      function hideLoading() {
+        if (loadingOverlay) loadingOverlay.classList.remove('active');
+      }
+
+      function showToast(type, title, message) {
+        type = safeText(type, 'info');
+        title = safeText(title, 'Notification');
+        message = safeText(message, '');
+        
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        var icons = {
+          success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+          info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+        };
+        var icon = icons[type] || icons.info;
+        toast.innerHTML = '<div class="toast-icon">' + icon + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        if (toastContainer) {
+          toastContainer.appendChild(toast);
+          setTimeout(function() {
+            toast.classList.add('hiding');
+            setTimeout(function() { toast.remove(); }, 300);
+          }, 4000);
+        }
+      }
+
+      function findProductData(searchTerm) {
+        if (!searchTerm) return null;
+        searchTerm = searchTerm.toLowerCase().trim();
+        for (var key in productData) {
+          var keyLower = key.toLowerCase();
+          if (keyLower === searchTerm) return { key: key, data: productData[key] };
+          if (keyLower.includes(searchTerm)) return { key: key, data: productData[key] };
+          if (searchTerm.includes(keyLower)) return { key: key, data: productData[key] };
+        }
+        return null;
+      }
+
+      function updateProductDisplay(productName, data) {
+        data = data || {};
+
+        var nameEl = document.getElementById('productName');
+        if (nameEl) nameEl.textContent = safeText(productName, 'Unknown Product');
+
+        var breadcrumbEl = document.getElementById('breadcrumbProduct');
+        if (breadcrumbEl) breadcrumbEl.textContent = safeText(productName, 'Unknown Product');
+
+        var extNameEl = document.getElementById('extProductName');
+        if (extNameEl) extNameEl.textContent = safeText(productName, 'Unknown Product');
+
+        var imgEl = document.getElementById('productImage');
+        if (imgEl && data.image) {
+          imgEl.src = data.image;
+        }
+
+        var labelImgEl = document.getElementById('labelImage');
+        if (labelImgEl && data.image) {
+          var labelSvg = data.image.replace(/width='(\d+)' height='(\d+)'/, "width='400' height='300'");
+          labelImgEl.src = labelSvg;
+        }
+
+        var score = data.score || 0;
+        var scoreEl = document.getElementById('complianceScore');
+        if (scoreEl) scoreEl.textContent = score;
+
+        var donutRing = document.getElementById('donutRing');
+        if (donutRing) {
+          var circumference = 2 * Math.PI * 46;
+          var offset = circumference - (score / 100) * circumference;
+          donutRing.style.strokeDasharray = circumference;
+          donutRing.style.strokeDashoffset = offset;
+
+          donutRing.classList.remove('text-blue-600', 'text-green-600', 'text-yellow-600', 'text-orange-600', 'text-red-600');
+          if (score >= 80) donutRing.classList.add('text-green-600');
+          else if (score >= 60) donutRing.classList.add('text-yellow-600');
+          else if (score >= 40) donutRing.classList.add('text-orange-600');
+          else donutRing.classList.add('text-red-600');
+        }
+
+        var scoreMsgEl = document.getElementById('scoreMessage');
+        if (scoreMsgEl) {
+          var msg = 'Score pending';
+          if (score >= 80) msg = 'High confidence for market entry';
+          else if (score >= 60) msg = 'Review recommended before launch';
+          else if (score >= 40) msg = 'Critical issues need resolution';
+          else if (score > 0) msg = 'Significant compliance gaps';
+          scoreMsgEl.textContent = msg;
+        }
+
+        var riskEl = document.getElementById('riskCount');
+        if (riskEl) riskEl.textContent = safeText(data.risk, 0);
+
+        var visibilityEl = document.getElementById('visibilityCount');
+        if (visibilityEl) visibilityEl.textContent = safeText(data.visibility, 0);
+
+        var statusEl = document.getElementById('productStatus');
+        if (statusEl) statusEl.textContent = safeText(data.status, 'Unknown');
+
+        var descEl = document.getElementById('productDescription');
+        if (descEl) descEl.textContent = safeText(data.description, '');
+
+        var missingEl = document.getElementById('missingCount');
+        if (missingEl) missingEl.textContent = safeText(data.missing, 0);
+
+        var formatEl = document.getElementById('formatCount');
+        if (formatEl) formatEl.textContent = safeText(data.format, 0);
+
+        document.title = safeText(productName, 'SKU Workspace') + ' | Compliance OS';
+      }
+
+      // Tab Functions
+      function switchTab(tabName) {
+        var tabBtns = document.querySelectorAll('.tab-btn');
+        var tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(function(btn) {
+          if (btn.dataset.tab === tabName) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        tabPanels.forEach(function(panel) {
+          if (panel.id === 'tab-' + tabName) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+
+        var url = new URL(window.location);
+        url.searchParams.set('tab', tabName);
+        window.history.replaceState({}, '', url);
+      }
+
+      // Event Listeners
+      if (newAuditBtn) {
+        newAuditBtn.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.add('active');
+        });
+      }
+
+      if (closeModal) {
+        closeModal.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.remove('active');
+        });
+      }
+
+      if (cancelModal) {
+        cancelModal.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.remove('active');
+        });
+      }
+
+      if (newAuditModal) {
+        newAuditModal.addEventListener('click', function(e) {
+          if (e.target === newAuditModal) newAuditModal.classList.remove('active');
+        });
+      }
+
+      if (createAudit) {
+        createAudit.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.remove('active');
+          showLoading('Creating Audit...', 'Setting up new compliance workspace.');
+          setTimeout(function() {
+            hideLoading();
+            showToast('success', 'Audit Created', 'New audit workspace is ready.');
+            setTimeout(function() { window.location.href = 'upload.html'; }, 800);
+          }, 1500);
+        });
+      }
+
+      if (notificationBtn) {
+        notificationBtn.addEventListener('click', function() {
+          showToast('warning', 'New Alert', 'Regulatory update detected for FSSAI labeling rules.');
+        });
+      }
+
+      if (tabNav) {
+        tabNav.addEventListener('click', function(e) {
+          var btn = e.target.closest('.tab-btn');
+          if (btn && btn.dataset.tab) {
+            switchTab(btn.dataset.tab);
+          }
+        });
+      }
+
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', function() {
+        var params = new URLSearchParams(window.location.search);
+        var productName = params.get('name') || params.get('product');
+        var tabName = params.get('tab') || 'overview';
+
+        if (!productName) {
+          productName = 'Organic Almond Milk V2';
+        } else {
+          productName = decodeURIComponent(productName.replace(/\+/g, ' ')).trim();
+        }
+
+        var match = findProductData(productName);
+
+        if (match) {
+          updateProductDisplay(match.key, match.data);
+        } else {
+          var fallbackData = {
+            score: 50,
+            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect fill='%23f3f4f6' width='72' height='72'/%3E%3Ctext x='36' y='40' font-family='system-ui' font-size='10' font-weight='bold' fill='%236b7280' text-anchor='middle' dominant-baseline='middle'%3EPRODUCT%3C/text%3E%3C/svg%3E",
+            risk: 2,
+            visibility: 1,
+            status: 'Unknown',
+            description: 'Product data not found.',
+            missing: 0,
+            format: 0
+          };
+          updateProductDisplay(productName, fallbackData);
+        }
+
+        switchTab(tabName);
+      });
+    })();
+  </script>
+
+  <style>
+    .tab-btn {
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b7280;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      margin-bottom: -1px;
+    }
+    .tab-btn:hover {
+      color: #374151;
+    }
+    .tab-btn.active {
+      color: #175CD3;
+      font-weight: 600;
+      border-bottom-color: #175CD3;
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    .border-l-3 {
+      border-left-width: 3px;
+    }
+  </style>
+</body>
+</html>
