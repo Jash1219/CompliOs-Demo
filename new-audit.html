@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compliance OS - Start a new product compliance audit.">
+  <title>New Audit | Compliance OS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
+      <span class="font-bold text-sm tracking-wide">Compliance OS</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Cancel</a>
+    </div>
+  </nav>
+
+  <!-- Progress Steps -->
+  <div class="bg-white border-b border-gray-200">
+    <div class="max-w-3xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3 step active" data-step="1">
+          <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">1</div>
+          <span class="text-sm font-semibold text-blue-600">Upload Label</span>
+        </div>
+        <div class="flex-1 h-px bg-gray-200 mx-4"></div>
+        <div class="flex items-center gap-3 step" data-step="2">
+          <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-bold">2</div>
+          <span class="text-sm font-medium text-gray-400">Product Details</span>
+        </div>
+        <div class="flex-1 h-px bg-gray-200 mx-4"></div>
+        <div class="flex items-center gap-3 step" data-step="3">
+          <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-bold">3</div>
+          <span class="text-sm font-medium text-gray-400">Review & Start</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 py-8">
+    
+    <!-- Step 1: Upload Label -->
+    <div id="step1" class="step-content">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Upload Product Label</h1>
+      <p class="text-gray-500 mb-8">Upload an image of your product label for AI-powered compliance analysis.</p>
+      
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+        <div id="uploadZone" class="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-blue-400 hover:bg-blue-50/50 transition-all cursor-pointer">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <p class="text-gray-900 font-semibold mb-1">Click to upload or drag and drop</p>
+          <p class="text-gray-500 text-sm">PNG, JPG up to 10MB</p>
+          <input type="file" id="labelInput" accept="image/*" class="hidden">
+        </div>
+        
+        <div id="previewZone" class="hidden">
+          <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+            <div class="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+              <img id="previewImage" src="" alt="Preview" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1">
+              <p id="fileName" class="font-semibold text-gray-900 text-sm"></p>
+              <p id="fileSize" class="text-gray-500 text-xs"></p>
+            </div>
+            <button id="removeFile" class="p-2 text-gray-400 hover:text-red-500 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex justify-end">
+        <button id="nextStep1" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200 btn-interactive flex items-center gap-2" disabled>
+          Continue
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2: Product Details -->
+    <div id="step2" class="step-content hidden">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Product Details</h1>
+      <p class="text-gray-500 mb-8">Enter basic product information for the compliance record.</p>
+      
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6 space-y-6">
+        <div>
+          <label class="block text-sm font-semibold text-gray-900 mb-2">Product Name *</label>
+          <input type="text" id="productName" placeholder="e.g., Organic Almond Milk" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-900 mb-2">Brand</label>
+          <input type="text" id="brandName" placeholder="e.g., Nature's Best" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+        
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-gray-900 mb-2">Category</label>
+            <select id="category" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none appearance-none bg-white">
+              <option value="">Select category</option>
+              <option value="beverages">Beverages</option>
+              <option value="dairy">Dairy & Alternatives</option>
+              <option value="snacks">Snacks</option>
+              <option value="bakery">Bakery</option>
+              <option value="supplements">Supplements</option>
+              <option value="oils">Cooking Oils</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-900 mb-2">Market</label>
+            <select id="market" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none appearance-none bg-white">
+              <option value="india">India (FSSAI)</option>
+              <option value="global">Global</option>
+            </select>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-900 mb-2">SKU / Product Code</label>
+          <input type="text" id="skuCode" placeholder="e.g., SKU-ALM-2024-01" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+      </div>
+      
+      <div class="flex justify-between">
+        <button id="backStep2" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl text-sm border border-gray-200 transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back
+        </button>
+        <button id="nextStep2" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200 btn-interactive flex items-center gap-2">
+          Continue
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Review & Start -->
+    <div id="step3" class="step-content hidden">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Review & Start Analysis</h1>
+      <p class="text-gray-500 mb-8">Review your details and start the AI-powered compliance analysis.</p>
+      
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+        <h3 class="font-semibold text-gray-900 mb-4">Audit Summary</h3>
+        
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+              <img id="summaryImage" src="" alt="Label" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p id="summaryName" class="font-semibold text-gray-900">-</p>
+              <p id="summaryBrand" class="text-gray-500 text-sm">-</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4">
+            <div class="p-4 bg-gray-50 rounded-xl text-center">
+              <p class="text-2xl font-bold text-gray-900" id="summaryCategory">-</p>
+              <p class="text-xs text-gray-500">Category</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl text-center">
+              <p class="text-2xl font-bold text-gray-900" id="summaryMarket">-</p>
+              <p class="text-xs text-gray-500">Market</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl text-center">
+              <p class="text-2xl font-bold text-gray-900" id="summarySku">-</p>
+              <p class="text-xs text-gray-500">SKU Code</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <p class="font-semibold text-blue-900 text-sm">What happens next?</p>
+            <p class="text-blue-700 text-sm mt-1">Our AI will analyze your label against FSSAI Schedule IX, Claims Regulations, and Legal Metrology Rules. This typically takes 30-60 seconds.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex justify-between">
+        <button id="backStep3" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl text-sm border border-gray-200 transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back
+        </button>
+        <button id="startAnalysis" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200 btn-interactive flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          Start Analysis
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="analysisLoading" class="step-content hidden">
+      <div class="bg-white rounded-2xl border border-gray-200 p-12 text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-blue-600 animate-spin" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Analyzing Label</h2>
+        <p class="text-gray-500 mb-6" id="analysisStatus">Initializing AI compliance engine...</p>
+        <div class="w-64 bg-gray-200 rounded-full h-2 mx-auto overflow-hidden">
+          <div id="analysisProgress" class="bg-blue-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    (function() {
+      'use strict';
+      
+      var currentStep = 1;
+      var formData = {
+        image: null,
+        name: '',
+        brand: '',
+        category: '',
+        market: 'india',
+        sku: ''
+      };
+      
+      // Elements
+      var uploadZone = document.getElementById('uploadZone');
+      var labelInput = document.getElementById('labelInput');
+      var previewZone = document.getElementById('previewZone');
+      var previewImage = document.getElementById('previewImage');
+      var fileName = document.getElementById('fileName');
+      var fileSize = document.getElementById('fileSize');
+      var removeFile = document.getElementById('removeFile');
+      var nextStep1 = document.getElementById('nextStep1');
+      var nextStep2 = document.getElementById('nextStep2');
+      var backStep2 = document.getElementById('backStep2');
+      var backStep3 = document.getElementById('backStep3');
+      var startAnalysis = document.getElementById('startAnalysis');
+      var toastContainer = document.getElementById('toastContainer');
+      
+      // Safe text helper
+      function safeText(val, fallback) {
+        return (val !== undefined && val !== null && val !== '') ? val : fallback;
+      }
+      
+      // Toast notification
+      function showToast(type, title, message) {
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        var icons = {
+          success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+        };
+        toast.innerHTML = '<div class="toast-icon">' + (icons[type] || icons.info) + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        toastContainer.appendChild(toast);
+        setTimeout(function() {
+          toast.classList.add('hiding');
+          setTimeout(function() { toast.remove(); }, 300);
+        }, 4000);
+      }
+      
+      // Update step indicators
+      function updateSteps(step) {
+        var steps = document.querySelectorAll('.step');
+        steps.forEach(function(s) {
+          var stepNum = parseInt(s.dataset.step);
+          var circle = s.querySelector('div:first-child');
+          var text = s.querySelector('span');
+          
+          if (stepNum < step) {
+            circle.className = 'w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold';
+            circle.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+            text.className = 'text-sm font-semibold text-green-600';
+          } else if (stepNum === step) {
+            circle.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
+            circle.textContent = stepNum;
+            text.className = 'text-sm font-semibold text-blue-600';
+          } else {
+            circle.className = 'w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-bold';
+            circle.textContent = stepNum;
+            text.className = 'text-sm font-medium text-gray-400';
+          }
+        });
+        
+        // Show/hide content
+        document.querySelectorAll('.step-content').forEach(function(c, i) {
+          c.classList.toggle('hidden', (i + 1) !== step);
+        });
+      }
+      
+      // Upload handlers
+      uploadZone.addEventListener('click', function() {
+        labelInput.click();
+      });
+      
+      labelInput.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        if (file) {
+          formData.image = file;
+          var reader = new FileReader();
+          reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            fileName.textContent = file.name;
+            fileSize.textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+            uploadZone.classList.add('hidden');
+            previewZone.classList.remove('hidden');
+            nextStep1.disabled = false;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+      
+      removeFile.addEventListener('click', function() {
+        formData.image = null;
+        labelInput.value = '';
+        previewImage.src = '';
+        uploadZone.classList.remove('hidden');
+        previewZone.classList.add('hidden');
+        nextStep1.disabled = true;
+      });
+      
+      // Navigation handlers
+      nextStep1.addEventListener('click', function() {
+        if (formData.image) {
+          currentStep = 2;
+          updateSteps(currentStep);
+        }
+      });
+      
+      backStep2.addEventListener('click', function() {
+        currentStep = 1;
+        updateSteps(currentStep);
+      });
+      
+      nextStep2.addEventListener('click', function() {
+        formData.name = document.getElementById('productName').value.trim();
+        formData.brand = document.getElementById('brandName').value.trim();
+        formData.category = document.getElementById('category').value;
+        formData.market = document.getElementById('market').value;
+        formData.sku = document.getElementById('skuCode').value.trim();
+        
+        if (!formData.name) {
+          showToast('error', 'Required Field', 'Please enter a product name.');
+          return;
+        }
+        
+        // Update summary
+        document.getElementById('summaryImage').src = previewImage.src;
+        document.getElementById('summaryName').textContent = formData.name;
+        document.getElementById('summaryBrand').textContent = formData.brand || 'No brand';
+        document.getElementById('summaryCategory').textContent = formData.category || '-';
+        document.getElementById('summaryMarket').textContent = formData.market === 'india' ? 'India' : 'Global';
+        document.getElementById('summarySku').textContent = formData.sku || '-';
+        
+        currentStep = 3;
+        updateSteps(currentStep);
+      });
+      
+      backStep3.addEventListener('click', function() {
+        currentStep = 2;
+        updateSteps(currentStep);
+      });
+      
+      // Start analysis
+      startAnalysis.addEventListener('click', function() {
+        currentStep = 4;
+        updateSteps(3);
+        document.getElementById('step3').classList.add('hidden');
+        document.getElementById('analysisLoading').classList.remove('hidden');
+        
+        var statuses = [
+          'Initializing AI compliance engine...',
+          'Scanning label image...',
+          'Detecting text elements...',
+          'Analyzing FSSAI requirements...',
+          'Checking claims regulations...',
+          'Validating Legal Metrology Rules...',
+          'Generating compliance report...'
+        ];
+        
+        var progress = document.getElementById('analysisProgress');
+        var statusEl = document.getElementById('analysisStatus');
+        var i = 0;
+        
+        var interval = setInterval(function() {
+          if (i < statuses.length) {
+            statusEl.textContent = statuses[i];
+            progress.style.width = ((i + 1) / statuses.length * 100) + '%';
+            i++;
+          }
+        }, 700);
+        
+        setTimeout(function() {
+          clearInterval(interval);
+          progress.style.width = '100%';
+          showToast('success', 'Analysis Complete', 'Redirecting to compliance report...');
+          setTimeout(function() {
+            var productId = formData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            window.location.href = 'sku.html?id=' + productId + '&name=' + encodeURIComponent(formData.name);
+          }, 1500);
+        }, 5000);
+      });
+    })();
+  </script>
+</body>
+</html>
