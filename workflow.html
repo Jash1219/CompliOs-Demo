@@ -1,1 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compliance OS - Visual workflow management for product compliance.">
+  <title>Workflow | Compliance OS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-screen flex flex-col overflow-hidden bg-[#F9FAFB]">
 
+  <!-- Navigation -->
+  <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
+      <span class="font-bold text-sm tracking-wide">Compliance OS</span>
+    </div>
+    <div class="flex gap-1">
+      <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
+      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
+      <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Projects</a>
+      <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Workflow</a>
+      <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Review</a>
+    </div>
+  </nav>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-[260px] bg-white border-r border-gray-200 flex flex-col shrink-0 z-20">
+      <div class="px-8 pt-8 pb-10">
+        <h2 class="font-bold text-[17px] text-gray-900 mb-1 leading-tight">Workflow</h2>
+        <p class="text-[12px] text-gray-500 font-medium">Visual compliance pipeline</p>
+      </div>
+
+      <nav class="flex flex-col flex-1">
+        <a href="dashboard.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Dashboard
+        </a>
+        <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2H2V5zm0 4h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9zm2 2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 001-1v-1a1 1 0 00-1-1H4z" clip-rule="evenodd"/></svg> Projects
+        </a>
+        <a href="review.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Review Queue
+        </a>
+        <a href="workflow.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-semibold text-blue-600 bg-blue-50 border-l-3 border-blue-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> Workflow
+        </a>
+      </nav>
+
+      <div class="p-6">
+        <button id="newAuditBtn" class="w-full py-3 bg-[#175CD3] hover:bg-blue-700 text-white font-semibold rounded-lg text-[14px] flex items-center justify-center gap-2 transition-colors shadow-md btn-interactive">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          New Audit
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+      <!-- Header -->
+      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-white border-b border-gray-100">
+        <div class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
+          <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
+          <span class="text-gray-300">›</span>
+          <span class="text-gray-900 font-bold">Workflow</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="text" id="searchInput" placeholder="Search products..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
+          </div>
+          <button id="addCardBtn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Add Product
+          </button>
+          <div class="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Kanban Board -->
+      <div class="flex-1 overflow-y-auto p-8">
+        <div class="kanban-board">
+          <!-- Draft Column -->
+          <div class="kanban-column draft">
+            <div class="kanban-column-header">
+              <div class="kanban-column-title">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                Draft
+              </div>
+              <span class="kanban-column-count">2</span>
+            </div>
+            <div class="kanban-cards">
+              <div class="kanban-card" data-product="Probiotic Greek Yogurt" data-score="0">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Probiotic Greek Yogurt</span>
+                  <span class="kanban-card-score low">0%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-DY-9021</span>
+                  <span>•</span>
+                  <span>Dairy</span>
+                </div>
+              </div>
+              <div class="kanban-card" data-product="Coconut Water - No Sugar Added" data-score="58">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Coconut Water</span>
+                  <span class="kanban-card-score medium">58%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-COC-033</span>
+                  <span>•</span>
+                  <span>Beverages</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- In Review Column -->
+          <div class="kanban-column in-review">
+            <div class="kanban-column-header">
+              <div class="kanban-column-title">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                In Review
+              </div>
+              <span class="kanban-column-count">3</span>
+            </div>
+            <div class="kanban-cards">
+              <div class="kanban-card" data-product="Himalayan Sea Salt Chips" data-score="45">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Himalayan Sea Salt Chips</span>
+                  <span class="kanban-card-score low">45%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-CHP-042</span>
+                  <span>•</span>
+                  <span>Snacks</span>
+                </div>
+              </div>
+              <div class="kanban-card" data-product="Masala Chai Concentrate" data-score="68">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Masala Chai Concentrate</span>
+                  <span class="kanban-card-score medium">68%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-CHAI-017</span>
+                  <span>•</span>
+                  <span>Beverages</span>
+                </div>
+              </div>
+              <div class="kanban-card" data-product="Organic Protein Bar - Chocolate" data-score="72">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Organic Protein Bar</span>
+                  <span class="kanban-card-score medium">72%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-PRO-089</span>
+                  <span>•</span>
+                  <span>Snacks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Approved Column -->
+          <div class="kanban-column approved">
+            <div class="kanban-column-header">
+              <div class="kanban-column-title">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Approved
+              </div>
+              <span class="kanban-column-count">3</span>
+            </div>
+            <div class="kanban-cards">
+              <div class="kanban-card" data-product="Organic Almond Milk V2" data-score="98">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Organic Almond Milk V2</span>
+                  <span class="kanban-card-score high">98%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-ALM-2024-01</span>
+                  <span>•</span>
+                  <span>Beverages</span>
+                </div>
+              </div>
+              <div class="kanban-card" data-product="Green Tea Extract Capsules" data-score="95">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Green Tea Extract Capsules</span>
+                  <span class="kanban-card-score high">95%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-GTE-012</span>
+                  <span>•</span>
+                  <span>Supplements</span>
+                </div>
+              </div>
+              <div class="kanban-card" data-product="Oat Milk - Vanilla" data-score="94">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="kanban-card-title">Oat Milk - Vanilla</span>
+                  <span class="kanban-card-score high">94%</span>
+                </div>
+                <div class="kanban-card-meta">
+                  <span>SKU-OAT-041</span>
+                  <span>•</span>
+                  <span>Dairy Alternatives</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Product Modal -->
+  <div id="addProductModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Product to Workflow</h3>
+        <button class="modal-close" id="closeProductModal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Product Name <span class="text-red-500">*</span></label>
+          <input type="text" class="form-input" id="newProductName" placeholder="e.g., Mango Lassi">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Initial Status <span class="text-red-500">*</span></label>
+          <select class="form-select" id="newProductStatus">
+            <option value="draft">Draft</option>
+            <option value="in-review">In Review</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-select" id="newProductCategory">
+            <option value="Beverages">Beverages</option>
+            <option value="Dairy">Dairy & Alternatives</option>
+            <option value="Snacks">Snacks & Confectionery</option>
+            <option value="Bakery">Bakery & Cereals</option>
+            <option value="Supplements">Food Supplements</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors" id="cancelProductModal">Cancel</button>
+        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="addProduct">Add to Draft</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner loading-spinner-dark" style="width: 40px; height: 40px; border-width: 3px;"></div>
+    <p class="loading-text" id="loadingText">Processing...</p>
+    <p class="loading-subtext" id="loadingSubtext">Please wait.</p>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    const addProductModal = document.getElementById('addProductModal');
+    const addProductBtn = document.getElementById('addProductBtn');
+    const closeProductModal = document.getElementById('closeProductModal');
+    const cancelProductModal = document.getElementById('cancelProductModal');
+    const addProduct = document.getElementById('addProduct');
+    const newAuditBtn = document.getElementById('newAuditBtn');
+    const searchInput = document.getElementById('searchInput');
+    const kanbanCards = document.querySelectorAll('.kanban-card');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const toastContainer = document.getElementById('toastContainer');
+
+    function showLoading(text, subtext) {
+      document.getElementById('loadingText').textContent = text;
+      document.getElementById('loadingSubtext').textContent = subtext;
+      loadingOverlay.classList.add('active');
+    }
+
+    function hideLoading() {
+      loadingOverlay.classList.remove('active');
+    }
+
+    function showToast(type, title, message) {
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = {
+        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+        warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
+      };
+      toast.innerHTML = `<div class="toast-icon">${icons[type]}</div><div class="toast-content"><p class="toast-title">${title}</p><p class="toast-message">${message}</p></div>`;
+      toastContainer.appendChild(toast);
+      setTimeout(() => { toast.classList.add('hiding'); setTimeout(() => toast.remove(), 300); }, 4000);
+    }
+
+    // Modal handlers
+    addProductBtn.addEventListener('click', () => addProductModal.classList.add('active'));
+    closeProductModal.addEventListener('click', () => addProductModal.classList.remove('active'));
+    cancelProductModal.addEventListener('click', () => addProductModal.classList.remove('active'));
+    addProductModal.addEventListener('click', (e) => { if (e.target === addProductModal) addProductModal.classList.remove('active'); });
+
+    addProduct.addEventListener('click', () => {
+      const name = document.getElementById('newProductName').value.trim();
+      const status = document.getElementById('newProductStatus').value;
+      
+      if (!name) {
+        showToast('error', 'Name Required', 'Please enter a product name.');
+        return;
+      }
+      
+      addProductModal.classList.remove('active');
+      showLoading('Adding Product...', 'Creating workflow card.');
+      
+      setTimeout(() => {
+        hideLoading();
+        document.getElementById('newProductName').value = '';
+        
+        const statusText = status === 'draft' ? 'Draft' : 'In Review';
+        showToast('success', 'Product Added', `"${name}" has been added to ${statusText}.`);
+      }, 1200);
+    });
+
+    // New Audit
+    newAuditBtn.addEventListener('click', () => {
+      showLoading('Preparing...', 'Setting up new audit workspace.');
+      setTimeout(() => {
+        hideLoading();
+        window.location.href = 'upload.html';
+      }, 800);
+    });
+
+    // Search
+    searchInput.addEventListener('input', () => {
+      const search = searchInput.value.toLowerCase();
+      kanbanCards.forEach(card => {
+        const name = card.dataset.product.toLowerCase();
+        card.style.display = name.includes(search) ? '' : 'none';
+      });
+    });
+
+    // Kanban card click
+    kanbanCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const name = card.dataset.product;
+        const score = parseInt(card.dataset.score);
+        const column = card.closest('.kanban-column');
+        const columnName = column.classList.contains('draft') ? 'Draft' : 
+                          column.classList.contains('in-review') ? 'In Review' : 'Approved';
+        
+        showLoading('Opening Product...', 'Loading compliance details.');
+        
+        setTimeout(() => {
+          hideLoading();
+          
+          if (columnName === 'Approved') {
+            showToast('success', 'Opening Report', `Viewing ${name} compliance report.`);
+          } else if (columnName === 'In Review') {
+            showToast('warning', 'Review Mode', `${name} is ready for your review.`);
+          } else {
+            showToast('info', 'Draft Mode', `${name} is being prepared. Score: ${score}%`);
+          }
+          
+          setTimeout(() => window.location.href = 'dashboard.html', 800);
+        }, 1000);
+      });
+
+      // Hover effect
+      card.addEventListener('mouseenter', () => {
+        card.style.cursor = 'pointer';
+      });
+    });
+  </script>
+</body>
+</html>
