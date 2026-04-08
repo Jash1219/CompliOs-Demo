@@ -18,13 +18,13 @@
     </div>
     <div class="flex items-center gap-2">
       <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-blue-600 bg-blue-50">Home</a>
-      <a href="dashboard.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Dashboard</a>
       <a href="features.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Projects</a>
       <a href="workflow.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Workflow</a>
       <a href="review.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Review</a>
+      <a href="sku.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-all">Workspace</a>
     </div>
     <div class="flex items-center gap-3">
-      <a href="upload.html" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-all shadow-lg shadow-blue-200/50 btn-interactive flex items-center gap-2">
+      <a href="new-audit.html" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-all shadow-lg shadow-blue-200/50 btn-interactive flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         Start New Audit
       </a>
@@ -49,12 +49,12 @@
             Upload your product label and get instant AI-powered analysis against FSSAI labeling regulations and Legal Metrology (Packaged Commodities) Rules. Ensure your FMCG products are market-ready.
           </p>
           <div class="flex gap-4 mt-10">
-            <a href="upload.html" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition-all shadow-xl shadow-blue-200/50 btn-interactive">
+            <a href="new-audit.html" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition-all shadow-xl shadow-blue-200/50 btn-interactive">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
               New Audit
             </a>
-            <a href="dashboard.html" class="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 flex items-center gap-2 transition-all hover:border-gray-300 hover:shadow-lg">
-              View Demo
+            <a href="features.html" class="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 flex items-center gap-2 transition-all hover:border-gray-300 hover:shadow-lg">
+              View Projects
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
@@ -222,7 +222,7 @@
       <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to ensure compliance?</h2>
       <p class="text-gray-500 mb-10 max-w-xl mx-auto text-base">Start your first audit today and get actionable insights within minutes. Join 500+ companies already using Compliance OS.</p>
       <div class="flex gap-4 justify-center">
-        <a href="upload.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-all shadow-xl shadow-blue-200/50 btn-interactive">
+        <a href="new-audit.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-all shadow-xl shadow-blue-200/50 btn-interactive">
           Start Free Audit
         </a>
         <a href="features.html" class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl text-sm border border-gray-200 transition-all hover:border-gray-300 hover:shadow-lg">
@@ -243,7 +243,6 @@
         <a href="features.html" class="hover:text-white transition-colors">Projects</a>
         <a href="workflow.html" class="hover:text-white transition-colors">Workflow</a>
         <a href="review.html" class="hover:text-white transition-colors">Review</a>
-        <a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a>
       </div>
       <p class="text-sm text-gray-500">© 2024 Compliance OS</p>
     </div>
@@ -253,35 +252,35 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    function showToast(type, title, message) {
-      const container = document.getElementById('toastContainer');
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
-      
-      const icons = {
-        success: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
-        error: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
-        warning: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
-      };
-      
-      toast.innerHTML = `
-        <div class="toast-icon">${icons[type]}</div>
-        <div class="toast-content">
-          <p class="toast-title">${title}</p>
-          <p class="toast-message">${message}</p>
-        </div>
-      `;
-      
-      container.appendChild(toast);
-      
-      setTimeout(() => {
-        toast.classList.add('hiding');
-        setTimeout(() => toast.remove(), 300);
-      }, 4000);
-    }
+    // Global error handler
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.log('[JS Error]', message, 'at line', lineno);
+      return true;
+    };
 
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
+    document.addEventListener('DOMContentLoaded', function() {
+      function showToast(type, title, message) {
+        var container = document.getElementById('toastContainer');
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        
+        var icons = {
+          success: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          warning: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
+        };
+        
+        toast.innerHTML = '<div class="toast-icon">' + (icons[type] || '') + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        
+        if (container) container.appendChild(toast);
+        
+        setTimeout(function() {
+          toast.classList.add('hiding');
+          setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
+        }, 4000);
+      }
+
+      setTimeout(function() {
         showToast('success', 'Welcome to Compliance OS', 'Start by creating a new audit or exploring existing projects.');
       }, 500);
     });
