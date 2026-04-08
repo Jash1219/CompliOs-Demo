@@ -18,10 +18,10 @@
     </div>
     <div class="flex gap-1">
       <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
-      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
       <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Projects</a>
       <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workflow</a>
       <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Review</a>
+      <a href="sku.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workspace</a>
     </div>
   </nav>
 
@@ -34,9 +34,6 @@
       </div>
 
       <nav class="flex flex-col flex-1">
-        <a href="dashboard.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Dashboard
-        </a>
         <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
           <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2H2V5zm0 4h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9zm2 2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 001-1v-1a1 1 0 00-1-1H4z" clip-rule="evenodd"/></svg> Projects
         </a>
@@ -59,7 +56,7 @@
     <!-- Main Content -->
     <main class="flex-1 flex flex-col overflow-hidden">
       <!-- Header -->
-      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-white border-b border-gray-100">
+      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-[#F9FAFB] border-b border-gray-100">
         <div class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
           <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
           <span class="text-gray-300">›</span>
@@ -68,7 +65,7 @@
         <div class="flex items-center gap-4">
           <div class="relative">
             <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="searchInput" placeholder="Search review items..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
+            <input type="text" id="searchInput" placeholder="Search..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
           </div>
           <div class="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center">
             <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
@@ -275,171 +272,187 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    const tabs = document.querySelectorAll('.review-tab');
-    const reviewItems = document.querySelectorAll('.review-item');
-    const emptyState = document.getElementById('emptyState');
-    const searchInput = document.getElementById('searchInput');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const toastContainer = document.getElementById('toastContainer');
-    const newAuditBtn = document.getElementById('newAuditBtn');
-    const pendingCountEl = document.getElementById('pendingCount');
-    const approvedCountEl = document.getElementById('approvedCount');
-    const flaggedCountEl = document.getElementById('flaggedCount');
-
-    let currentTab = 'all';
-
-    const productData = {
-      "Organic Almond Milk V2": { score: 92, risk: 1, visibility: 0, status: "approved" },
-      "Masala Chai Concentrate": { score: 78, risk: 3, visibility: 2, status: "pending" },
-      "Himalayan Sea Salt Chips": { score: 45, risk: 8, visibility: 4, status: "pending" },
-      "Probiotic Greek Yogurt": { score: 0, risk: 0, visibility: 0, status: "draft" },
-      "Green Tea Extract Capsules": { score: 95, risk: 0, visibility: 0, status: "approved" },
-      "Oat Milk - Vanilla": { score: 94, risk: 0, visibility: 0, status: "approved" },
-      "Coconut Water": { score: 58, risk: 4, visibility: 1, status: "pending" },
-      "Organic Protein Bar": { score: 65, risk: 3, visibility: 1, status: "pending" },
-      "Quinoa Pasta - Whole Grain": { score: 72, risk: 2, visibility: 1, status: "approved" },
-      "Avocado Oil Spray": { score: 88, risk: 1, visibility: 0, status: "approved" },
-      "Energy Drink - Tropical": { score: 55, risk: 6, visibility: 3, status: "flagged" },
-      "Protein Powder - Unflavored": { score: 81, risk: 2, visibility: 1, status: "flagged" }
+    // Global error handler
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.log('[JS Error]', message, 'at line', lineno);
+      return true;
     };
 
-    function showLoading(text, subtext) {
-      document.getElementById('loadingText').textContent = text;
-      document.getElementById('loadingSubtext').textContent = subtext;
-      loadingOverlay.classList.add('active');
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.review-tab');
+      const reviewItems = document.querySelectorAll('.review-item');
+      const emptyState = document.getElementById('emptyState');
+      const searchInput = document.getElementById('searchInput');
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      const toastContainer = document.getElementById('toastContainer');
+      const newAuditBtn = document.getElementById('newAuditBtn');
+      const pendingCountEl = document.getElementById('pendingCount');
+      const approvedCountEl = document.getElementById('approvedCount');
+      const flaggedCountEl = document.getElementById('flaggedCount');
 
-    function hideLoading() {
-      loadingOverlay.classList.remove('active');
-    }
+      let currentTab = 'all';
 
-    function showToast(type, title, message) {
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
-      const icons = {
-        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
-        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
-        warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
-        info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+      const productData = {
+        "Organic Almond Milk V2": { score: 92, risk: 1, visibility: 0, status: "approved" },
+        "Masala Chai Concentrate": { score: 78, risk: 3, visibility: 2, status: "pending" },
+        "Himalayan Sea Salt Chips": { score: 45, risk: 8, visibility: 4, status: "pending" },
+        "Probiotic Greek Yogurt": { score: 0, risk: 0, visibility: 0, status: "draft" },
+        "Green Tea Extract Capsules": { score: 95, risk: 0, visibility: 0, status: "approved" },
+        "Oat Milk - Vanilla": { score: 94, risk: 0, visibility: 0, status: "approved" },
+        "Coconut Water": { score: 58, risk: 4, visibility: 1, status: "pending" },
+        "Organic Protein Bar": { score: 65, risk: 3, visibility: 1, status: "pending" },
+        "Quinoa Pasta - Whole Grain": { score: 72, risk: 2, visibility: 1, status: "approved" },
+        "Avocado Oil Spray": { score: 88, risk: 1, visibility: 0, status: "approved" },
+        "Energy Drink - Tropical": { score: 55, risk: 6, visibility: 3, status: "flagged" },
+        "Protein Powder - Unflavored": { score: 81, risk: 2, visibility: 1, status: "flagged" }
       };
-      toast.innerHTML = `<div class="toast-icon">${icons[type] || icons.info}</div><div class="toast-content"><p class="toast-title">${title}</p><p class="toast-message">${message}</p></div>`;
-      toastContainer.appendChild(toast);
-      setTimeout(() => { toast.classList.add('hiding'); setTimeout(() => toast.remove(), 300); }, 4000);
-    }
 
-    function getScoreClass(score) {
-      if (score >= 80) return 'high';
-      if (score >= 60) return 'medium';
-      return 'low';
-    }
+      function showLoading(text, subtext) {
+        var lt = document.getElementById('loadingText');
+        var ls = document.getElementById('loadingSubtext');
+        if (lt) lt.textContent = text;
+        if (ls) ls.textContent = subtext;
+        if (loadingOverlay) loadingOverlay.classList.add('active');
+      }
 
-    function updateReviewItems() {
-      reviewItems.forEach(item => {
-        const productName = item.dataset.product;
-        const data = productData[productName];
-        const scoreEl = item.querySelector('.score-badge');
-        if (data && scoreEl) {
-          scoreEl.textContent = data.score;
-          scoreEl.className = `score-badge ${getScoreClass(data.score)} mr-2`;
-        }
+      function hideLoading() {
+        if (loadingOverlay) loadingOverlay.classList.remove('active');
+      }
+
+      function showToast(type, title, message) {
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        var icons = {
+          success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+          info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+        };
+        toast.innerHTML = '<div class="toast-icon">' + (icons[type] || icons.info) + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        if (toastContainer) toastContainer.appendChild(toast);
+        setTimeout(function() { toast.classList.add('hiding'); setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300); }, 4000);
+      }
+
+      function getScoreClass(score) {
+        if (score >= 80) return 'high';
+        if (score >= 60) return 'medium';
+        return 'low';
+      }
+
+      function updateReviewItems() {
+        reviewItems.forEach(function(item) {
+          var productName = item.dataset.product;
+          var data = productData[productName];
+          var scoreEl = item.querySelector('.score-badge');
+          if (data && scoreEl) {
+            scoreEl.textContent = data.score;
+            scoreEl.className = 'score-badge ' + getScoreClass(data.score) + ' mr-2';
+          }
+        });
+      }
+
+      function updateStats() {
+        var pending = 0, approved = 0, flagged = 0;
+        reviewItems.forEach(function(item) {
+          var productName = item.dataset.product;
+          var data = productData[productName];
+          if (data) {
+            if (data.status === 'pending' || data.status === 'review') pending++;
+            else if (data.status === 'approved') approved++;
+            else if (data.status === 'flagged') flagged++;
+          }
+        });
+        if (pendingCountEl) pendingCountEl.textContent = pending;
+        if (approvedCountEl) approvedCountEl.textContent = approved;
+        if (flaggedCountEl) flaggedCountEl.textContent = flagged;
+      }
+
+      function filterItems() {
+        var search = '';
+        if (searchInput) search = searchInput.value.toLowerCase();
+        var visibleCount = 0;
+
+        reviewItems.forEach(function(item) {
+          var type = item.dataset.type;
+          var titleEl = item.querySelector('.review-item-title');
+          var metaEl = item.querySelector('.review-item-meta');
+          var title = titleEl ? titleEl.textContent.toLowerCase() : '';
+          var meta = metaEl ? metaEl.textContent.toLowerCase() : '';
+          
+          var matchesTab = currentTab === 'all' || type === currentTab;
+          var matchesSearch = title.includes(search) || meta.includes(search);
+          
+          if (matchesTab && matchesSearch) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
+      }
+
+      // Initialize
+      updateReviewItems();
+      updateStats();
+
+      // Tab switching
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          currentTab = tab.dataset.tab;
+          filterItems();
+        });
       });
-    }
 
-    function updateStats() {
-      let pending = 0, approved = 0, flagged = 0;
-      reviewItems.forEach(item => {
-        const productName = item.dataset.product;
-        const data = productData[productName];
-        if (data) {
-          if (data.status === 'pending' || data.status === 'review') pending++;
-          else if (data.status === 'approved') approved++;
-          else if (data.status === 'flagged') flagged++;
-        }
+      // Search
+      if (searchInput) searchInput.addEventListener('input', filterItems);
+
+      // Review item click - pass product data via URL
+      reviewItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          var titleEl = item.querySelector('.review-item-title');
+          var title = titleEl ? titleEl.textContent : 'Product';
+          var type = item.dataset.type;
+          var productId = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+          
+          if (type === 'approved') {
+            showLoading('Opening Report...', 'Loading compliance details.');
+            setTimeout(function() {
+              hideLoading();
+              showToast('success', 'Opening Report', 'Viewing ' + title + ' compliance report.');
+              setTimeout(function() { window.location.href = 'sku.html?product=' + productId + '&name=' + encodeURIComponent(title); }, 500);
+            }, 1000);
+          } else if (type === 'pending') {
+            showLoading('Opening for Review...', 'Loading review workspace.');
+            setTimeout(function() {
+              hideLoading();
+              showToast('warning', 'Review Mode', title + ' is ready for your review.');
+              setTimeout(function() { window.location.href = 'sku.html?product=' + productId + '&name=' + encodeURIComponent(title); }, 500);
+            }, 1000);
+          } else if (type === 'flagged') {
+            showLoading('Investigating...', 'Loading flagged item details.');
+            setTimeout(function() {
+              hideLoading();
+              showToast('error', 'Flagged Item', title + ' requires immediate attention.');
+              setTimeout(function() { window.location.href = 'sku.html?product=' + productId + '&name=' + encodeURIComponent(title); }, 500);
+            }, 1000);
+          }
+        });
       });
-      if (pendingCountEl) pendingCountEl.textContent = pending;
-      if (approvedCountEl) approvedCountEl.textContent = approved;
-      if (flaggedCountEl) flaggedCountEl.textContent = flagged;
-    }
 
-    function filterItems() {
-      const search = searchInput.value.toLowerCase();
-      let visibleCount = 0;
-
-      reviewItems.forEach(item => {
-        const type = item.dataset.type;
-        const title = item.querySelector('.review-item-title').textContent.toLowerCase();
-        const meta = item.querySelector('.review-item-meta').textContent.toLowerCase();
-        
-        const matchesTab = currentTab === 'all' || type === currentTab;
-        const matchesSearch = title.includes(search) || meta.includes(search);
-        
-        if (matchesTab && matchesSearch) {
-          item.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-
-      emptyState.classList.toggle('hidden', visibleCount > 0);
-    }
-
-    // Initialize
-    updateReviewItems();
-    updateStats();
-
-    // Tab switching
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentTab = tab.dataset.tab;
-        filterItems();
-      });
-    });
-
-    // Search
-    searchInput.addEventListener('input', filterItems);
-
-    // Review item click - pass product data via URL
-    reviewItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const title = item.querySelector('.review-item-title').textContent;
-        const type = item.dataset.type;
-        const productId = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-        
-        if (type === 'approved') {
-          showLoading('Opening Report...', 'Loading compliance details.');
-          setTimeout(() => {
+      // New Audit button
+      if (newAuditBtn) {
+        newAuditBtn.addEventListener('click', function() {
+          showLoading('Preparing...', 'Setting up new audit workspace.');
+          setTimeout(function() {
             hideLoading();
-            showToast('success', 'Opening Report', `Viewing ${title} compliance report.`);
-            setTimeout(() => window.location.href = `sku.html?product=${productId}&name=${encodeURIComponent(title)}`, 500);
-          }, 1000);
-        } else if (type === 'pending') {
-          showLoading('Opening for Review...', 'Loading review workspace.');
-          setTimeout(() => {
-            hideLoading();
-            showToast('warning', 'Review Mode', `${title} is ready for your review.`);
-            setTimeout(() => window.location.href = `sku.html?product=${productId}&name=${encodeURIComponent(title)}`, 500);
-          }, 1000);
-        } else if (type === 'flagged') {
-          showLoading('Investigating...', 'Loading flagged item details.');
-          setTimeout(() => {
-            hideLoading();
-            showToast('error', 'Flagged Item', `${title} requires immediate attention.`);
-            setTimeout(() => window.location.href = `sku.html?product=${productId}&name=${encodeURIComponent(title)}`, 500);
-          }, 1000);
-        }
-      });
-    });
-
-    // New Audit button
-    newAuditBtn.addEventListener('click', () => {
-      showLoading('Preparing...', 'Setting up new audit workspace.');
-      setTimeout(() => {
-        hideLoading();
-        window.location.href = 'upload.html';
-      }, 800);
+            window.location.href = 'new-audit.html';
+          }, 800);
+        });
+      }
     });
   </script>
 </body>
