@@ -1,156 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Features | Compliance OS</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root { --blue-primary: #2563EB; --bg-app: #F8FAFC; --text-main: #0F172A; }
-  body { font-family: 'Inter', sans-serif; background-color: var(--bg-app); color: var(--text-main); }
-  .sidebar-link.active { color: var(--blue-primary); background: #EFF6FF; border-left: 3px solid var(--blue-primary); }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CompliOS India — Manage and validate your FMCG product SKU compliance catalogue." />
+  <title>Features | Compliance OS India</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="h-screen flex flex-col overflow-hidden bg-white">
 
+  <!-- ======== NAVBAR ======== -->
   <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
     <div class="flex items-center gap-2">
       <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
-      <span class="font-bold text-sm tracking-wide">Compliance OS</span>
+      <span class="font-bold text-sm tracking-wide">Compliance OS India</span>
     </div>
     <div class="flex gap-1">
-      <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
+      <a href="index.html"     class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
       <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
-      <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Features</a>
+      <a href="features.html"  class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Features</a>
     </div>
   </nav>
 
   <div class="flex flex-1 overflow-hidden">
+
+    <!-- ======== SIDEBAR ======== -->
     <aside class="w-[260px] bg-gray-50 border-r border-gray-200 flex flex-col shrink-0 py-6 z-20">
-      <div class="px-6 mb-8 flex items-center gap-2">
-        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+      <div class="px-6 mb-8 flex items-center gap-3">
+        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
         </div>
         <div>
           <h2 class="font-bold text-[15px] leading-none text-gray-900">Compliance OS</h2>
           <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Intelligent Ledger</p>
         </div>
       </div>
+
       <nav class="flex flex-col gap-1 flex-1">
-        <a href="#" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg> Dashboard
+        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+          </svg>
+          Dashboard
         </a>
-        <a href="features.html" class="sidebar-link active px-6 py-2.5 text-sm font-semibold flex items-center gap-3">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"></path><path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"></path></svg> Projects
+        <a href="features.html" class="sidebar-link active flex items-center gap-3 px-6 py-2.5 text-sm font-semibold">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"/>
+            <path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"/>
+          </svg>
+          Projects
         </a>
-        <a href="#" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> History
+        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          History
+        </a>
+        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          Settings
+        </a>
+        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Help
         </a>
       </nav>
-      <div class="px-6">
-        <a href="index.html" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm">
-          + New Audit
+
+      <div class="px-6 mt-4">
+        <a href="index.html" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          New Audit
         </a>
       </div>
     </aside>
 
-    <main class="flex-1 bg-white flex flex-col relative">
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="flex-1 bg-white flex flex-col relative overflow-hidden">
+
+      <!-- Sub-header breadcrumb -->
       <header class="px-8 py-4 border-b border-gray-100 flex items-center justify-between z-10 bg-white shrink-0">
-        <div class="text-sm font-medium text-gray-500">
-          Projects <span class="text-gray-300 mx-1">›</span> <span class="text-blue-600 font-semibold">SKU Inventory</span>
+        <div class="text-sm font-medium text-gray-500 flex items-center gap-2">
+          <a href="dashboard.html" class="hover:text-gray-900 transition-colors">Projects</a>
+          <span class="text-gray-300">›</span>
+          <span class="text-blue-600 font-semibold">SKU Inventory</span>
         </div>
         <div class="flex items-center gap-4">
           <div class="relative">
-            <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            <input type="text" placeholder="Search global ledger..." class="pl-9 pr-4 py-2 bg-gray-50 border-none rounded-full text-sm focus:ring-2 focus:ring-blue-500 outline-none w-64">
+            <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input type="text" placeholder="Search global ledger…" class="pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600" />
           </div>
+          <button class="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+          </button>
+          <button class="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </button>
+          <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">A</div>
         </div>
       </header>
 
+      <!-- Two-column layout: table + detail panel -->
       <div class="flex flex-1 overflow-hidden">
+
+        <!-- SKU Table area -->
         <div class="flex-1 p-8 overflow-y-auto">
+
+          <!-- Page heading + CTA -->
           <div class="flex justify-between items-start mb-8">
             <div>
-              <h1 class="text-3xl font-bold text-gray-900 mb-2">SKU Management</h1>
-              <p class="text-gray-500">Review and validate product compliance across your catalog.</p>
+              <h1 class="text-3xl font-bold text-gray-900 mb-2 tracking-tight">SKU Management</h1>
+              <p class="text-gray-500 text-sm">Review and validate product compliance across your catalog.</p>
             </div>
-            <button class="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl text-sm flex items-center gap-2 shadow-lg shadow-blue-200">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg> Add New SKU
-            </button>
+            <a href="index.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm flex items-center gap-2 shadow-lg shadow-blue-200 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+              Add New SKU
+            </a>
           </div>
 
-          <div class="flex gap-4 mb-6">
+          <!-- Filters -->
+          <div class="flex gap-3 mb-6 flex-wrap">
             <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 flex items-center gap-3">
               <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Status</span>
-              <select class="bg-transparent text-sm font-semibold text-gray-900 outline-none pr-4 appearance-none cursor-pointer"><option>All Statuses</option></select>
+              <select class="bg-transparent text-sm font-semibold text-gray-900 outline-none appearance-none cursor-pointer pr-2">
+                <option>All Statuses</option>
+                <option>Approved</option>
+                <option>Review Required</option>
+                <option>Draft</option>
+              </select>
             </div>
             <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 flex items-center gap-3">
               <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Score Range</span>
-              <select class="bg-transparent text-sm font-semibold text-gray-900 outline-none pr-4 appearance-none cursor-pointer"><option>80% - 100%</option></select>
+              <select class="bg-transparent text-sm font-semibold text-gray-900 outline-none appearance-none cursor-pointer pr-2">
+                <option>80% – 100%</option>
+                <option>60% – 79%</option>
+                <option>Below 60%</option>
+              </select>
+            </div>
+            <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 flex items-center gap-3">
+              <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Category</span>
+              <select class="bg-transparent text-sm font-semibold text-gray-900 outline-none appearance-none cursor-pointer pr-2">
+                <option>All Categories</option>
+                <option>Beverages</option>
+                <option>Snacks</option>
+                <option>Dairy</option>
+              </select>
             </div>
           </div>
 
+          <!-- Table -->
           <div class="w-full">
+            <!-- Table header -->
             <div class="grid grid-cols-12 gap-4 pb-4 border-b border-gray-200 text-[10px] font-bold text-gray-400 uppercase tracking-wider px-4">
               <div class="col-span-4">Product Name</div>
-              <div class="col-span-3 text-center">Category</div>
-              <div class="col-span-2 text-center">Compliance Score</div>
+              <div class="col-span-2 text-center">Category</div>
+              <div class="col-span-3 text-center">Compliance Score</div>
               <div class="col-span-3 text-right">Status</div>
             </div>
 
-            <div class="flex flex-col gap-2 mt-2">
-              <a href="dashboard.html" class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-gray-50 rounded-xl border border-gray-100 hover:bg-gray-100 transition-colors">
+            <!-- Table rows -->
+            <div class="flex flex-col gap-2 mt-3">
+
+              <!-- Row 1: Approved -->
+              <a href="dashboard.html" class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-blue-50/60 rounded-xl border border-blue-100 hover:bg-blue-50 transition-colors">
                 <div class="col-span-4 flex items-center gap-4">
-                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1"><div class="w-full h-full bg-gray-200 rounded-sm"></div></div>
+                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1 shrink-0">
+                    <div class="w-full h-full bg-gray-200 rounded-sm"></div>
+                  </div>
                   <div>
                     <p class="font-bold text-gray-900 text-sm">Organic Almond Milk V2</p>
                     <p class="text-xs text-gray-500 font-medium">SKU-ALM-2024-01</p>
                   </div>
                 </div>
-                <div class="col-span-3 text-center">
+                <div class="col-span-2 text-center">
                   <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded text-xs font-bold">Beverages</span>
                 </div>
-                <div class="col-span-2 flex items-center justify-center gap-2">
-                  <div class="w-8 h-8 rounded-full border-2 border-blue-600 flex items-center justify-center text-[10px] font-black text-blue-600">98%</div>
+                <div class="col-span-3 flex items-center justify-center gap-2">
+                  <div class="relative w-8 h-8 shrink-0">
+                    <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15" fill="none" stroke="#E5E7EB" stroke-width="3"/>
+                      <circle cx="18" cy="18" r="15" fill="none" stroke="#2563EB" stroke-width="3" stroke-dasharray="94.2" stroke-dashoffset="1.9"/>
+                    </svg>
+                    <span class="absolute inset-0 flex items-center justify-center text-[8px] font-black text-blue-600">98</span>
+                  </div>
                   <span class="text-xs font-bold text-blue-600">Verified</span>
                 </div>
                 <div class="col-span-3 text-right">
-                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 text-blue-600 rounded text-[10px] font-black uppercase tracking-wider">
-                    APPROVED
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-50 text-green-700 rounded text-[10px] font-black uppercase tracking-wider">
+                    ● APPROVED
                   </span>
                 </div>
               </a>
+
+              <!-- Row 2: Review Required -->
+              <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-white rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="col-span-4 flex items-center gap-4">
+                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1 shrink-0 border border-gray-100">
+                    <div class="w-full h-full bg-gray-100 rounded-sm"></div>
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-900 text-sm">Himalayan Sea Salt Chips</p>
+                    <p class="text-xs text-gray-500 font-medium">SKU-CHP-042</p>
+                  </div>
+                </div>
+                <div class="col-span-2 text-center">
+                  <span class="inline-block px-3 py-1 bg-orange-50 text-orange-600 rounded text-xs font-bold">Snacks</span>
+                </div>
+                <div class="col-span-3 flex items-center justify-center gap-2">
+                  <div class="relative w-8 h-8 shrink-0">
+                    <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15" fill="none" stroke="#E5E7EB" stroke-width="3"/>
+                      <circle cx="18" cy="18" r="15" fill="none" stroke="#D92D20" stroke-width="3" stroke-dasharray="94.2" stroke-dashoffset="51.8"/>
+                    </svg>
+                    <span class="absolute inset-0 flex items-center justify-center text-[8px] font-black text-red-600">45</span>
+                  </div>
+                  <span class="text-xs font-bold text-red-600">Critical</span>
+                </div>
+                <div class="col-span-3 text-right">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-50 text-red-600 rounded text-[10px] font-black uppercase tracking-wider border border-red-100">
+                    REVIEW REQUIRED
+                  </span>
+                </div>
+              </div>
+
+              <!-- Row 3: Draft -->
+              <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-white rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="col-span-4 flex items-center gap-4">
+                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1 shrink-0 border border-gray-100">
+                    <div class="w-full h-full bg-gray-100 rounded-sm"></div>
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-900 text-sm">Probiotic Greek Yogurt</p>
+                    <p class="text-xs text-gray-500 font-medium">SKU-DY-9021</p>
+                  </div>
+                </div>
+                <div class="col-span-2 text-center">
+                  <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs font-bold">Dairy</span>
+                </div>
+                <div class="col-span-3 flex items-center justify-center gap-2">
+                  <div class="relative w-8 h-8 shrink-0">
+                    <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15" fill="none" stroke="#E5E7EB" stroke-width="3"/>
+                    </svg>
+                    <span class="absolute inset-0 flex items-center justify-center text-[8px] font-black text-gray-400">0%</span>
+                  </div>
+                  <span class="text-xs font-medium text-gray-400">No Data</span>
+                </div>
+                <div class="col-span-3 text-right">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 text-gray-500 rounded text-[10px] font-black uppercase tracking-wider">
+                    DRAFT
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex items-center justify-between mt-6 text-sm text-gray-500">
+              <span>Showing 3 of 452 SKUs</span>
+              <div class="flex items-center gap-1">
+                <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors font-medium">Prev</button>
+                <button class="px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold border border-blue-600">1</button>
+                <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors font-medium">2</button>
+                <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors font-medium">3</button>
+                <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors font-medium">Next</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="w-[340px] bg-white border-l border-gray-200 overflow-y-auto flex flex-col shadow-[-4px_0_24px_rgba(0,0,0,0.02)] z-10 shrink-0">
+        <!-- ======== DETAIL PANEL ======== -->
+        <div class="w-[340px] bg-white border-l border-gray-200 overflow-y-auto flex flex-col shrink-0 shadow-[-4px_0_24px_rgba(0,0,0,0.02)] z-10">
+
+          <!-- Panel header -->
           <div class="p-6 border-b border-gray-100">
-            <h2 class="text-xl font-black text-gray-900 mb-1 mt-4">Organic Almond Milk V2</h2>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">Detail View</p>
+            <h2 class="text-xl font-black text-gray-900 mb-1">Organic Almond Milk V2</h2>
             <div class="flex items-center gap-1.5 text-[10px] font-black text-blue-600 uppercase tracking-wider">
-              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Verified Compliant
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Verified Compliant
             </div>
           </div>
 
-          <div class="p-6 flex flex-col gap-8">
+          <div class="p-6 flex flex-col gap-7">
+
+            <!-- SKU Core Data -->
             <div>
-              <h3 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2">SKU Core Data</h3>
+              <h3 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                SKU Core Data
+              </h3>
               <div class="flex flex-col gap-3">
                 <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
                   <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Barcode (GTIN)</p>
-                  <p class="text-sm font-bold text-gray-900 tracking-widest">0 123456 789012 8</p>
+                  <p class="text-sm font-bold text-gray-900 tracking-widest font-mono">0 123456 789012 8</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                  <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Manufacturer</p>
+                  <p class="text-sm font-semibold text-gray-900">PureEarth Organics Ltd.</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                  <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Packaging Type</p>
+                  <p class="text-sm font-semibold text-gray-900">Recyclable Tetra Pak (1L)</p>
                 </div>
               </div>
             </div>
-            
-            <a href="dashboard.html" class="w-full py-3 bg-gray-200 hover:bg-gray-300 text-gray-900 font-bold rounded-lg text-sm flex items-center justify-center transition-colors">
+
+            <!-- Audit History -->
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xs font-bold text-gray-900 uppercase tracking-wider flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                  Audit History
+                </h3>
+                <a href="dashboard.html" class="text-xs font-semibold text-blue-600 hover:underline">View All</a>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between py-2.5 border-b border-gray-100">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-[11px] font-black">98</div>
+                    <span class="text-sm text-gray-700 font-medium">Oct 24, 2023</span>
+                  </div>
+                  <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+                <div class="flex items-center justify-between py-2.5 border-b border-gray-100">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-[11px] font-black">96</div>
+                    <span class="text-sm text-gray-700 font-medium">Aug 12, 2023</span>
+                  </div>
+                  <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+                <div class="flex items-center justify-between py-2.5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 text-[11px] font-black">82</div>
+                    <span class="text-sm text-gray-700 font-medium">May 03, 2023</span>
+                  </div>
+                  <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Version History -->
+            <div>
+              <h3 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Version History
+              </h3>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between py-2 border-b border-gray-50">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-blue-600 shrink-0"></div>
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Version 2.4.0</p>
+                      <p class="text-[11px] text-gray-400">Updated Nutrition Label · Oct 24</p>
+                    </div>
+                  </div>
+                  <a href="dashboard.html" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View
+                  </a>
+                </div>
+                <div class="flex items-center justify-between py-2 border-b border-gray-50">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-gray-300 shrink-0"></div>
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Version 2.3.1</p>
+                      <p class="text-[11px] text-gray-400">Fixed Allergen Warning · Aug 12</p>
+                    </div>
+                  </div>
+                  <a href="dashboard.html" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View
+                  </a>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-gray-300 shrink-0"></div>
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Version 2.0.0</p>
+                      <p class="text-[11px] text-gray-400">Initial Rebrand Release · Jan 10</p>
+                    </div>
+                  </div>
+                  <a href="dashboard.html" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- View Report CTA -->
+            <a href="dashboard.html" class="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-lg text-sm flex items-center justify-center transition-colors">
               View Full Compliance Report →
             </a>
+
+            <!-- Export button -->
+            <button class="w-full py-3 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold rounded-lg text-sm flex items-center justify-center gap-2 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Export Compliance Pack
+            </button>
+
           </div>
         </div>
+
       </div>
     </main>
   </div>
+
 </body>
 </html>
