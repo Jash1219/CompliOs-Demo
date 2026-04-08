@@ -1,142 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upload Label | Compliance OS</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root { --blue-primary: #2563EB; --bg-app: #F8FAFC; --text-main: #0F172A; }
-  body { font-family: 'Inter', sans-serif; background-color: var(--bg-app); color: var(--text-main); }
-  .sidebar-link.active { color: var(--blue-primary); background: #EFF6FF; border-left: 3px solid var(--blue-primary); }
-  .dashed-box { background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23CBD5E1' stroke-width='2' stroke-dasharray='8%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); border-radius: 16px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CompliOS India — Upload your product label for FSSAI and Legal Metrology compliance analysis." />
+  <title>Upload Label | Compliance OS India</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="h-screen flex flex-col overflow-hidden">
+<body class="h-screen flex flex-col overflow-hidden bg-white">
 
+  <!-- ======== NAVBAR ======== -->
   <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
     <div class="flex items-center gap-2">
       <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
-      <span class="font-bold text-sm tracking-wide">Compliance OS</span>
+      <span class="font-bold text-sm tracking-wide">Compliance OS India</span>
     </div>
     <div class="flex gap-1">
-      <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Home</a>
+      <a href="index.html"     class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Home</a>
       <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
-      <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Features</a>
+      <a href="features.html"  class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Features</a>
     </div>
   </nav>
 
   <div class="flex flex-1 overflow-hidden">
-    <aside class="w-64 bg-gray-50 border-r border-gray-200 flex flex-col py-6">
+
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="w-64 bg-gray-50 border-r border-gray-200 flex flex-col py-6 shrink-0">
       <div class="px-6 mb-8">
-        <h2 class="font-bold text-lg mb-1">Lex Guard</h2>
+        <h2 class="font-bold text-lg mb-1">CompliOS India</h2>
         <p class="text-xs text-gray-500 font-semibold tracking-wider uppercase">Onboarding</p>
         <p class="text-xs text-gray-400">Step 3 of 4</p>
       </div>
+
       <nav class="flex flex-col gap-1">
-        <a href="#" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> Account
+        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+          Account
         </a>
-        <a href="#" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg> SKU Details
+        <a href="features.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          SKU Details
         </a>
-        <a href="#" class="sidebar-link active px-6 py-2.5 text-sm font-semibold flex items-center gap-3">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg> Label Upload
+        <a href="index.html" class="sidebar-link active flex items-center gap-3 px-6 py-2.5 text-sm font-semibold">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+          </svg>
+          Label Upload
         </a>
-        <a href="#" class="px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 flex items-center gap-3">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> Results
+        <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Results
         </a>
       </nav>
+
       <div class="mt-auto px-6">
         <div class="bg-gray-100 p-4 rounded-xl">
           <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide mb-1">Compliance Tip</p>
-          <p class="text-xs text-gray-600">Ensure text is legible and lighting is even for the most accurate AI analysis.</p>
+          <p class="text-xs text-gray-600 leading-relaxed">Ensure text is legible and lighting is even for the most accurate FSSAI AI analysis.</p>
         </div>
       </div>
     </aside>
 
-    <main class="flex-1 bg-white relative flex flex-col">
-      <div class="px-10 py-6 border-b border-gray-100 flex justify-between text-sm text-gray-500 font-medium shrink-0">
-        <div>Product ID: #LX-9902 <span class="mx-3">Region: North America</span></div>
-        <div class="flex gap-4">
-          <button><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></button>
-          <button><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="flex-1 bg-white relative flex flex-col overflow-hidden">
+
+      <!-- Sub-header bar -->
+      <div class="px-10 py-4 border-b border-gray-100 flex justify-between items-center text-sm text-gray-500 font-medium shrink-0">
+        <div class="flex items-center gap-6">
+          <span>Product ID: <span class="font-semibold text-gray-800">#IN-0042</span></span>
+          <span>Region: <span class="font-semibold text-gray-800">India (FSSAI)</span></span>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors" title="Help">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </button>
+          <a href="features.html" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors" title="Close">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </a>
         </div>
       </div>
 
-      <div class="flex-1 overflow-y-auto p-10 flex flex-col max-w-5xl mx-auto w-full">
-        <div class="max-w-2xl mb-8">
-          <h1 class="text-4xl font-bold mb-4 flex items-end">Upload Label <span class="text-blue-600 ml-1 text-5xl leading-[0.5]">.</span></h1>
-          <p class="text-gray-500 text-lg">Our intelligent ledger will scan your packaging artwork for regulatory inconsistencies. Drop your file to begin the analysis.</p>
-        </div>
+      <!-- Scrollable content -->
+      <div class="flex-1 overflow-y-auto p-10">
+        <div class="max-w-5xl mx-auto w-full">
 
-        <div class="flex gap-8 items-start">
-          <div class="flex-1 dashed-box bg-gray-50 rounded-2xl flex flex-col items-center justify-center p-12 aspect-square max-h-[500px]">
-            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2">Drop your product label here</h3>
-            <p class="text-sm text-gray-500 mb-6">Support for .jpg, .png, or .pdf files. Max size 25MB per label.</p>
-            <button class="px-6 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-semibold transition-colors">Select from computer</button>
+          <!-- Page heading -->
+          <div class="max-w-2xl mb-10">
+            <h1 class="text-4xl font-bold mb-4 flex items-end gap-1 leading-tight">
+              Upload Label
+              <span class="text-blue-600 text-5xl leading-none" style="margin-bottom:-4px">.</span>
+            </h1>
+            <p class="text-gray-500 text-lg leading-relaxed">
+              Our intelligent ledger will scan your packaging artwork for FSSAI and Legal Metrology regulatory inconsistencies. Drop your file to begin the analysis.
+            </p>
           </div>
 
-          <div class="w-72 flex flex-col gap-4">
-            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
-              <div class="flex justify-between items-center mb-3">
-                <h4 class="text-xs font-bold uppercase tracking-wide text-gray-500">Onboarding Progress</h4>
-                <span class="text-blue-600 font-bold text-sm">75%</span>
+          <!-- Upload area + right panel -->
+          <div class="flex gap-8 items-start">
+
+            <!-- Drop zone -->
+            <div class="flex-1 dashed-box bg-gray-50 rounded-2xl flex flex-col items-center justify-center p-12 min-h-[400px]">
+              <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                </svg>
               </div>
-              <div class="h-1.5 w-full bg-gray-200 rounded-full mb-5 overflow-hidden">
-                <div class="h-full bg-blue-600 w-3/4 rounded-full"></div>
-              </div>
-              <div class="flex flex-col gap-3 text-sm">
-                <div class="flex items-center gap-2 text-gray-600"><div class="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px]">✓</div> Account setup complete</div>
-                <div class="flex items-center gap-2 text-gray-600"><div class="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px]">✓</div> SKU details verified</div>
-                <div class="flex items-center gap-2 font-semibold text-gray-900"><div class="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div></div> Label upload in progress</div>
-              </div>
+              <h3 class="text-xl font-bold mb-2 text-gray-900">Drop your product label here</h3>
+              <p class="text-sm text-gray-500 mb-6 text-center">
+                Support for .jpg, .png, or .pdf files.<br/>Max size 25MB per label.
+              </p>
+              <button class="px-6 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-semibold transition-colors text-gray-800">
+                Select from computer
+              </button>
             </div>
 
-            <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm relative overflow-hidden">
-              <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
-              <h4 class="font-bold text-sm mb-4 pl-2">Upload Checklist</h4>
-              <div class="flex flex-col gap-4 pl-2">
-                <div class="flex gap-3">
-                  <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
-                  <div>
-                    <p class="text-xs font-bold mb-0.5">Original Scale</p>
-                    <p class="text-xs text-gray-500">Don't crop margins or bleed lines.</p>
-                  </div>
+            <!-- Right panel -->
+            <div class="w-72 flex flex-col gap-4 shrink-0">
+
+              <!-- Onboarding progress -->
+              <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                <div class="flex justify-between items-center mb-3">
+                  <h4 class="text-xs font-bold uppercase tracking-wide text-gray-500">Onboarding Progress</h4>
+                  <span class="text-blue-600 font-bold text-sm">75%</span>
                 </div>
-                <div class="flex gap-3">
-                  <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                  <div>
-                    <p class="text-xs font-bold mb-0.5">High Contrast</p>
-                    <p class="text-xs text-gray-500">Ensure text is readable against background.</p>
+                <div class="h-1.5 w-full bg-gray-200 rounded-full mb-5 overflow-hidden">
+                  <div class="h-full bg-blue-600 rounded-full" style="width:75%"></div>
+                </div>
+                <div class="flex flex-col gap-3 text-sm">
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <div class="step-check done">✓</div>
+                    Account setup complete
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <div class="step-check done">✓</div>
+                    SKU details verified
+                  </div>
+                  <div class="flex items-center gap-2 font-semibold text-gray-900">
+                    <div class="step-check current"></div>
+                    Label upload in progress
                   </div>
                 </div>
               </div>
+
+              <!-- Upload checklist -->
+              <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-l-xl"></div>
+                <h4 class="font-bold text-sm mb-4 pl-2">Upload Checklist</h4>
+                <div class="flex flex-col gap-4 pl-2">
+                  <div class="flex gap-3">
+                    <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                    </svg>
+                    <div>
+                      <p class="text-xs font-bold mb-0.5">Original Scale</p>
+                      <p class="text-xs text-gray-500">Don't crop margins or bleed lines.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-3">
+                    <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <div>
+                      <p class="text-xs font-bold mb-0.5">High Contrast</p>
+                      <p class="text-xs text-gray-500">Ensure text is readable against background.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-3">
+                    <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <div>
+                      <p class="text-xs font-bold mb-0.5">Flattened PDF</p>
+                      <p class="text-xs text-gray-500">Prefer flattened files for faster scanning.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coming soon -->
+              <div class="rounded-xl overflow-hidden" style="background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%)">
+                <div class="p-5">
+                  <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">Coming Soon</p>
+                  <p class="text-white font-bold text-base leading-snug">Batch Analysis &amp;<br/>Historical Comparisons</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
-      
+
+      <!-- ======== FOOTER BAR ======== -->
       <div class="h-20 border-t border-gray-100 flex items-center justify-between px-10 bg-white shrink-0">
         <div class="flex items-center gap-3">
           <div class="flex -space-x-2">
             <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
             <div class="w-8 h-8 rounded-full bg-blue-600 border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">+12</div>
           </div>
-          <span class="text-xs text-gray-500 font-medium">Trusted by 2,000+ legal teams worldwide.</span>
+          <span class="text-xs text-gray-500 font-medium">Trusted by 2,000+ legal &amp; compliance teams worldwide.</span>
         </div>
-        <div class="flex items-center gap-6">
-          <button class="text-sm font-bold text-gray-700 hover:text-gray-900">Back</button>
-          <a href="dashboard.html" class="px-6 py-2.5 bg-gray-100 text-gray-400 font-bold rounded-lg text-sm flex items-center gap-2 cursor-not-allowed">
-            Analyze Label <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        <div class="flex items-center gap-4">
+          <a href="features.html" class="text-sm font-bold text-gray-700 hover:text-gray-900 transition-colors">Back</a>
+          <a href="dashboard.html" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-sm flex items-center gap-2 transition-colors shadow-sm shadow-blue-200">
+            Analyze Label
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
           </a>
         </div>
       </div>
+
     </main>
   </div>
+
 </body>
 </html>
