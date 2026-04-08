@@ -60,13 +60,13 @@
     <main class="flex-1 flex flex-col h-full overflow-hidden">
       <!-- Header -->
       <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-[#F9FAFB]">
-        <div class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
-          <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
-          <span class="text-gray-300">›</span>
-          <a href="features.html" class="hover:text-gray-900 transition-colors">Organic Almond Milk V2</a>
-          <span class="text-gray-300">›</span>
-          <span class="text-gray-900 font-bold">Compliance Report</span>
-        </div>
+          <div id="breadcrumb" class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
+            <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
+            <span class="text-gray-300">›</span>
+            <a href="features.html" id="breadcrumbProduct" class="hover:text-gray-900 transition-colors">Organic Almond Milk V2</a>
+            <span class="text-gray-300">›</span>
+            <span class="text-gray-900 font-bold">Compliance Report</span>
+          </div>
         <div class="flex items-center gap-5">
           <div class="relative">
             <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -89,29 +89,36 @@
           <!-- Title & Score -->
           <div class="flex justify-between items-start mb-10">
             <div class="flex-1 pr-8">
-              <div class="flex items-center gap-4 mb-4">
-                <h1 class="text-[40px] font-bold text-gray-900 tracking-tight leading-tight">Organic Almond<br>Milk V2</h1>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[11px] font-bold self-start mt-2 border border-blue-100">
-                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Expert Reviewed
-                </span>
+              <div class="flex items-start gap-6">
+                <div style="width: 80px; height: 80px; border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);">
+                  <img id="productImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23e0e7ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%234f46e5' font-size='12' font-weight='bold'%3EALMOND%3C/text%3E%3C/svg%3E" alt="Product" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                  <div class="flex items-center gap-4 mb-4">
+                    <h1 id="productName" class="text-[40px] font-bold text-gray-900 tracking-tight leading-tight">Organic Almond Milk V2</h1>
+                    <span id="productStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[11px] font-bold self-start mt-2 border border-blue-100">
+                      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> <span id="productStatus">Expert Reviewed</span>
+                    </span>
+                  </div>
+                  <p id="productDescription" class="text-gray-500 text-[15px] max-w-[420px] leading-relaxed">Detailed analysis of labeling, claims, and regulatory alignment for the North American market launch.</p>
+                </div>
               </div>
-              <p class="text-gray-500 text-[15px] max-w-[420px] leading-relaxed">Detailed analysis of labeling, claims, and regulatory alignment for the North American market launch.</p>
             </div>
             
             <div class="w-[300px] bg-white rounded-2xl p-6 card-shadow border border-gray-100 flex items-center gap-5 shrink-0">
               <div class="relative w-[72px] h-[72px] flex items-center justify-center shrink-0">
                 <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="46" class="text-gray-100" stroke-width="8" fill="none" stroke="currentColor"></circle>
-                  <circle cx="50" cy="50" r="46" class="text-blue-600 donut-ring" stroke-width="8" stroke="currentColor" fill="none"></circle>
+                  <circle id="donutRing" cx="50" cy="50" r="46" class="text-green-600 progress-ring-circle" stroke-width="8" stroke="currentColor" fill="none" stroke-dasharray="289.0" stroke-dashoffset="0"></circle>
                 </svg>
                 <div class="absolute text-center flex flex-col justify-center items-center mt-1">
-                  <span class="text-[22px] font-black text-gray-900 leading-none">92</span>
+                  <span id="complianceScore" class="text-[22px] font-black text-gray-900 leading-none">92</span>
                   <span class="text-[9px] font-bold text-gray-400 mt-0.5">/ 100</span>
                 </div>
               </div>
               <div>
                 <h3 class="font-bold text-gray-900 text-[14px] mb-1">Compliance Score</h3>
-                <p class="text-[12px] text-gray-500 leading-snug">High confidence for market entry</p>
+                <p id="scoreMessage" class="text-[12px] text-gray-500 leading-snug">High confidence for market entry</p>
               </div>
             </div>
           </div>
@@ -122,6 +129,14 @@
               <div class="bg-gray-100/80 p-1.5 rounded-xl flex shadow-inner border border-gray-200/50">
                 <button id="expertMode" class="flex-1 py-2.5 rounded-lg bg-white shadow-sm text-[13px] font-bold text-gray-900 transition-all">Expert-certified</button>
                 <button id="aiMode" class="flex-1 py-2.5 rounded-lg text-[13px] font-semibold text-gray-500 hover:text-gray-700 transition-colors">AI-only</button>
+              </div>
+              <!-- Inline AI Mode Info Panel -->
+              <div id="aiModePanel" class="ai-mode-panel hidden">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                  <span class="text-[12px] font-semibold text-blue-600">AI-Generated Insights</span>
+                </div>
+                <p class="text-[11px] text-gray-500 leading-relaxed">Analysis based on automated checks. Review recommended before final approval.</p>
               </div>
               <div class="flex gap-4">
                 <button id="downloadPdfBtn" class="flex-1 bg-white border border-gray-200 rounded-2xl py-5 flex flex-col items-center justify-center gap-2 card-shadow hover:bg-gray-50 transition-colors cursor-pointer btn-interactive">
@@ -139,62 +154,57 @@
               </div>
             </div>
 
-            <div class="flex-1 bg-white rounded-2xl card-shadow border border-gray-100 p-8 flex flex-col justify-between">
-              <div class="grid grid-cols-4 gap-4 mt-2">
-                <div><p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Missing Data</p><p class="text-[32px] font-bold text-[#D92D20] leading-none">2</p></div>
-                <div><p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Formatting</p><p class="text-[32px] font-bold text-[#B54708] leading-none">1</p></div>
-                <div><p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Visibility</p><p class="text-[32px] font-bold text-gray-300 leading-none">0</p></div>
-                <div><p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Claims Risks</p><p class="text-[32px] font-bold text-[#175CD3] leading-none">1</p></div>
+            <div class="flex-1 grid grid-cols-4 gap-4">
+              <div class="metric-card">
+                <div class="metric-icon" style="background: #fef2f2;">
+                  <svg class="w-4 h-4" style="color: #D92D20;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                </div>
+                <div class="metric-content">
+                  <p class="metric-label">Missing Data</p>
+                  <p class="metric-value" id="missingCount" style="color: #D92D20;">2</p>
+                </div>
               </div>
-              <div class="flex gap-8 items-end w-full mb-2">
-                <div class="h-1.5 bg-[#D92D20] rounded-full flex-1"></div>
-                <div class="h-1.5 bg-[#B54708] rounded-full flex-1"></div>
-                <div class="h-1.5 bg-gray-200 rounded-full flex-1"></div>
-                <div class="h-1.5 bg-[#175CD3] rounded-full flex-1"></div>
+              <div class="metric-card">
+                <div class="metric-icon" style="background: #fffbeb;">
+                  <svg class="w-4 h-4" style="color: #B54708;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                </div>
+                <div class="metric-content">
+                  <p class="metric-label">Formatting</p>
+                  <p class="metric-value" id="formatCount" style="color: #B54708;">1</p>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon" style="background: #f0fdf4;">
+                  <svg class="w-4 h-4" style="color: #16a34a;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </div>
+                <div class="metric-content">
+                  <p class="metric-label">Visibility</p>
+                  <p id="visibilityCount" class="metric-value" style="color: #16a34a;">0</p>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon" style="background: #eff6ff;">
+                  <svg class="w-4 h-4" style="color: #175CD3;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div class="metric-content">
+                  <p class="metric-label">Claims Risks</p>
+                  <p id="riskCount" class="metric-value" style="color: #175CD3;">1</p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Audit Findings -->
-          <h2 class="text-[20px] font-bold text-gray-900 mb-6 tracking-tight">Compliance Audit Findings</h2>
-          <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 relative overflow-hidden card-shadow finding-card border-red">
-              <div class="flex justify-between items-center mb-5 pl-2">
-                <span class="bg-red-50 text-[#D92D20] px-2.5 py-1 rounded-[4px] text-[10px] font-bold uppercase tracking-wider">Missing Data</span>
-                <span class="confidence-dot">98% AI Confidence</span>
-              </div>
-              <h3 class="font-bold text-[15px] text-gray-900 mb-2.5 pl-2">Missing allergen statement for Almonds</h3>
-              <p class="text-[13px] text-gray-500 leading-relaxed mb-6 pl-2 pr-4">The product contains Almonds, which are a major food allergen. Federal law requires a clear statement on the packaging.</p>
-              <div class="rule-reference-row pl-2">
-                <div>
-                  <p class="rule-reference-label">Rule Reference</p>
-                  <p class="rule-reference-value">FSSAI Schedule IX, Clause 5.1</p>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 relative overflow-hidden card-shadow finding-card border-blue">
-              <div class="flex justify-between items-center mb-5 pl-2">
-                <span class="bg-blue-50 text-[#175CD3] px-2.5 py-1 rounded-[4px] text-[10px] font-bold uppercase tracking-wider">Claims Risks</span>
-                <span class="confidence-dot">91% AI Confidence</span>
-              </div>
-              <h3 class="font-bold text-[15px] text-gray-900 mb-2.5 pl-2">"Heart Healthy" claim requires disclaimer</h3>
-              <p class="text-[13px] text-gray-500 leading-relaxed mb-6 pl-2 pr-4">The term "Heart Healthy" is a regulated health claim and must be accompanied by the standard FDA disclaimer regarding fat content.</p>
-              <div class="rule-reference-row pl-2">
-                <div>
-                  <p class="rule-reference-label">Rule Reference</p>
-                  <p class="rule-reference-value">FDA 21 CFR 101.14</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2 id="findingsTitle" class="text-[20px] font-bold text-gray-900 mb-6 tracking-tight">Compliance Audit Findings</h2>
+          <div class="grid grid-cols-2 gap-6" id="findingsContainer"></div>
 
           <!-- Actions -->
           <div class="mt-8 flex items-center gap-4">
             <a href="features.html" class="px-5 py-2.5 bg-white border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              ← Back to Projects
+              Back to Projects
             </a>
             <a href="review.html" class="px-5 py-2.5 bg-white border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              Review Queue →
+              Review Queue
             </a>
             <button id="reanalyzeBtn" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-colors shadow-sm btn-interactive">
               <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
@@ -235,7 +245,7 @@
           <select class="form-select">
             <option value="">Select category</option>
             <option value="beverages">Beverages</option>
-            <option value="dairy">Dairy & Alternatives</option>
+            <option value="dairy">Dairy &amp; Alternatives</option>
             <option value="snacks">Snacks</option>
             <option value="bakery">Bakery</option>
           </select>
@@ -249,132 +259,616 @@
   </div>
 
   <script>
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const loadingText = document.getElementById('loadingText');
-    const loadingSubtext = document.getElementById('loadingSubtext');
-    const toastContainer = document.getElementById('toastContainer');
-    const newAuditModal = document.getElementById('newAuditModal');
-    const newAuditBtn = document.getElementById('newAuditBtn');
-    const closeModal = document.getElementById('closeModal');
-    const cancelModal = document.getElementById('cancelModal');
-    const createAudit = document.getElementById('createAudit');
-    const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-    const shareReportBtn = document.getElementById('shareReportBtn');
-    const reanalyzeBtn = document.getElementById('reanalyzeBtn');
-    const expertMode = document.getElementById('expertMode');
-    const aiMode = document.getElementById('aiMode');
-    const notificationBtn = document.getElementById('notificationBtn');
+    (function() {
+      'use strict';
 
-    function showLoading(text, subtext) {
-      loadingText.textContent = text;
-      loadingSubtext.textContent = subtext;
-      loadingOverlay.classList.add('active');
-    }
+      // DOM Elements
+      var loadingOverlay = document.getElementById('loadingOverlay');
+      var loadingText = document.getElementById('loadingText');
+      var loadingSubtext = document.getElementById('loadingSubtext');
+      var toastContainer = document.getElementById('toastContainer');
+      var newAuditModal = document.getElementById('newAuditModal');
+      var newAuditBtn = document.getElementById('newAuditBtn');
+      var closeModal = document.getElementById('closeModal');
+      var cancelModal = document.getElementById('cancelModal');
+      var createAudit = document.getElementById('createAudit');
+      var downloadPdfBtn = document.getElementById('downloadPdfBtn');
+      var shareReportBtn = document.getElementById('shareReportBtn');
+      var reanalyzeBtn = document.getElementById('reanalyzeBtn');
+      var expertMode = document.getElementById('expertMode');
+      var aiMode = document.getElementById('aiMode');
+      var aiModePanel = document.getElementById('aiModePanel');
+      var notificationBtn = document.getElementById('notificationBtn');
 
-    function hideLoading() {
-      loadingOverlay.classList.remove('active');
-    }
+      // State
+      var currentMode = 'expert';
+      var currentProduct = 'Organic Almond Milk V2';
 
-    function showToast(type, title, message) {
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
-      const icons = {
-        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
-        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
-        warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
-      };
-      toast.innerHTML = `<div class="toast-icon">${icons[type]}</div><div class="toast-content"><p class="toast-title">${title}</p><p class="toast-message">${message}</p></div>`;
-      toastContainer.appendChild(toast);
-      setTimeout(() => { toast.classList.add('hiding'); setTimeout(() => toast.remove(), 300); }, 4000);
-    }
+      // Safe text helpers
+      function safeText(val, fallback) {
+        return (val !== undefined && val !== null && val !== '') ? val : fallback;
+      }
 
-    // Modal handlers
-    newAuditBtn.addEventListener('click', () => newAuditModal.classList.add('active'));
-    closeModal.addEventListener('click', () => newAuditModal.classList.remove('active'));
-    cancelModal.addEventListener('click', () => newAuditModal.classList.remove('active'));
-    newAuditModal.addEventListener('click', (e) => { if (e.target === newAuditModal) newAuditModal.classList.remove('active'); });
-    
-    createAudit.addEventListener('click', () => {
-      newAuditModal.classList.remove('active');
-      showLoading('Creating Audit...', 'Setting up new compliance workspace.');
-      setTimeout(() => {
-        hideLoading();
-        showToast('success', 'Audit Created', 'New audit workspace is ready.');
-        setTimeout(() => window.location.href = 'upload.html', 800);
-      }, 1500);
-    });
-
-    // Download PDF
-    downloadPdfBtn.addEventListener('click', () => {
-      downloadPdfBtn.disabled = true;
-      downloadPdfBtn.classList.add('opacity-70');
-      showLoading('Generating PDF...', 'Preparing compliance report for download.');
-      setTimeout(() => {
-        hideLoading();
-        downloadPdfBtn.disabled = false;
-        downloadPdfBtn.classList.remove('opacity-70');
-        showToast('success', 'Report Downloaded', 'Compliance report PDF has been downloaded.');
-      }, 2000);
-    });
-
-    // Share Report
-    shareReportBtn.addEventListener('click', () => {
-      shareReportBtn.disabled = true;
-      showLoading('Preparing Share Link...', 'Generating secure share link.');
-      setTimeout(() => {
-        hideLoading();
-        shareReportBtn.disabled = false;
-        showToast('success', 'Link Copied', 'Share link copied to clipboard.');
-      }, 1200);
-    });
-
-    // Re-analyze
-    reanalyzeBtn.addEventListener('click', () => {
-      reanalyzeBtn.disabled = true;
-      const messages = [
-        { text: 'Initializing analysis...', sub: 'Loading compliance engine.' },
-        { text: 'Scanning label...', sub: 'Processing label image data.' },
-        { text: 'Analyzing claims...', sub: 'Checking regulatory compliance.' },
-        { text: 'Finalizing results...', sub: 'Generating compliance report.' }
-      ];
-      let i = 0;
-      showLoading(messages[0].text, messages[0].sub);
-      const interval = setInterval(() => {
-        i++;
-        if (i < messages.length) {
-          loadingText.textContent = messages[i].text;
-          loadingSubtext.textContent = messages[i].sub;
+      // Product Data
+      var productData = {
+        "Organic Almond Milk V2": {
+          score: 92,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23e0e7ff' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='11' font-weight='bold' fill='%234f46e5' text-anchor='middle' dominant-baseline='middle'%3EALMOND%3C/text%3E%3C/svg%3E",
+          risk: 1,
+          visibility: 0,
+          status: "Expert Reviewed",
+          description: "Detailed analysis of labeling, claims, and regulatory alignment for the North American market launch.",
+          missing: 2,
+          format: 1
+        },
+        "Masala Chai Concentrate": {
+          score: 78,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23fde68a' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='10' font-weight='bold' fill='%23b45309' text-anchor='middle' dominant-baseline='middle'%3ECHAI%3C/text%3E%3C/svg%3E",
+          risk: 3,
+          visibility: 2,
+          status: "Review Required",
+          description: "Analysis of chai concentrate labeling for domestic market compliance.",
+          missing: 1,
+          format: 0
+        },
+        "Himalayan Sea Salt Chips": {
+          score: 45,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23fef3c7' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%2392400e' text-anchor='middle' dominant-baseline='middle'%3ECHIPS%3C/text%3E%3C/svg%3E",
+          risk: 8,
+          visibility: 4,
+          status: "Review Required",
+          description: "Compliance analysis for snack product labeling in the Indian market.",
+          missing: 3,
+          format: 2
+        },
+        "Probiotic Greek Yogurt": {
+          score: 0,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23fce7f3' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%23be185d' text-anchor='middle' dominant-baseline='middle'%3EYOGURT%3C/text%3E%3C/svg%3E",
+          risk: 0,
+          visibility: 0,
+          status: "Draft",
+          description: "Initial compliance review for dairy product.",
+          missing: 0,
+          format: 0
+        },
+        "Green Tea Extract Capsules": {
+          score: 95,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23d1fae5' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%23059669' text-anchor='middle' dominant-baseline='middle'%3EGTE%3C/text%3E%3C/svg%3E",
+          risk: 0,
+          visibility: 0,
+          status: "Approved",
+          description: "Dietary supplement compliance analysis.",
+          missing: 0,
+          format: 0
+        },
+        "Oat Milk - Vanilla": {
+          score: 94,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23ffedd5' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='11' font-weight='bold' fill='%23c2410c' text-anchor='middle' dominant-baseline='middle'%3EOAT%3C/text%3E%3C/svg%3E",
+          risk: 0,
+          visibility: 0,
+          status: "Approved",
+          description: "Plant-based milk alternative compliance review.",
+          missing: 0,
+          format: 0
+        },
+        "Coconut Water": {
+          score: 58,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23d1fae5' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%23059669' text-anchor='middle' dominant-baseline='middle'%3ECWATER%3C/text%3E%3C/svg%3E",
+          risk: 4,
+          visibility: 1,
+          status: "Draft",
+          description: "Coconut water product compliance review.",
+          missing: 1,
+          format: 1
+        },
+        "Organic Protein Bar": {
+          score: 65,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23e9d5ff' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='10' font-weight='bold' fill='%237c3aed' text-anchor='middle' dominant-baseline='middle'%3EBAR%3C/text%3E%3C/svg%3E",
+          risk: 3,
+          visibility: 1,
+          status: "Review Required",
+          description: "Protein bar compliance analysis for sports nutrition products.",
+          missing: 1,
+          format: 0
+        },
+        "Quinoa Pasta - Whole Grain": {
+          score: 72,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23fef3c7' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%2392400e' text-anchor='middle' dominant-baseline='middle'%3EPASTA%3C/text%3E%3C/svg%3E",
+          risk: 2,
+          visibility: 1,
+          status: "Approved",
+          description: "Whole grain pasta compliance review for healthy eating category.",
+          missing: 0,
+          format: 0
+        },
+        "Avocado Oil Spray": {
+          score: 88,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23dcfce7' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%2315803d' text-anchor='middle' dominant-baseline='middle'%3EOIL%3C/text%3E%3C/svg%3E",
+          risk: 1,
+          visibility: 0,
+          status: "Approved",
+          description: "Cooking oil spray product compliance analysis.",
+          missing: 0,
+          format: 0
+        },
+        "Energy Drink - Tropical": {
+          score: 55,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23fee2e2' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='9' font-weight='bold' fill='%23dc2626' text-anchor='middle' dominant-baseline='middle'%3EENERGY%3C/text%3E%3C/svg%3E",
+          risk: 6,
+          visibility: 3,
+          status: "Review Required",
+          description: "Energy drink labeling compliance for functional beverages.",
+          missing: 2,
+          format: 1
+        },
+        "Protein Powder - Unflavored": {
+          score: 81,
+          image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23fee2e2' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='8' font-weight='bold' fill='%23dc2626' text-anchor='middle' dominant-baseline='middle'%3EPOWDER%3C/text%3E%3C/svg%3E",
+          risk: 2,
+          visibility: 1,
+          status: "Approved",
+          description: "Dietary supplement powder compliance review.",
+          missing: 0,
+          format: 0
         }
-      }, 600);
-      setTimeout(() => {
-        clearInterval(interval);
-        hideLoading();
-        reanalyzeBtn.disabled = false;
-        showToast('success', 'Analysis Complete', 'Re-analysis finished. 4 findings detected.');
-      }, 3000);
-    });
+      };
 
-    // Mode toggle
-    expertMode.addEventListener('click', () => {
-      expertMode.classList.add('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
-      expertMode.classList.remove('text-gray-500');
-      aiMode.classList.remove('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
-      aiMode.classList.add('text-gray-500');
-      showToast('success', 'Mode Changed', 'Now showing Expert-certified analysis.');
-    });
+      // Expert Findings
+      var expertFindings = {
+        "Organic Almond Milk V2": [
+          {
+            type: "Missing Data",
+            typeClass: "bg-red-50 text-[#D92D20]",
+            borderClass: "border-red",
+            iconBg: "linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)",
+            icon: '<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+            title: "Missing allergen statement for Almonds",
+            description: "The product contains Almonds, which are a major food allergen. Federal law requires a clear statement on the packaging.",
+            regulation: "FSSAI Schedule IX, Clause 5.1",
+            confidence: "98% Confidence"
+          },
+          {
+            type: "Claims Risks",
+            typeClass: "bg-blue-50 text-[#175CD3]",
+            borderClass: "border-blue",
+            iconBg: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
+            icon: '<svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+            title: '"Heart Healthy" claim requires disclaimer',
+            description: 'The term "Heart Healthy" is a regulated health claim and must be accompanied by the standard FDA disclaimer regarding fat content.',
+            regulation: "FDA 21 CFR 101.14",
+            confidence: "91% Confidence"
+          }
+        ],
+        "default": [
+          {
+            type: "Review Required",
+            typeClass: "bg-orange-50 text-[#B45309]",
+            borderClass: "border-orange",
+            iconBg: "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)",
+            icon: '<svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+            title: "Compliance review pending",
+            description: "This product requires expert review before final compliance certification.",
+            regulation: "Standard compliance protocol",
+            confidence: "95% Confidence"
+          }
+        ]
+      };
 
-    aiMode.addEventListener('click', () => {
-      aiMode.classList.add('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
-      aiMode.classList.remove('text-gray-500');
-      expertMode.classList.remove('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
-      expertMode.classList.add('text-gray-500');
-      showToast('info', 'AI-only Mode', 'Showing AI-generated analysis only.');
-    });
+      // AI Findings
+      var aiFindings = {
+        "Organic Almond Milk V2": [
+          {
+            type: "Suggestion",
+            typeClass: "bg-orange-50 text-[#B45309]",
+            borderClass: "border-orange",
+            iconBg: "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)",
+            icon: '<svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
+            title: 'Potential misleading claim: "Boosts Immunity"',
+            description: 'AI detected language that may require additional substantiation under FSSAI advertising guidelines for functional claims.',
+            regulation: "FSSAI Advertising Guidelines",
+            confidence: "82% Confidence"
+          },
+          {
+            type: "Design Issue",
+            typeClass: "bg-purple-50 text-[#7C3AED]",
+            borderClass: "border-purple",
+            iconBg: "linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)",
+            icon: '<svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>',
+            title: "Low contrast detected in nutrition panel",
+            description: "AI analysis suggests improving text contrast in the nutrition information section for better readability.",
+            regulation: "Label readability best practice",
+            confidence: "76% Confidence"
+          }
+        ],
+        "default": [
+          {
+            type: "AI Suggestion",
+            typeClass: "bg-blue-50 text-[#175CD3]",
+            borderClass: "border-blue",
+            iconBg: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
+            icon: '<svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
+            title: "Automated checks in progress",
+            description: "AI is analyzing label data. Full report will be available after review.",
+            regulation: "AI-assisted analysis",
+            confidence: "78% Confidence"
+          }
+        ]
+      };
 
-    // Notifications
-    notificationBtn.addEventListener('click', () => {
-      showToast('warning', 'New Alert', 'Regulatory update detected for FSSAI labeling rules.');
-    });
+      // Helper Functions
+      function showLoading(text, subtext) {
+        text = safeText(text, 'Processing...');
+        subtext = safeText(subtext, 'Please wait.');
+        if (loadingText) loadingText.textContent = text;
+        if (loadingSubtext) loadingSubtext.textContent = subtext;
+        if (loadingOverlay) loadingOverlay.classList.add('active');
+      }
+
+      function hideLoading() {
+        if (loadingOverlay) loadingOverlay.classList.remove('active');
+      }
+
+      function showToast(type, title, message) {
+        type = safeText(type, 'info');
+        title = safeText(title, 'Notification');
+        message = safeText(message, '');
+        
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        var icons = {
+          success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+          info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+        };
+        var icon = icons[type] || icons.info;
+        toast.innerHTML = '<div class="toast-icon">' + icon + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        if (toastContainer) {
+          toastContainer.appendChild(toast);
+          setTimeout(function() {
+            toast.classList.add('hiding');
+            setTimeout(function() { toast.remove(); }, 300);
+          }, 4000);
+        }
+      }
+
+      function findProductData(searchTerm) {
+        if (!searchTerm) return null;
+        searchTerm = searchTerm.toLowerCase().trim();
+        for (var key in productData) {
+          var keyLower = key.toLowerCase();
+          if (keyLower === searchTerm) return { key: key, data: productData[key] };
+          if (keyLower.includes(searchTerm)) return { key: key, data: productData[key] };
+          if (searchTerm.includes(keyLower)) return { key: key, data: productData[key] };
+        }
+        return null;
+      }
+
+      function getExpertFindings(productName) {
+        return expertFindings[productName] || expertFindings['default'] || [];
+      }
+
+      function getAIFindings(productName) {
+        return aiFindings[productName] || aiFindings['default'] || [];
+      }
+
+      function renderFindings(findings) {
+        var container = document.getElementById('findingsContainer');
+        if (!container) return;
+        if (!findings || findings.length === 0) {
+          container.innerHTML = '<div class="col-span-2 text-center py-12 text-gray-500">No findings available.</div>';
+          return;
+        }
+
+        var html = findings.map(function(finding) {
+          var typeClass = safeText(finding.typeClass, 'bg-gray-50 text-gray-600');
+          var borderClass = safeText(finding.borderClass, '');
+          var iconBg = safeText(finding.iconBg, '#f3f4f6');
+          var icon = safeText(finding.icon, '');
+          var type = safeText(finding.type, 'Info');
+          var title = safeText(finding.title, 'No title');
+          var description = safeText(finding.description, 'No description available.');
+          var regulation = safeText(finding.regulation, 'N/A');
+          var confidence = safeText(finding.confidence, '90% Confidence');
+
+          return '<div class="bg-white border border-gray-200 rounded-2xl p-6 relative overflow-hidden card-shadow finding-card ' + borderClass + '">' +
+            '<div class="flex items-start gap-4 mb-4">' +
+              '<div class="product-thumb" style="width: 56px; height: 56px; flex-shrink: 0;">' +
+                '<div class="product-thumb-inner" style="background: ' + iconBg + '; width: 100%; height: 100%;">' +
+                  icon +
+                '</div>' +
+              '</div>' +
+              '<div class="flex-1">' +
+                '<div class="flex justify-between items-center mb-2">' +
+                  '<span class="' + typeClass + ' px-2.5 py-1 rounded-[4px] text-[10px] font-bold uppercase tracking-wider">' + type + '</span>' +
+                  '<span class="confidence-dot">' + confidence + '</span>' +
+                '</div>' +
+                '<h3 class="font-bold text-[15px] text-gray-900 mb-2">' + title + '</h3>' +
+              '</div>' +
+            '</div>' +
+            '<p class="text-[13px] text-gray-500 leading-relaxed mb-4">' + description + '</p>' +
+            '<div class="rule-reference-row">' +
+              '<div>' +
+                '<p class="rule-reference-label">Rule Reference</p>' +
+                '<p class="rule-reference-value">' + regulation + '</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+
+        container.innerHTML = html;
+      }
+
+      function updateScoreDisplay(score, message) {
+        var scoreEl = document.getElementById('complianceScore');
+        var scoreMsgEl = document.getElementById('scoreMessage');
+        var donutRing = document.getElementById('donutRing');
+
+        score = score || 0;
+        message = safeText(message, 'Score pending');
+
+        if (scoreEl) scoreEl.textContent = score;
+        if (scoreMsgEl) scoreMsgEl.textContent = message;
+
+        if (donutRing) {
+          var circumference = 2 * Math.PI * 46;
+          var offset = circumference - (score / 100) * circumference;
+          donutRing.style.strokeDasharray = circumference;
+          donutRing.style.strokeDashoffset = offset;
+
+          donutRing.classList.remove('text-blue-600', 'text-green-600', 'text-yellow-600', 'text-orange-600', 'text-red-600');
+          if (score >= 80) donutRing.classList.add('text-green-600');
+          else if (score >= 60) donutRing.classList.add('text-yellow-600');
+          else if (score >= 40) donutRing.classList.add('text-orange-600');
+          else donutRing.classList.add('text-red-600');
+        }
+      }
+
+      function updateProductDisplay(productName, data) {
+        data = data || {};
+
+        var nameEl = document.getElementById('productName');
+        if (nameEl) nameEl.textContent = safeText(productName, 'Unknown Product');
+
+        var breadcrumbEl = document.getElementById('breadcrumbProduct');
+        if (breadcrumbEl) breadcrumbEl.textContent = safeText(productName, 'Unknown Product');
+
+        var imgEl = document.getElementById('productImage');
+        if (imgEl && data.image) {
+          imgEl.src = data.image;
+        }
+
+        var score = data.score || 0;
+        var scoreEl = document.getElementById('complianceScore');
+        if (scoreEl) scoreEl.textContent = score;
+
+        var donutRing = document.getElementById('donutRing');
+        if (donutRing) {
+          var circumference = 2 * Math.PI * 46;
+          var offset = circumference - (score / 100) * circumference;
+          donutRing.style.strokeDasharray = circumference;
+          donutRing.style.strokeDashoffset = offset;
+
+          donutRing.classList.remove('text-blue-600', 'text-green-600', 'text-yellow-600', 'text-orange-600', 'text-red-600');
+          if (score >= 80) donutRing.classList.add('text-green-600');
+          else if (score >= 60) donutRing.classList.add('text-yellow-600');
+          else if (score >= 40) donutRing.classList.add('text-orange-600');
+          else donutRing.classList.add('text-red-600');
+        }
+
+        var scoreMsgEl = document.getElementById('scoreMessage');
+        if (scoreMsgEl) {
+          var msg = 'Score pending';
+          if (score >= 80) msg = 'High confidence for market entry';
+          else if (score >= 60) msg = 'Review recommended before launch';
+          else if (score >= 40) msg = 'Critical issues need resolution';
+          else if (score > 0) msg = 'Significant compliance gaps';
+          scoreMsgEl.textContent = msg;
+        }
+
+        var riskEl = document.getElementById('riskCount');
+        if (riskEl) riskEl.textContent = safeText(data.risk, 0);
+
+        var visibilityEl = document.getElementById('visibilityCount');
+        if (visibilityEl) visibilityEl.textContent = safeText(data.visibility, 0);
+
+        var statusEl = document.getElementById('productStatus');
+        if (statusEl) statusEl.textContent = safeText(data.status, 'Unknown');
+
+        var descEl = document.getElementById('productDescription');
+        if (descEl) descEl.textContent = safeText(data.description, '');
+
+        var missingEl = document.getElementById('missingCount');
+        if (missingEl) missingEl.textContent = safeText(data.missing, 0);
+
+        var formatEl = document.getElementById('formatCount');
+        if (formatEl) formatEl.textContent = safeText(data.format, 0);
+
+        document.title = safeText(productName, 'Dashboard') + ' | Compliance OS';
+      }
+
+      function setExpertMode() {
+        currentMode = 'expert';
+        if (expertMode) {
+          expertMode.classList.add('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          expertMode.classList.remove('text-gray-500');
+        }
+        if (aiMode) {
+          aiMode.classList.remove('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          aiMode.classList.add('text-gray-500');
+        }
+        if (aiModePanel) aiModePanel.classList.add('hidden');
+
+        var data = productData[currentProduct];
+        var score = data ? data.score : 0;
+        updateScoreDisplay(score, score >= 80 ? 'High confidence for market entry' : 'Review recommended');
+        renderFindings(getExpertFindings(currentProduct));
+        
+        showToast('success', 'Mode Changed', 'Now showing Expert-certified analysis.');
+      }
+
+      function setAIMode() {
+        currentMode = 'ai';
+        if (aiMode) {
+          aiMode.classList.add('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          aiMode.classList.remove('text-gray-500');
+        }
+        if (expertMode) {
+          expertMode.classList.remove('bg-white', 'shadow-sm', 'text-gray-900', 'font-bold');
+          expertMode.classList.add('text-gray-500');
+        }
+        if (aiModePanel) aiModePanel.classList.remove('hidden');
+
+        var aiScore = currentProduct === 'Organic Almond Milk V2' ? 76 : 70;
+        updateScoreDisplay(aiScore, 'Showing AI-generated analysis only.');
+        renderFindings(getAIFindings(currentProduct));
+        
+        showToast('info', 'AI-only Mode', 'Showing AI-generated analysis only.');
+      }
+
+      // Event Listeners
+      if (expertMode) {
+        expertMode.addEventListener('click', function() {
+          if (currentMode !== 'expert') setExpertMode();
+        });
+      }
+
+      if (aiMode) {
+        aiMode.addEventListener('click', function() {
+          if (currentMode !== 'ai') setAIMode();
+        });
+      }
+
+      if (newAuditBtn) {
+        newAuditBtn.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.add('active');
+        });
+      }
+
+      if (closeModal) {
+        closeModal.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.remove('active');
+        });
+      }
+
+      if (cancelModal) {
+        cancelModal.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.remove('active');
+        });
+      }
+
+      if (newAuditModal) {
+        newAuditModal.addEventListener('click', function(e) {
+          if (e.target === newAuditModal) newAuditModal.classList.remove('active');
+        });
+      }
+
+      if (createAudit) {
+        createAudit.addEventListener('click', function() {
+          if (newAuditModal) newAuditModal.classList.remove('active');
+          showLoading('Creating Audit...', 'Setting up new compliance workspace.');
+          setTimeout(function() {
+            hideLoading();
+            showToast('success', 'Audit Created', 'New audit workspace is ready.');
+            setTimeout(function() { window.location.href = 'upload.html'; }, 800);
+          }, 1500);
+        });
+      }
+
+      if (downloadPdfBtn) {
+        downloadPdfBtn.addEventListener('click', function() {
+          downloadPdfBtn.disabled = true;
+          downloadPdfBtn.classList.add('opacity-70');
+          showLoading('Generating PDF...', 'Preparing compliance report for download.');
+          setTimeout(function() {
+            hideLoading();
+            downloadPdfBtn.disabled = false;
+            downloadPdfBtn.classList.remove('opacity-70');
+            showToast('success', 'Report Downloaded', 'Compliance report PDF has been downloaded.');
+          }, 2000);
+        });
+      }
+
+      if (shareReportBtn) {
+        shareReportBtn.addEventListener('click', function() {
+          shareReportBtn.disabled = true;
+          showLoading('Preparing Share Link...', 'Generating secure share link.');
+          setTimeout(function() {
+            hideLoading();
+            shareReportBtn.disabled = false;
+            showToast('success', 'Link Copied', 'Share link copied to clipboard.');
+          }, 1200);
+        });
+      }
+
+      if (reanalyzeBtn) {
+        reanalyzeBtn.addEventListener('click', function() {
+          reanalyzeBtn.disabled = true;
+          var messages = [
+            { text: 'Initializing analysis...', sub: 'Loading compliance engine.' },
+            { text: 'Scanning label...', sub: 'Processing label image data.' },
+            { text: 'Analyzing claims...', sub: 'Checking regulatory compliance.' },
+            { text: 'Finalizing results...', sub: 'Generating compliance report.' }
+          ];
+          var i = 0;
+          showLoading(messages[0].text, messages[0].sub);
+          var interval = setInterval(function() {
+            i++;
+            if (i < messages.length) {
+              if (loadingText) loadingText.textContent = messages[i].text;
+              if (loadingSubtext) loadingSubtext.textContent = messages[i].sub;
+            }
+          }, 600);
+          setTimeout(function() {
+            clearInterval(interval);
+            hideLoading();
+            reanalyzeBtn.disabled = false;
+            showToast('success', 'Analysis Complete', 'Re-analysis finished. 4 findings detected.');
+          }, 3000);
+        });
+      }
+
+      if (notificationBtn) {
+        notificationBtn.addEventListener('click', function() {
+          showToast('warning', 'New Alert', 'Regulatory update detected for FSSAI labeling rules.');
+        });
+      }
+
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', function() {
+        var params = new URLSearchParams(window.location.search);
+        var productName = params.get('name') || params.get('product');
+
+        // Default to Organic Almond Milk V2
+        if (!productName) {
+          productName = 'Organic Almond Milk V2';
+        } else {
+          productName = decodeURIComponent(productName.replace(/\+/g, ' ')).trim();
+        }
+
+        var match = findProductData(productName);
+        currentProduct = match ? match.key : productName;
+
+        if (match) {
+          updateProductDisplay(match.key, match.data);
+        } else {
+          var fallbackData = {
+            score: 50,
+            image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect fill='%23f3f4f6' width='80' height='80'/%3E%3Ctext x='40' y='45' font-family='system-ui' font-size='10' font-weight='bold' fill='%236b7280' text-anchor='middle' dominant-baseline='middle'%3EPRODUCT%3C/text%3E%3C/svg%3E",
+            risk: 2,
+            visibility: 1,
+            status: 'Unknown',
+            description: 'Product data not found.',
+            missing: 0,
+            format: 0
+          };
+          updateProductDisplay(productName, fallbackData);
+        }
+
+        // Initialize in expert mode
+        renderFindings(getExpertFindings(currentProduct));
+      });
+    })();
   </script>
 </body>
 </html>
