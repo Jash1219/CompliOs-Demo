@@ -18,10 +18,10 @@
     </div>
     <div class="flex gap-1">
       <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
-      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
       <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Projects</a>
       <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Workflow</a>
       <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Review</a>
+      <a href="sku.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workspace</a>
     </div>
   </nav>
 
@@ -34,9 +34,6 @@
       </div>
 
       <nav class="flex flex-col flex-1">
-        <a href="dashboard.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Dashboard
-        </a>
         <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
           <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2H2V5zm0 4h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9zm2 2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 001-1v-1a1 1 0 00-1-1H4z" clip-rule="evenodd"/></svg> Projects
         </a>
@@ -59,7 +56,7 @@
     <!-- Main Content -->
     <main class="flex-1 flex flex-col overflow-hidden">
       <!-- Header -->
-      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-white border-b border-gray-100">
+      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-[#F9FAFB] border-b border-gray-100">
         <div class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
           <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
           <span class="text-gray-300">›</span>
@@ -68,9 +65,9 @@
         <div class="flex items-center gap-4">
           <div class="relative">
             <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="searchInput" placeholder="Search products..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
+            <input type="text" id="searchInput" placeholder="Search..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
           </div>
-          <button id="addCardBtn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-colors">
+          <button id="addCardBtn" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-colors shadow-md btn-interactive">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Add Product
           </button>
@@ -93,6 +90,10 @@
               <span class="kanban-column-count">2</span>
             </div>
             <div class="kanban-cards">
+              <!-- Empty state (hidden when cards exist) -->
+              <div class="kanban-empty-state hidden">
+                <p class="text-xs text-gray-400">No items in draft</p>
+              </div>
               <div class="kanban-card" data-product="Probiotic Greek Yogurt" data-product-id="probiotic-greek-yogurt" data-score="0">
                 <div style="width: 100%; height: 64px; border-radius: 10px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center;">
                   <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='64'%3E%3Crect fill='%23fce7f3' width='200' height='64'/%3E%3Ctext x='100' y='36' font-family='system-ui,sans-serif' font-size='11' font-weight='bold' fill='%23be185d' text-anchor='middle' dominant-baseline='middle'%3EGREEK YOGURT%3C/text%3E%3C/svg%3E" alt="" style="width: 100%; height: 100%; object-fit: cover;">
@@ -129,6 +130,11 @@
               </div>
               <span class="kanban-column-count">3</span>
             </div>
+            <div class="kanban-cards">
+              <!-- Empty state (hidden when cards exist) -->
+              <div class="kanban-empty-state hidden">
+                <p class="text-xs text-gray-400">No items in review</p>
+              </div>
             <div class="kanban-cards">
               <div class="kanban-card" data-product="Himalayan Sea Salt Chips" data-product-id="himalayan-sea-salt-chips" data-score="45">
                 <div style="width: 100%; height: 64px; border-radius: 10px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center;">
@@ -179,6 +185,10 @@
               <span class="kanban-column-count">3</span>
             </div>
             <div class="kanban-cards">
+              <!-- Empty state (hidden when cards exist) -->
+              <div class="kanban-empty-state hidden">
+                <p class="text-xs text-gray-400">No approved items</p>
+              </div>
               <div class="kanban-card" data-product="Organic Almond Milk V2" data-product-id="organic-almond-milk-v2" data-score="98">
                 <div style="width: 100%; height: 64px; border-radius: 10px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center;">
                   <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='64'%3E%3Crect fill='%23e0e7ff' width='200' height='64'/%3E%3Ctext x='100' y='36' font-family='system-ui,sans-serif' font-size='11' font-weight='bold' fill='%234f46e5' text-anchor='middle' dominant-baseline='middle'%3EALMOND MILK%3C/text%3E%3C/svg%3E" alt="" style="width: 100%; height: 100%; object-fit: cover;">
@@ -256,7 +266,7 @@
       </div>
       <div class="modal-footer">
         <button class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors" id="cancelProductModal">Cancel</button>
-        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="addProduct">Add to Draft</button>
+        <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors" id="addProduct">Add to Draft</button>
       </div>
     </div>
   </div>
@@ -272,158 +282,182 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    const addProductModal = document.getElementById('addProductModal');
-    const addCardBtn = document.getElementById('addCardBtn');
-    const closeProductModal = document.getElementById('closeProductModal');
-    const cancelProductModal = document.getElementById('cancelProductModal');
-    const addProduct = document.getElementById('addProduct');
-    const newAuditBtn = document.getElementById('newAuditBtn');
-    const searchInput = document.getElementById('searchInput');
-    const kanbanCards = document.querySelectorAll('.kanban-card');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const toastContainer = document.getElementById('toastContainer');
-
-    const productData = {
-      "Organic Almond Milk V2": { score: 92, risk: 1, visibility: 0, status: "Expert Reviewed", description: "Detailed analysis of labeling, claims, and regulatory alignment." },
-      "Masala Chai Concentrate": { score: 78, risk: 3, visibility: 2, status: "Review Required", description: "Analysis of chai concentrate labeling for domestic market." },
-      "Himalayan Sea Salt Chips": { score: 45, risk: 8, visibility: 4, status: "Review Required", description: "Compliance analysis for snack product labeling." },
-      "Probiotic Greek Yogurt": { score: 0, risk: 0, visibility: 0, status: "Draft", description: "Initial compliance review for dairy product." },
-      "Green Tea Extract Capsules": { score: 95, risk: 0, visibility: 0, status: "Approved", description: "Dietary supplement compliance analysis." },
-      "Oat Milk - Vanilla": { score: 94, risk: 0, visibility: 0, status: "Approved", description: "Plant-based milk alternative compliance review." },
-      "Coconut Water": { score: 58, risk: 4, visibility: 1, status: "Draft", description: "Coconut water product compliance review." },
-      "Organic Protein Bar": { score: 65, risk: 3, visibility: 1, status: "Review Required", description: "Protein bar compliance analysis." },
-      "Quinoa Pasta - Whole Grain": { score: 72, risk: 2, visibility: 1, status: "Approved", description: "Whole grain pasta compliance review." },
-      "Avocado Oil Spray": { score: 88, risk: 1, visibility: 0, status: "Approved", description: "Cooking oil spray compliance analysis." },
-      "Energy Drink - Tropical": { score: 55, risk: 6, visibility: 3, status: "Review Required", description: "Energy drink labeling compliance." },
-      "Protein Powder - Unflavored": { score: 81, risk: 2, visibility: 1, status: "Approved", description: "Dietary supplement powder compliance." }
+    // Global error handler
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.log('[JS Error]', message, 'at line', lineno);
+      return true;
     };
 
-    function showLoading(text, subtext) {
-      document.getElementById('loadingText').textContent = text;
-      document.getElementById('loadingSubtext').textContent = subtext;
-      loadingOverlay.classList.add('active');
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var addProductModal = document.getElementById('addProductModal');
+      var addCardBtn = document.getElementById('addCardBtn');
+      var closeProductModal = document.getElementById('closeProductModal');
+      var cancelProductModal = document.getElementById('cancelProductModal');
+      var addProduct = document.getElementById('addProduct');
+      var newAuditBtn = document.getElementById('newAuditBtn');
+      var searchInput = document.getElementById('searchInput');
+      var kanbanCards = document.querySelectorAll('.kanban-card');
+      var loadingOverlay = document.getElementById('loadingOverlay');
+      var toastContainer = document.getElementById('toastContainer');
 
-    function hideLoading() {
-      loadingOverlay.classList.remove('active');
-    }
-
-    function showToast(type, title, message) {
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
-      const icons = {
-        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
-        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
-        warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
-        info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+      var productData = {
+        "Organic Almond Milk V2": { score: 92, risk: 1, visibility: 0, status: "Expert Reviewed", description: "Detailed analysis of labeling, claims, and regulatory alignment." },
+        "Masala Chai Concentrate": { score: 78, risk: 3, visibility: 2, status: "Review Required", description: "Analysis of chai concentrate labeling for domestic market." },
+        "Himalayan Sea Salt Chips": { score: 45, risk: 8, visibility: 4, status: "Review Required", description: "Compliance analysis for snack product labeling." },
+        "Probiotic Greek Yogurt": { score: 0, risk: 0, visibility: 0, status: "Draft", description: "Initial compliance review for dairy product." },
+        "Green Tea Extract Capsules": { score: 95, risk: 0, visibility: 0, status: "Approved", description: "Dietary supplement compliance analysis." },
+        "Oat Milk - Vanilla": { score: 94, risk: 0, visibility: 0, status: "Approved", description: "Plant-based milk alternative compliance review." },
+        "Coconut Water": { score: 58, risk: 4, visibility: 1, status: "Draft", description: "Coconut water product compliance review." },
+        "Organic Protein Bar": { score: 65, risk: 3, visibility: 1, status: "Review Required", description: "Protein bar compliance analysis." },
+        "Quinoa Pasta - Whole Grain": { score: 72, risk: 2, visibility: 1, status: "Approved", description: "Whole grain pasta compliance review." },
+        "Avocado Oil Spray": { score: 88, risk: 1, visibility: 0, status: "Approved", description: "Cooking oil spray compliance analysis." },
+        "Energy Drink - Tropical": { score: 55, risk: 6, visibility: 3, status: "Review Required", description: "Energy drink labeling compliance." },
+        "Protein Powder - Unflavored": { score: 81, risk: 2, visibility: 1, status: "Approved", description: "Dietary supplement powder compliance." }
       };
-      toast.innerHTML = `<div class="toast-icon">${icons[type] || icons.info}</div><div class="toast-content"><p class="toast-title">${title}</p><p class="toast-message">${message}</p></div>`;
-      toastContainer.appendChild(toast);
-      setTimeout(() => { toast.classList.add('hiding'); setTimeout(() => toast.remove(), 300); }, 4000);
-    }
 
-    // Modal handlers
-    addCardBtn.addEventListener('click', () => addProductModal.classList.add('active'));
-    closeProductModal.addEventListener('click', () => addProductModal.classList.remove('active'));
-    cancelProductModal.addEventListener('click', () => addProductModal.classList.remove('active'));
-    addProductModal.addEventListener('click', (e) => { if (e.target === addProductModal) addProductModal.classList.remove('active'); });
-
-    addProduct.addEventListener('click', () => {
-      const name = document.getElementById('newProductName').value.trim();
-      const status = document.getElementById('newProductStatus').value;
-      
-      if (!name) {
-        showToast('error', 'Name Required', 'Please enter a product name.');
-        return;
+      function showLoading(text, subtext) {
+        var lt = document.getElementById('loadingText');
+        var ls = document.getElementById('loadingSubtext');
+        if (lt) lt.textContent = text;
+        if (ls) ls.textContent = subtext;
+        if (loadingOverlay) loadingOverlay.classList.add('active');
       }
-      
-      addProductModal.classList.remove('active');
-      showLoading('Adding Product...', 'Creating workflow card.');
-      
-      setTimeout(() => {
-        hideLoading();
-        document.getElementById('newProductName').value = '';
-        
-        const statusText = status === 'draft' ? 'Draft' : 'In Review';
-        showToast('success', 'Product Added', `"${name}" has been added to ${statusText}.`);
-      }, 1200);
-    });
 
-    // New Audit
-    newAuditBtn.addEventListener('click', () => {
-      showLoading('Preparing...', 'Setting up new audit workspace.');
-      setTimeout(() => {
-        hideLoading();
-        window.location.href = 'upload.html';
-      }, 800);
-    });
+      function hideLoading() {
+        if (loadingOverlay) loadingOverlay.classList.remove('active');
+      }
 
-    // Search with dynamic product data
-    searchInput.addEventListener('input', () => {
-      const search = searchInput.value.toLowerCase();
-      kanbanCards.forEach(card => {
-        const name = card.dataset.product.toLowerCase();
-        card.style.display = name.includes(search) ? '' : 'none';
+      function showToast(type, title, message) {
+        var toast = document.createElement('div');
+        toast.className = 'toast ' + type;
+        var icons = {
+          success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+          error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+          warning: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+          info: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+        };
+        toast.innerHTML = '<div class="toast-icon">' + (icons[type] || icons.info) + '</div><div class="toast-content"><p class="toast-title">' + title + '</p><p class="toast-message">' + message + '</p></div>';
+        if (toastContainer) toastContainer.appendChild(toast);
+        setTimeout(function() { toast.classList.add('hiding'); setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300); }, 4000);
+      }
+
+      // Modal handlers
+      if (addCardBtn) addCardBtn.addEventListener('click', function() { 
+        console.log('Add Product clicked');
+        window.location.href = 'new-audit.html';
       });
-    });
+      if (closeProductModal) closeProductModal.addEventListener('click', function() { if (addProductModal) addProductModal.classList.remove('active'); });
+      if (cancelProductModal) cancelProductModal.addEventListener('click', function() { if (addProductModal) addProductModal.classList.remove('active'); });
+      if (addProductModal) addProductModal.addEventListener('click', function(e) { if (e.target === addProductModal) addProductModal.classList.remove('active'); });
 
-    // Dynamic score badge class based on score
-    function getScoreClass(score) {
-      if (score >= 80) return 'high';
-      if (score >= 60) return 'medium';
-      if (score > 0) return 'low';
-      return 'neutral';
-    }
-
-    // Update kanban cards with dynamic data
-    function updateKanbanCards() {
-      kanbanCards.forEach(card => {
-        const productName = card.dataset.product;
-        const data = productData[productName];
-        if (data) {
-          card.dataset.score = data.score;
-          const scoreEl = card.querySelector('.kanban-card-score');
-          if (scoreEl) {
-            scoreEl.textContent = data.score > 0 ? data.score + '%' : '—';
-            scoreEl.className = `kanban-card-score ${getScoreClass(data.score)}`;
-          }
-        }
-      });
-    }
-
-    // Initialize kanban cards
-    updateKanbanCards();
-
-    // Kanban card click - pass product data via URL
-    kanbanCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const name = card.dataset.product;
-        const score = parseInt(card.dataset.score) || 0;
-        const productId = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-        const column = card.closest('.kanban-column');
-        const columnName = column.classList.contains('draft') ? 'Draft' : 
-                          column.classList.contains('in-review') ? 'In Review' : 'Approved';
-        
-        showLoading('Opening Product...', 'Loading compliance details.');
-        
-        setTimeout(() => {
-          hideLoading();
+      if (addProduct) {
+        addProduct.addEventListener('click', function() {
+          var nameInput = document.getElementById('newProductName');
+          var statusSelect = document.getElementById('newProductStatus');
+          var name = nameInput ? nameInput.value.trim() : '';
+          var status = statusSelect ? statusSelect.value : 'draft';
           
-          if (columnName === 'Approved') {
-            showToast('success', 'Opening Report', `Viewing ${name} compliance report.`);
-          } else if (columnName === 'In Review') {
-            showToast('warning', 'Review Mode', `${name} is ready for your review.`);
-          } else {
-            showToast('info', 'Draft Mode', `${name} is being prepared.${score > 0 ? ' Score: ' + score + '%' : ''}`);
+          if (!name) {
+            showToast('error', 'Name Required', 'Please enter a product name.');
+            return;
           }
           
-          setTimeout(() => window.location.href = `sku.html?product=${productId}&name=${encodeURIComponent(name)}`, 800);
-        }, 1000);
-      });
+          if (addProductModal) addProductModal.classList.remove('active');
+          showLoading('Adding Product...', 'Creating workflow card.');
+          
+          setTimeout(function() {
+            hideLoading();
+            if (nameInput) nameInput.value = '';
+            var statusText = status === 'draft' ? 'Draft' : 'In Review';
+            showToast('success', 'Product Added', '"' + name + '" has been added to ' + statusText + '.');
+          }, 1200);
+        });
+      }
 
-      // Hover effect
-      card.addEventListener('mouseenter', () => {
-        card.style.cursor = 'pointer';
+      // New Audit
+      if (newAuditBtn) {
+        newAuditBtn.addEventListener('click', function() {
+          showLoading('Preparing...', 'Setting up new audit workspace.');
+          setTimeout(function() {
+            hideLoading();
+            window.location.href = 'new-audit.html';
+          }, 800);
+        });
+      }
+
+      // Search with dynamic product data
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          var search = searchInput.value.toLowerCase();
+          kanbanCards.forEach(function(card) {
+            var name = card.dataset.product ? card.dataset.product.toLowerCase() : '';
+            card.style.display = name.includes(search) ? '' : 'none';
+          });
+        });
+      }
+
+      // Dynamic score badge class based on score
+      function getScoreClass(score) {
+        if (score >= 80) return 'high';
+        if (score >= 60) return 'medium';
+        if (score > 0) return 'low';
+        return 'neutral';
+      }
+
+      // Update kanban cards with dynamic data
+      function updateKanbanCards() {
+        kanbanCards.forEach(function(card) {
+          var productName = card.dataset.product;
+          var data = productData[productName];
+          if (data) {
+            card.dataset.score = data.score;
+            var scoreEl = card.querySelector('.kanban-card-score');
+            if (scoreEl) {
+              scoreEl.textContent = data.score > 0 ? data.score + '%' : '—';
+              scoreEl.className = 'kanban-card-score ' + getScoreClass(data.score);
+            }
+          }
+        });
+      }
+
+      // Initialize kanban cards
+      updateKanbanCards();
+
+      // Kanban card click - pass product data via URL
+      kanbanCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          var name = card.dataset.product || 'Product';
+          var score = parseInt(card.dataset.score) || 0;
+          var productId = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+          var column = card.closest('.kanban-column');
+          var columnName = 'Draft';
+          if (column) {
+            if (column.classList.contains('draft')) columnName = 'Draft';
+            else if (column.classList.contains('in-review')) columnName = 'In Review';
+            else columnName = 'Approved';
+          }
+          
+          showLoading('Opening Product...', 'Loading compliance details.');
+          
+          setTimeout(function() {
+            hideLoading();
+            
+            if (columnName === 'Approved') {
+              showToast('success', 'Opening Report', 'Viewing ' + name + ' compliance report.');
+            } else if (columnName === 'In Review') {
+              showToast('warning', 'Review Mode', name + ' is ready for your review.');
+            } else {
+              showToast('info', 'Draft Mode', name + ' is being prepared.' + (score > 0 ? ' Score: ' + score + '%' : ''));
+            }
+            
+            setTimeout(function() { window.location.href = 'sku.html?product=' + productId + '&name=' + encodeURIComponent(name); }, 800);
+          }, 1000);
+        });
+
+        // Hover effect
+        card.addEventListener('mouseenter', function() {
+          card.style.cursor = 'pointer';
+        });
       });
     });
   </script>
