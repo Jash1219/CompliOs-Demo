@@ -111,84 +111,84 @@
             </div>
           </div>
 
-          <!-- Table -->
-          <div class="w-full">
-            <div class="grid grid-cols-12 gap-4 pb-4 border-b border-gray-200 text-[10px] font-bold text-gray-400 uppercase tracking-wider px-4">
-              <div class="col-span-4">Product Name</div>
-              <div class="col-span-3 text-center">Category</div>
-              <div class="col-span-2 text-center">Compliance Score</div>
-              <div class="col-span-3 text-right">Status</div>
-            </div>
-
-            <div class="flex flex-col gap-2 mt-2" id="skuList">
-              <!-- Approved SKU -->
-              <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-blue-50/60 rounded-xl border border-blue-100 hover:bg-blue-50 transition-colors cursor-pointer" data-status="approved" data-name="Organic Almond Milk V2">
-                <div class="col-span-4 flex items-center gap-4">
-                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1"><div class="w-full h-full bg-gray-200 rounded-sm"></div></div>
-                  <div>
-                    <p class="font-bold text-gray-900 text-sm">Organic Almond Milk V2</p>
-                    <p class="text-xs text-gray-500 font-medium">SKU-ALM-2024-01</p>
-                  </div>
-                </div>
-                <div class="col-span-3 text-center">
-                  <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded text-xs font-bold">Beverages</span>
-                </div>
-                <div class="col-span-2 flex items-center justify-center gap-2">
-                  <div class="w-8 h-8 rounded-full border-2 border-blue-600 flex items-center justify-center text-[10px] font-black text-blue-600">98%</div>
-                  <span class="text-xs font-bold text-blue-600">Verified</span>
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-50 text-green-700 rounded text-[10px] font-black uppercase tracking-wider">
-                    ● APPROVED
-                  </span>
-                </div>
+            <!-- Table -->
+            <div class="w-full">
+              <div class="grid grid-cols-12 gap-4 pb-4 border-b border-gray-200 text-[10px] font-bold text-gray-400 uppercase tracking-wider px-4">
+                <div class="col-span-4">Product Name</div>
+                <div class="col-span-3 text-center">Category</div>
+                <div class="col-span-2 text-center">Compliance Score</div>
+                <div class="col-span-3 text-right">Status</div>
               </div>
 
-              <!-- Review Required SKU -->
-              <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-white rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" data-status="review" data-name="Himalayan Sea Salt Chips">
-                <div class="col-span-4 flex items-center gap-4">
-                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1 border border-gray-100"><div class="w-full h-full bg-gray-100 rounded-sm"></div></div>
-                  <div>
-                    <p class="font-bold text-gray-900 text-sm">Himalayan Sea Salt Chips</p>
-                    <p class="text-xs text-gray-500 font-medium">SKU-CHP-042</p>
+              <div class="flex flex-col gap-2 mt-2" id="skuList">
+                <!-- Approved SKU -->
+                <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-blue-50/60 rounded-xl border border-blue-100 hover:bg-blue-50 transition-colors cursor-pointer" data-status="approved" data-name="Organic Almond Milk V2" data-product-id="organic-almond-milk-v2">
+                  <div class="col-span-4 flex items-center gap-4">
+                    <div style="width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Crect fill='%23e0e7ff' width='56' height='56'/%3E%3Ctext x='28' y='31' font-family='system-ui,sans-serif' font-size='10' font-weight='bold' fill='%234f46e5' text-anchor='middle' dominant-baseline='middle'%3EMILK%3C/text%3E%3C/svg%3E" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 text-sm">Organic Almond Milk V2</p>
+                      <p class="text-xs text-gray-500 font-medium">SKU-ALM-2024-01</p>
+                    </div>
+                  </div>
+                  <div class="col-span-3 text-center">
+                    <span class="tag tag-indigo">Beverages</span>
+                  </div>
+                  <div class="col-span-2 flex items-center justify-center gap-2">
+                    <span class="score-badge high">98</span>
+                    <span class="text-xs font-bold text-green-600">Verified</span>
+                  </div>
+                  <div class="col-span-3 text-right">
+                    <span class="status-indicator status-approved">APPROVED</span>
                   </div>
                 </div>
-                <div class="col-span-3 text-center">
-                  <span class="inline-block px-3 py-1 bg-orange-50 text-orange-600 rounded text-xs font-bold">Snacks</span>
-                </div>
-                <div class="col-span-2 flex items-center justify-center gap-2">
-                  <div class="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center text-[10px] font-black text-red-500">45%</div>
-                  <span class="text-xs font-bold text-red-500">Critical</span>
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-50 text-red-600 rounded text-[10px] font-black uppercase tracking-wider border border-red-100">
-                    REVIEW REQUIRED
-                  </span>
-                </div>
-              </div>
 
-              <!-- Draft SKU -->
-              <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-white rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" data-status="draft" data-name="Probiotic Greek Yogurt">
-                <div class="col-span-4 flex items-center gap-4">
-                  <div class="w-10 h-12 bg-white rounded shadow-sm flex items-center justify-center p-1 border border-gray-100"><div class="w-full h-full bg-gray-100 rounded-sm"></div></div>
-                  <div>
-                    <p class="font-bold text-gray-900 text-sm">Probiotic Greek Yogurt</p>
-                    <p class="text-xs text-gray-500 font-medium">SKU-DY-9021</p>
+                <!-- Review Required SKU -->
+                <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-white rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" data-status="review" data-name="Himalayan Sea Salt Chips" data-product-id="himalayan-sea-salt-chips">
+                  <div class="col-span-4 flex items-center gap-4">
+                    <div style="width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Crect fill='%23fef3c7' width='56' height='56'/%3E%3Ctext x='28' y='31' font-family='system-ui,sans-serif' font-size='10' font-weight='bold' fill='%2392400e' text-anchor='middle' dominant-baseline='middle'%3ECHIPS%3C/text%3E%3C/svg%3E" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 text-sm">Himalayan Sea Salt Chips</p>
+                      <p class="text-xs text-gray-500 font-medium">SKU-CHP-042</p>
+                    </div>
+                  </div>
+                  <div class="col-span-3 text-center">
+                    <span class="tag tag-orange">Snacks</span>
+                  </div>
+                  <div class="col-span-2 flex items-center justify-center gap-2">
+                    <span class="score-badge low">45</span>
+                    <span class="text-xs font-bold text-red-600">Critical</span>
+                  </div>
+                  <div class="col-span-3 text-right">
+                    <span class="status-indicator status-flagged">REVIEW REQUIRED</span>
                   </div>
                 </div>
-                <div class="col-span-3 text-center">
-                  <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded text-xs font-bold">Dairy</span>
+
+                <!-- Draft SKU -->
+                <div class="grid grid-cols-12 gap-4 items-center py-4 px-4 bg-white rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" data-status="draft" data-name="Probiotic Greek Yogurt" data-product-id="probiotic-greek-yogurt">
+                  <div class="col-span-4 flex items-center gap-4">
+                    <div style="width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Crect fill='%23fce7f3' width='56' height='56'/%3E%3Ctext x='28' y='31' font-family='system-ui,sans-serif' font-size='10' font-weight='bold' fill='%23be185d' text-anchor='middle' dominant-baseline='middle'%3EYOGURT%3C/text%3E%3C/svg%3E" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 text-sm">Probiotic Greek Yogurt</p>
+                      <p class="text-xs text-gray-500 font-medium">SKU-DY-9021</p>
+                    </div>
+                  </div>
+                  <div class="col-span-3 text-center">
+                    <span class="tag tag-gray">Dairy</span>
+                  </div>
+                  <div class="col-span-2 flex items-center justify-center gap-2">
+                    <span class="score-badge neutral">—</span>
+                    <span class="text-xs font-medium text-gray-400">No Data</span>
+                  </div>
+                  <div class="col-span-3 text-right">
+                    <span class="status-indicator status-draft">DRAFT</span>
+                  </div>
                 </div>
-                <div class="col-span-2 flex items-center justify-center gap-2">
-                  <div class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-[10px] font-black text-gray-400">0%</div>
-                  <span class="text-xs font-medium text-gray-400">No Data</span>
-                </div>
-                <div class="col-span-3 text-right">
-                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 text-gray-500 rounded text-[10px] font-black uppercase tracking-wider">
-                    DRAFT
-                  </span>
-                </div>
-              </div>
 
               <!-- Empty State (hidden by default) -->
               <div id="emptyState" class="empty-state hidden">
@@ -258,7 +258,7 @@
                   <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                   Audit History
                 </h3>
-                <a href="dashboard.html" class="text-xs font-semibold text-blue-600 hover:underline">View All</a>
+                <a href="sku.html" class="text-xs font-semibold text-blue-600 hover:underline">View All</a>
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between py-2.5 border-b border-gray-100">
@@ -286,7 +286,7 @@
             </div>
 
             <!-- Actions -->
-            <a href="dashboard.html" class="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-lg text-sm flex items-center justify-center transition-colors">
+            <a href="sku.html" class="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-lg text-sm flex items-center justify-center transition-colors">
               View Full Compliance Report →
             </a>
 
@@ -349,6 +349,7 @@
   <script>
     const addSkuModal = document.getElementById('addSkuModal');
     const addSkuBtn = document.getElementById('addSkuBtn');
+    const emptyStateAddBtn = document.getElementById('emptyStateAddBtn');
     const newAuditSidebarBtn = document.getElementById('newAuditSidebarBtn');
     const closeSkuModal = document.getElementById('closeSkuModal');
     const cancelSkuModal = document.getElementById('cancelSkuModal');
@@ -385,6 +386,7 @@
 
     // Modal handlers
     addSkuBtn.addEventListener('click', () => addSkuModal.classList.add('active'));
+    emptyStateAddBtn.addEventListener('click', () => addSkuModal.classList.add('active'));
     newAuditSidebarBtn.addEventListener('click', () => {
       window.location.href = 'upload.html';
     });
@@ -456,11 +458,13 @@
       document.getElementById('showingCount').textContent = `Showing ${visibleCount} of 452 SKUs`;
     }
 
-    // SKU row click
+    // SKU row click - pass product data via URL
     skuList.addEventListener('click', (e) => {
-      const row = e.target.closest('[data-name]');
+      const row = e.target.closest('[data-product-id]');
       if (row) {
-        window.location.href = 'dashboard.html';
+        const productName = row.dataset.name;
+        const productId = row.dataset.productId;
+        window.location.href = `sku.html?product=${productId}&name=${encodeURIComponent(productName)}`;
       }
     });
   </script>
