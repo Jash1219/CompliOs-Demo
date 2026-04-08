@@ -1,1 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compliance OS - Review pending, approved, and flagged compliance items.">
+  <title>Review Queue | Compliance OS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-screen flex flex-col overflow-hidden bg-[#F9FAFB]">
 
+  <!-- Navigation -->
+  <nav class="h-14 bg-white border-b border-gray-200 flex items-center px-6 justify-between shrink-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">C</div>
+      <span class="font-bold text-sm tracking-wide">Compliance OS</span>
+    </div>
+    <div class="flex gap-1">
+      <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Home</a>
+      <a href="dashboard.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Dashboard</a>
+      <a href="features.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Projects</a>
+      <a href="workflow.html" class="px-4 py-1.5 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">Workflow</a>
+      <a href="review.html" class="px-4 py-1.5 rounded-md text-sm font-semibold bg-blue-50 text-blue-600">Review</a>
+    </div>
+  </nav>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-[260px] bg-white border-r border-gray-200 flex flex-col shrink-0 z-20">
+      <div class="px-8 pt-8 pb-10">
+        <h2 class="font-bold text-[17px] text-gray-900 mb-1 leading-tight">Review Queue</h2>
+        <p class="text-[12px] text-gray-500 font-medium">Compliance items need attention</p>
+      </div>
+
+      <nav class="flex flex-col flex-1">
+        <a href="dashboard.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Dashboard
+        </a>
+        <a href="features.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2H2V5zm0 4h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9zm2 2a1 1 0 00-1 1v1a1 1 0 001 1h2a1 1 0 001-1v-1a1 1 0 00-1-1H4z" clip-rule="evenodd"/></svg> Projects
+        </a>
+        <a href="review.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-semibold text-blue-600 bg-blue-50 border-l-3 border-blue-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg> Review Queue
+        </a>
+        <a href="workflow.html" class="flex items-center gap-3 px-8 py-3 text-[14px] font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> Workflow
+        </a>
+      </nav>
+
+      <div class="p-6">
+        <button id="newAuditBtn" class="w-full py-3 bg-[#175CD3] hover:bg-blue-700 text-white font-semibold rounded-lg text-[14px] flex items-center justify-center gap-2 transition-colors shadow-md btn-interactive">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          New Audit
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+      <!-- Header -->
+      <header class="h-16 px-8 flex items-center justify-between shrink-0 bg-white border-b border-gray-100">
+        <div class="text-[13px] font-medium text-gray-500 flex items-center gap-2">
+          <a href="features.html" class="hover:text-gray-900 transition-colors">Projects</a>
+          <span class="text-gray-300">›</span>
+          <span class="text-gray-900 font-bold">Review Queue</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="text" id="searchInput" placeholder="Search review items..." class="pl-9 pr-4 py-2 bg-gray-100/80 border-none rounded-full text-[13px] focus:ring-2 focus:ring-blue-500 outline-none w-64 text-gray-600">
+          </div>
+          <div class="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="flex-1 overflow-y-auto p-8">
+        <div class="max-w-4xl">
+          <!-- Page Title -->
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Review Queue</h1>
+            <p class="text-gray-500">Items requiring compliance review before approval.</p>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Pending Review</span>
+              </div>
+              <p class="text-3xl font-bold text-gray-900" id="pendingCount">4</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Approved</span>
+              </div>
+              <p class="text-3xl font-bold text-gray-900" id="approvedCount">12</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-gray-100 card-shadow">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Flagged</span>
+              </div>
+              <p class="text-3xl font-bold text-gray-900" id="flaggedCount">2</p>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="review-tabs">
+            <button class="review-tab active" data-tab="all">All <span class="count">18</span></button>
+            <button class="review-tab" data-tab="pending">Pending <span class="count">4</span></button>
+            <button class="review-tab" data-tab="approved">Approved <span class="count">12</span></button>
+            <button class="review-tab" data-tab="flagged">Flagged <span class="count">2</span></button>
+          </div>
+
+          <!-- Review List -->
+          <div class="review-list" id="reviewList">
+            <!-- Pending Items -->
+            <div class="review-item pending" data-type="pending">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Himalayan Sea Salt Chips</p>
+                <p class="review-item-meta">Missing allergen info • SKU-CHP-042 • 2 hours ago</p>
+              </div>
+              <span class="review-item-score">45%</span>
+            </div>
+
+            <div class="review-item pending" data-type="pending">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Masala Chai Concentrate</p>
+                <p class="review-item-meta">Claim requires disclaimer • SKU-CHAI-017 • 4 hours ago</p>
+              </div>
+              <span class="review-item-score">68%</span>
+            </div>
+
+            <div class="review-item pending" data-type="pending">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Organic Protein Bar - Chocolate</p>
+                <p class="review-item-meta">Net quantity format issue • SKU-PRO-089 • 1 day ago</p>
+              </div>
+              <span class="review-item-score">72%</span>
+            </div>
+
+            <div class="review-item pending" data-type="pending">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Coconut Water - No Sugar Added</p>
+                <p class="review-item-meta">Nutrition label incomplete • SKU-COC-033 • 2 days ago</p>
+              </div>
+              <span class="review-item-score">58%</span>
+            </div>
+
+            <!-- Approved Items -->
+            <div class="review-item approved hidden" data-type="approved">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Organic Almond Milk V2</p>
+                <p class="review-item-meta">All compliance checks passed • SKU-ALM-2024-01 • Verified</p>
+              </div>
+              <span class="review-item-score">98%</span>
+            </div>
+
+            <div class="review-item approved hidden" data-type="approved">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Green Tea Extract Capsules</p>
+                <p class="review-item-meta">Compliant with FSANZ regulations • SKU-GTE-012 • Verified</p>
+              </div>
+              <span class="review-item-score">95%</span>
+            </div>
+
+            <div class="review-item approved hidden" data-type="approved">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Oat Milk - Vanilla</p>
+                <p class="review-item-meta">Allergen labeling complete • SKU-OAT-041 • Verified</p>
+              </div>
+              <span class="review-item-score">94%</span>
+            </div>
+
+            <div class="review-item approved hidden" data-type="approved">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Quinoa Pasta - Whole Grain</p>
+                <p class="review-item-meta">Claims verified • SKU-QPA-008 • Verified</p>
+              </div>
+              <span class="review-item-score">91%</span>
+            </div>
+
+            <div class="review-item approved hidden" data-type="approved">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Avocado Oil Spray</p>
+                <p class="review-item-meta">Net quantity compliant • SKU-AVO-055 • Verified</p>
+              </div>
+              <span class="review-item-score">89%</span>
+            </div>
+
+            <!-- Flagged Items -->
+            <div class="review-item flagged hidden" data-type="flagged">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Energy Drink - Tropical</p>
+                <p class="review-item-meta">Prohibited claim detected • SKU-EDR-101 • Requires immediate action</p>
+              </div>
+              <span class="review-item-score">32%</span>
+            </div>
+
+            <div class="review-item flagged hidden" data-type="flagged">
+              <div class="review-item-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              </div>
+              <div class="review-item-content">
+                <p class="review-item-title">Protein Powder - Unflavored</p>
+                <p class="review-item-meta">Label mismatch detected • SKU-PP-201 • Verification failed</p>
+              </div>
+              <span class="review-item-score">28%</span>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div id="emptyState" class="empty-state hidden">
+            <div class="empty-state-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <p class="empty-state-title">No Items Found</p>
+            <p class="empty-state-text">No items match the selected filter. Try a different category or clear your search.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner loading-spinner-dark" style="width: 40px; height: 40px; border-width: 3px;"></div>
+    <p class="loading-text" id="loadingText">Processing...</p>
+    <p class="loading-subtext" id="loadingSubtext">Please wait.</p>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    const tabs = document.querySelectorAll('.review-tab');
+    const reviewItems = document.querySelectorAll('.review-item');
+    const emptyState = document.getElementById('emptyState');
+    const searchInput = document.getElementById('searchInput');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const toastContainer = document.getElementById('toastContainer');
+    const newAuditBtn = document.getElementById('newAuditBtn');
+
+    let currentTab = 'all';
+
+    function showLoading(text, subtext) {
+      document.getElementById('loadingText').textContent = text;
+      document.getElementById('loadingSubtext').textContent = subtext;
+      loadingOverlay.classList.add('active');
+    }
+
+    function hideLoading() {
+      loadingOverlay.classList.remove('active');
+    }
+
+    function showToast(type, title, message) {
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = {
+        success: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>',
+        error: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+      };
+      toast.innerHTML = `<div class="toast-icon">${icons[type]}</div><div class="toast-content"><p class="toast-title">${title}</p><p class="toast-message">${message}</p></div>`;
+      toastContainer.appendChild(toast);
+      setTimeout(() => { toast.classList.add('hiding'); setTimeout(() => toast.remove(), 300); }, 4000);
+    }
+
+    function filterItems() {
+      const search = searchInput.value.toLowerCase();
+      let visibleCount = 0;
+
+      reviewItems.forEach(item => {
+        const type = item.dataset.type;
+        const title = item.querySelector('.review-item-title').textContent.toLowerCase();
+        const meta = item.querySelector('.review-item-meta').textContent.toLowerCase();
+        
+        const matchesTab = currentTab === 'all' || type === currentTab;
+        const matchesSearch = title.includes(search) || meta.includes(search);
+        
+        if (matchesTab && matchesSearch) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      emptyState.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    // Tab switching
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentTab = tab.dataset.tab;
+        filterItems();
+      });
+    });
+
+    // Search
+    searchInput.addEventListener('input', filterItems);
+
+    // Review item click
+    reviewItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const title = item.querySelector('.review-item-title').textContent;
+        const type = item.dataset.type;
+        
+        if (type === 'approved') {
+          showLoading('Opening Report...', 'Loading compliance details.');
+          setTimeout(() => {
+            hideLoading();
+            showToast('success', 'Opening Report', `Viewing ${title} compliance report.`);
+            setTimeout(() => window.location.href = 'dashboard.html', 500);
+          }, 1000);
+        } else if (type === 'pending') {
+          showLoading('Opening for Review...', 'Loading review workspace.');
+          setTimeout(() => {
+            hideLoading();
+            showToast('warning', 'Review Mode', `${title} is ready for your review.`);
+            setTimeout(() => window.location.href = 'dashboard.html', 500);
+          }, 1000);
+        } else if (type === 'flagged') {
+          showLoading('Investigating...', 'Loading flagged item details.');
+          setTimeout(() => {
+            hideLoading();
+            showToast('error', 'Flagged Item', `${title} requires immediate attention.`);
+            setTimeout(() => window.location.href = 'dashboard.html', 500);
+          }, 1000);
+        }
+      });
+    });
+
+    // New Audit button
+    newAuditBtn.addEventListener('click', () => {
+      showLoading('Preparing...', 'Setting up new audit workspace.');
+      setTimeout(() => {
+        hideLoading();
+        window.location.href = 'upload.html';
+      }, 800);
+    });
+  </script>
+</body>
+</html>
