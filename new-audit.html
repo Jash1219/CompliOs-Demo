@@ -25,7 +25,7 @@
   <div class="bg-white border-b border-gray-200">
     <div class="max-w-3xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-3 step active" data-step="1">
+        <div class="flex items-center gap-3 step" data-step="1">
           <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">1</div>
           <span class="text-sm font-semibold text-blue-600">Upload Label</span>
         </div>
@@ -47,7 +47,7 @@
   <main class="max-w-3xl mx-auto px-6 py-8">
     
     <!-- Step 1: Upload Label -->
-    <div id="step1" class="step-content">
+    <div id="step-upload" class="step-content">
       <h1 class="text-2xl font-bold text-gray-900 mb-2">Upload Product Label</h1>
       <p class="text-gray-500 mb-8">Upload an image of your product label for AI-powered compliance analysis.</p>
       
@@ -60,10 +60,11 @@
           </div>
           <p class="text-gray-900 font-semibold mb-1">Click to upload or drag and drop</p>
           <p class="text-gray-500 text-sm">PNG, JPG up to 10MB</p>
-          <input type="file" id="labelInput" accept="image/*" class="hidden">
+          <button id="browseBtn" class="mt-4 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">Browse Files</button>
+          <input type="file" id="labelInput" accept="image/*,.pdf" class="hidden">
         </div>
         
-        <div id="previewZone" class="hidden">
+        <div id="previewZone" class="hidden mt-4">
           <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
             <div class="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
               <img id="previewImage" src="" alt="Preview" class="w-full h-full object-cover">
@@ -82,7 +83,7 @@
       </div>
       
       <div class="flex justify-end">
-        <button id="nextStep1" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200 btn-interactive flex items-center gap-2" disabled>
+        <button id="nextStep1" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors shadow-md btn-interactive flex items-center gap-2" disabled>
           Continue
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -92,7 +93,7 @@
     </div>
 
     <!-- Step 2: Product Details -->
-    <div id="step2" class="step-content hidden">
+    <div id="step-product" class="step-content">
       <h1 class="text-2xl font-bold text-gray-900 mb-2">Product Details</h1>
       <p class="text-gray-500 mb-8">Enter basic product information for the compliance record.</p>
       
@@ -137,13 +138,13 @@
       </div>
       
       <div class="flex justify-between">
-        <button id="backStep2" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl text-sm border border-gray-200 transition-colors flex items-center gap-2">
+        <button id="backStep2" class="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-lg text-sm border border-gray-200 transition-colors flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
           Back
         </button>
-        <button id="nextStep2" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200 btn-interactive flex items-center gap-2">
+        <button id="nextStep2" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors shadow-md btn-interactive flex items-center gap-2">
           Continue
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -153,7 +154,7 @@
     </div>
 
     <!-- Step 3: Review & Start -->
-    <div id="step3" class="step-content hidden">
+    <div id="step-review" class="step-content">
       <h1 class="text-2xl font-bold text-gray-900 mb-2">Review & Start Analysis</h1>
       <p class="text-gray-500 mb-8">Review your details and start the AI-powered compliance analysis.</p>
       
@@ -166,22 +167,22 @@
               <img id="summaryImage" src="" alt="Label" class="w-full h-full object-cover">
             </div>
             <div>
-              <p id="summaryName" class="font-semibold text-gray-900">-</p>
-              <p id="summaryBrand" class="text-gray-500 text-sm">-</p>
+              <p id="summaryName" class="font-semibold text-gray-900">Product Name</p>
+              <p id="summaryBrand" class="text-gray-500 text-sm">Brand Name</p>
             </div>
           </div>
           
           <div class="grid grid-cols-3 gap-4">
             <div class="p-4 bg-gray-50 rounded-xl text-center">
-              <p class="text-2xl font-bold text-gray-900" id="summaryCategory">-</p>
+              <p class="text-2xl font-bold text-gray-900" id="summaryCategory">Not specified</p>
               <p class="text-xs text-gray-500">Category</p>
             </div>
             <div class="p-4 bg-gray-50 rounded-xl text-center">
-              <p class="text-2xl font-bold text-gray-900" id="summaryMarket">-</p>
+              <p class="text-2xl font-bold text-gray-900" id="summaryMarket">India</p>
               <p class="text-xs text-gray-500">Market</p>
             </div>
             <div class="p-4 bg-gray-50 rounded-xl text-center">
-              <p class="text-2xl font-bold text-gray-900" id="summarySku">-</p>
+              <p class="text-2xl font-bold text-gray-900" id="summarySku">Pending</p>
               <p class="text-xs text-gray-500">SKU Code</p>
             </div>
           </div>
@@ -201,13 +202,13 @@
       </div>
       
       <div class="flex justify-between">
-        <button id="backStep3" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl text-sm border border-gray-200 transition-colors flex items-center gap-2">
+        <button id="backStep3" class="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-lg text-sm border border-gray-200 transition-colors flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
           Back
         </button>
-        <button id="startAnalysis" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-lg shadow-blue-200 btn-interactive flex items-center gap-2">
+        <button id="startAnalysis" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition-colors shadow-md btn-interactive flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
@@ -234,12 +235,34 @@
     </div>
   </main>
 
+  <!-- Full Screen Loading Overlay -->
+  <div id="loadingScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+    <div class="spinner" style="width: 50px; height: 50px; border: 5px solid #eee; border-top: 5px solid #2563eb; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 24px;"></div>
+    <h2 style="font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 8px;">Analyzing Label...</h2>
+    <p id="loadingText" style="color: #6b7280; font-size: 14px; margin-bottom: 24px;">Initializing compliance engine</p>
+    <div class="progress-bar" style="width: 280px; height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+      <div id="progressFill" style="height: 100%; background: #2563eb; border-radius: 4px; transition: width 0.5s ease; width: 0%;"></div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
   <script>
-    (function() {
-      'use strict';
+    // Global error handler
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.log('[JS Error]', message, 'at line', lineno);
+      return true;
+    };
+
+    document.addEventListener("DOMContentLoaded", function() {
+      console.log('[New Audit] Script loaded, initializing...');
       
       var currentStep = 1;
       var formData = {
@@ -251,28 +274,73 @@
         sku: ''
       };
       
-      // Elements
-      var uploadZone = document.getElementById('uploadZone');
-      var labelInput = document.getElementById('labelInput');
-      var previewZone = document.getElementById('previewZone');
-      var previewImage = document.getElementById('previewImage');
-      var fileName = document.getElementById('fileName');
-      var fileSize = document.getElementById('fileSize');
-      var removeFile = document.getElementById('removeFile');
-      var nextStep1 = document.getElementById('nextStep1');
-      var nextStep2 = document.getElementById('nextStep2');
-      var backStep2 = document.getElementById('backStep2');
-      var backStep3 = document.getElementById('backStep3');
-      var startAnalysis = document.getElementById('startAnalysis');
-      var toastContainer = document.getElementById('toastContainer');
+      // Safe element getter
+      function getEl(id) {
+        var el = document.getElementById(id);
+        if (!el) {
+          console.warn('[New Audit] Element not found:', id);
+        }
+        return el;
+      }
       
-      // Safe text helper
-      function safeText(val, fallback) {
-        return (val !== undefined && val !== null && val !== '') ? val : fallback;
+      // Show specific step
+      function showStep(stepId) {
+        console.log('[New Audit] Showing step:', stepId);
+        
+        // Hide all step content
+        document.querySelectorAll('.step-content').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        
+        // Show target step
+        var targetStep = document.getElementById(stepId);
+        if (targetStep) {
+          targetStep.style.display = 'block';
+          console.log('[New Audit] Step displayed:', stepId);
+        } else {
+          console.error('[New Audit] Step container not found:', stepId);
+        }
+      }
+      
+      // Update step indicators (top navigation)
+      function updateStepIndicators(step) {
+        var steps = document.querySelectorAll('.step');
+        steps.forEach(function(s) {
+          var stepNum = parseInt(s.dataset.step, 10);
+          var circle = s.querySelector('div:first-child');
+          var text = s.querySelector('span');
+          
+          if (circle) {
+            if (stepNum < step) {
+              circle.className = 'w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold';
+              circle.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+            } else if (stepNum === step) {
+              circle.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
+              circle.textContent = stepNum;
+            } else {
+              circle.className = 'w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-bold';
+              circle.textContent = stepNum;
+            }
+          }
+          
+          if (text) {
+            if (stepNum <= step) {
+              text.className = 'text-sm font-semibold text-blue-600';
+            } else {
+              text.className = 'text-sm font-medium text-gray-400';
+            }
+          }
+        });
       }
       
       // Toast notification
       function showToast(type, title, message) {
+        var toastContainer = getEl('toastContainer');
+        if (!toastContainer) {
+          console.warn('[New Audit] Toast container not found');
+          return;
+        }
+        
         var toast = document.createElement('div');
         toast.className = 'toast ' + type;
         var icons = {
@@ -284,152 +352,239 @@
         toastContainer.appendChild(toast);
         setTimeout(function() {
           toast.classList.add('hiding');
-          setTimeout(function() { toast.remove(); }, 300);
+          setTimeout(function() {
+            if (toast.parentNode) toast.remove();
+          }, 300);
         }, 4000);
       }
       
-      // Update step indicators
-      function updateSteps(step) {
-        var steps = document.querySelectorAll('.step');
-        steps.forEach(function(s) {
-          var stepNum = parseInt(s.dataset.step);
-          var circle = s.querySelector('div:first-child');
-          var text = s.querySelector('span');
-          
-          if (stepNum < step) {
-            circle.className = 'w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold';
-            circle.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
-            text.className = 'text-sm font-semibold text-green-600';
-          } else if (stepNum === step) {
-            circle.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
-            circle.textContent = stepNum;
-            text.className = 'text-sm font-semibold text-blue-600';
-          } else {
-            circle.className = 'w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-bold';
-            circle.textContent = stepNum;
-            text.className = 'text-sm font-medium text-gray-400';
-          }
-        });
-        
-        // Show/hide content
-        document.querySelectorAll('.step-content').forEach(function(c, i) {
-          c.classList.toggle('hidden', (i + 1) !== step);
-        });
+      // Navigate to step
+      function goToStep(step) {
+        currentStep = step;
+        console.log('[New Audit] Navigating to step:', step);
+        var stepIds = ['', 'step-upload', 'step-product', 'step-review'];
+        showStep(stepIds[step]);
+        updateStepIndicators(step);
       }
       
-      // Upload handlers
-      uploadZone.addEventListener('click', function() {
-        labelInput.click();
-      });
+      // Get form elements
+      var browseBtn = getEl('browseBtn');
+      var labelInput = getEl('labelInput');
+      var uploadZone = getEl('uploadZone');
+      var previewZone = getEl('previewZone');
+      var previewImage = getEl('previewImage');
+      var fileNameEl = getEl('fileName');
+      var fileSizeEl = getEl('fileSize');
+      var removeFile = getEl('removeFile');
+      var nextStep1 = getEl('nextStep1');
+      var nextStep2 = getEl('nextStep2');
+      var backStep2 = getEl('backStep2');
+      var backStep3 = getEl('backStep3');
+      var startAnalysis = getEl('startAnalysis');
       
-      labelInput.addEventListener('change', function(e) {
+      // Validate critical elements
+      if (!browseBtn || !labelInput || !uploadZone || !nextStep1) {
+        console.error('[New Audit] Critical upload elements missing');
+        var main = document.querySelector('main');
+        if (main) {
+          main.innerHTML = '<div class="bg-white rounded-2xl border border-gray-200 p-8 text-center"><p class="text-red-600 font-semibold">Upload module failed to load</p><p class="text-gray-500 text-sm mt-2">Please refresh the page.</p></div>';
+        }
+        return;
+      }
+      
+      console.log('[New Audit] All critical elements found');
+      
+      // Handle file selection
+      function handleFile(file) {
+        if (!file) return;
+        
+        console.log('[New Audit] File selected:', file.name, file.type);
+        formData.image = file;
+        
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          console.log('[New Audit] File loaded, showing preview');
+          if (previewImage) previewImage.src = e.target.result;
+          if (fileNameEl) fileNameEl.textContent = file.name;
+          if (fileSizeEl) fileSizeEl.textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+          if (uploadZone) uploadZone.style.display = 'none';
+          if (previewZone) previewZone.classList.remove('hidden');
+          if (nextStep1) nextStep1.disabled = false;
+        };
+        reader.readAsDataURL(file);
+      }
+      
+      // Browse button click
+      browseBtn.onclick = function() {
+        console.log('[New Audit] Browse button clicked');
+        labelInput.click();
+      };
+      
+      // File input change
+      labelInput.onchange = function(e) {
         var file = e.target.files[0];
         if (file) {
-          formData.image = file;
-          var reader = new FileReader();
-          reader.onload = function(e) {
-            previewImage.src = e.target.result;
-            fileName.textContent = file.name;
-            fileSize.textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
-            uploadZone.classList.add('hidden');
-            previewZone.classList.remove('hidden');
-            nextStep1.disabled = false;
-          };
-          reader.readAsDataURL(file);
+          handleFile(file);
+        }
+      };
+      
+      // Drag and drop
+      uploadZone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        uploadZone.classList.add('border-blue-400', 'bg-blue-50');
+      });
+      
+      uploadZone.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        uploadZone.classList.remove('border-blue-400', 'bg-blue-50');
+      });
+      
+      uploadZone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        uploadZone.classList.remove('border-blue-400', 'bg-blue-50');
+        var file = e.dataTransfer.files[0];
+        if (file && (file.type.startsWith('image/') || file.type === 'application/pdf')) {
+          handleFile(file);
         }
       });
       
-      removeFile.addEventListener('click', function() {
-        formData.image = null;
-        labelInput.value = '';
-        previewImage.src = '';
-        uploadZone.classList.remove('hidden');
-        previewZone.classList.add('hidden');
-        nextStep1.disabled = true;
-      });
+      // Remove file
+      if (removeFile) {
+        removeFile.onclick = function() {
+          console.log('[New Audit] Remove file clicked');
+          formData.image = null;
+          if (labelInput) labelInput.value = '';
+          if (previewImage) previewImage.src = '';
+          if (uploadZone) uploadZone.style.display = 'block';
+          if (previewZone) previewZone.classList.add('hidden');
+          if (nextStep1) nextStep1.disabled = true;
+        };
+      }
       
-      // Navigation handlers
-      nextStep1.addEventListener('click', function() {
-        if (formData.image) {
-          currentStep = 2;
-          updateSteps(currentStep);
-        }
-      });
+      // Step 1 -> 2
+      if (nextStep1) {
+        nextStep1.onclick = function() {
+          if (formData.image) {
+            console.log('[New Audit] Moving to step 2');
+            goToStep(2);
+          }
+        };
+      }
       
-      backStep2.addEventListener('click', function() {
-        currentStep = 1;
-        updateSteps(currentStep);
-      });
+      // Step 2 -> 3
+      if (nextStep2) {
+        nextStep2.onclick = function() {
+          var prodName = document.getElementById('productName');
+          var brandName = document.getElementById('brandName');
+          var category = document.getElementById('category');
+          var market = document.getElementById('market');
+          var skuCode = document.getElementById('skuCode');
+          
+          formData.name = prodName ? prodName.value.trim() : '';
+          formData.brand = brandName ? brandName.value.trim() : '';
+          formData.category = category ? category.value : '';
+          formData.market = market ? market.value : 'india';
+          formData.sku = skuCode ? skuCode.value.trim() : '';
+          
+          if (!formData.name) {
+            showToast('error', 'Required Field', 'Please enter a product name.');
+            return;
+          }
+          
+          console.log('[New Audit] Moving to step 3 with data:', formData);
+          
+          // Update summary
+          var summaryImage = document.getElementById('summaryImage');
+          var summaryName = document.getElementById('summaryName');
+          var summaryBrand = document.getElementById('summaryBrand');
+          var summaryCategory = document.getElementById('summaryCategory');
+          var summaryMarket = document.getElementById('summaryMarket');
+          var summarySku = document.getElementById('summarySku');
+          
+          if (summaryImage && previewImage) summaryImage.src = previewImage.src;
+          if (summaryName) summaryName.textContent = formData.name;
+          if (summaryBrand) summaryBrand.textContent = formData.brand || 'No brand';
+          if (summaryCategory) summaryCategory.textContent = formData.category || '-';
+          if (summaryMarket) summaryMarket.textContent = formData.market === 'india' ? 'India' : 'Global';
+          if (summarySku) summarySku.textContent = formData.sku || '-';
+          
+          goToStep(3);
+        };
+      }
       
-      nextStep2.addEventListener('click', function() {
-        formData.name = document.getElementById('productName').value.trim();
-        formData.brand = document.getElementById('brandName').value.trim();
-        formData.category = document.getElementById('category').value;
-        formData.market = document.getElementById('market').value;
-        formData.sku = document.getElementById('skuCode').value.trim();
-        
-        if (!formData.name) {
-          showToast('error', 'Required Field', 'Please enter a product name.');
-          return;
-        }
-        
-        // Update summary
-        document.getElementById('summaryImage').src = previewImage.src;
-        document.getElementById('summaryName').textContent = formData.name;
-        document.getElementById('summaryBrand').textContent = formData.brand || 'No brand';
-        document.getElementById('summaryCategory').textContent = formData.category || '-';
-        document.getElementById('summaryMarket').textContent = formData.market === 'india' ? 'India' : 'Global';
-        document.getElementById('summarySku').textContent = formData.sku || '-';
-        
-        currentStep = 3;
-        updateSteps(currentStep);
-      });
+      // Step 2 back -> 1
+      if (backStep2) {
+        backStep2.onclick = function() {
+          console.log('[New Audit] Going back to step 1');
+          goToStep(1);
+        };
+      }
       
-      backStep3.addEventListener('click', function() {
-        currentStep = 2;
-        updateSteps(currentStep);
-      });
+      // Step 3 back -> 2
+      if (backStep3) {
+        backStep3.onclick = function() {
+          console.log('[New Audit] Going back to step 2');
+          goToStep(2);
+        };
+      }
       
       // Start analysis
-      startAnalysis.addEventListener('click', function() {
-        currentStep = 4;
-        updateSteps(3);
-        document.getElementById('step3').classList.add('hidden');
-        document.getElementById('analysisLoading').classList.remove('hidden');
-        
-        var statuses = [
-          'Initializing AI compliance engine...',
-          'Scanning label image...',
-          'Detecting text elements...',
-          'Analyzing FSSAI requirements...',
-          'Checking claims regulations...',
-          'Validating Legal Metrology Rules...',
-          'Generating compliance report...'
-        ];
-        
-        var progress = document.getElementById('analysisProgress');
-        var statusEl = document.getElementById('analysisStatus');
-        var i = 0;
-        
-        var interval = setInterval(function() {
-          if (i < statuses.length) {
-            statusEl.textContent = statuses[i];
-            progress.style.width = ((i + 1) / statuses.length * 100) + '%';
-            i++;
+      if (startAnalysis) {
+        startAnalysis.onclick = function() {
+          console.log('[New Audit] Starting analysis');
+          
+          var stepReviewEl = document.getElementById('step-review');
+          var loadingScreen = document.getElementById('loadingScreen');
+          var loadingText = document.getElementById('loadingText');
+          var progressFill = document.getElementById('progressFill');
+          
+          if (stepReviewEl) stepReviewEl.style.display = 'none';
+          
+          if (loadingScreen) {
+            loadingScreen.style.display = 'flex';
           }
-        }, 700);
-        
-        setTimeout(function() {
-          clearInterval(interval);
-          progress.style.width = '100%';
-          showToast('success', 'Analysis Complete', 'Redirecting to compliance report...');
-          setTimeout(function() {
-            var productId = formData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-            window.location.href = 'sku.html?id=' + productId + '&name=' + encodeURIComponent(formData.name);
-          }, 1500);
-        }, 5000);
+          
+          var loadingMessages = [
+            'Initializing compliance engine...',
+            'Scanning label text...',
+            'Extracting FSSAI elements...',
+            'Validating LMPC rules...',
+            'Finalizing compliance report...'
+          ];
+          
+          var i = 0;
+          var totalSteps = loadingMessages.length;
+          
+          var interval = setInterval(function() {
+            if (i < totalSteps) {
+              if (loadingText) loadingText.innerText = loadingMessages[i];
+              if (progressFill) progressFill.style.width = ((i + 1) / totalSteps * 100) + '%';
+              i++;
+            } else {
+              clearInterval(interval);
+              setTimeout(function() {
+                var productId = formData.sku || formData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                var productName = formData.name || 'New Product';
+                window.location.href = 'sku.html?product=' + encodeURIComponent(productId) + '&name=' + encodeURIComponent(productName) + '&tab=overview';
+              }, 800);
+            }
+          }, 800);
+        };
+      }
+      
+      // Failsafe: Check all step containers exist
+      var requiredSteps = ['step-upload', 'step-product', 'step-review'];
+      requiredSteps.forEach(function(stepId) {
+        if (!document.getElementById(stepId)) {
+          console.error('[New Audit] MISSING step container:', stepId);
+        }
       });
-    })();
+
+      // Initialize - show step 1
+      console.log('[New Audit] Initializing, showing step 1');
+      goToStep(1);
+      
+    });
   </script>
 </body>
 </html>
